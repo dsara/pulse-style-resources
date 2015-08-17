@@ -1,0 +1,17 @@
+{
+  "name": "pulse-style-resources",
+  "version": "1.0.0",
+  "homepage": "https://github.com/dsara/pulse-style-resources",
+  "authors": [
+    "dsara <dan.steve.sara@gmail.com>"
+  ],
+  "description": "University of Utah SharePoint Pulse Sytle Resources",
+  "main": "/SCSS/uu.sp.commons.scss",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
