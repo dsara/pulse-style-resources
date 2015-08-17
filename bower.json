@@ -6,7 +6,7 @@
     "dsara <dan.steve.sara@gmail.com>"
   ],
   "description": "University of Utah SharePoint Pulse Sytle Resources",
-  "main": "/SCSS/uu.sp.commons.scss",
+  "main": ["SCSS/uu.sp.commons.scss", "LESS/uu.sp.commons.less"],
   "ignore": [
     "**/.*",
     "node_modules",
