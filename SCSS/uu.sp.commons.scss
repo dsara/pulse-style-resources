@@ -1,0 +1,138 @@
+﻿$media-phone: "(max-width:767px)";
+$media-tablet: "(min-width:768px) and (max-width:991px)";
+$media-minTablet: "(min-width:768px)";
+$media-maxTablet: "(max-width:991px)";
+$media-desktop: "(min-width:992px) and (max-width:1199px)";
+$media-minDesktop: "(min-width:992px)";
+$media-maxDesktop: "(max-width:1199px)";
+$media-wideDesktop: "(min-width:1200p)";
+
+$black-box-shadow: rgba(0,0,0,0.2);
+$pulse-light-green: #96c93f;
+$pulse-dark-green: #3f6d34;
+$pulse-light-grey: #f1f1f2;
+$pulse-transparent-white: rgba(255, 255, 255, 0.5);
+$pulse-ribbon-grey: rgb(239,239,239);
+$pulse-ribbon-grey-opaque: rgba(239,239,239,1);
+$pulse-purple: #440a3c;
+$pulse-dark-blue: #3278bd;
+$pulse-light-blue: #00adef;
+$pulse-red: #b71237;
+$pulse-orange: #f47c40;
+$pulse-yellow: #f6bc17;
+$pulse-pink: #cd1d5d;
+
+%black-shadow {
+    box-shadow: 0 1px 4px $black-box-shadow;
+    box-shadow: 0 .1rem .4rem $black-box-shadow;
+}
+
+@mixin black-shadow () {
+    box-shadow: 0 1px 4px $black-box-shadow;
+    box-shadow: 0 .1rem .4rem $black-box-shadow;
+}
+
+@mixin font-size($remSize) {
+    font-size: $remSize * 10px;
+    font-size: $remSize * 1rem;
+}
+
+@mixin rem-prop($property, $important:no, $rem:none, $rem2: none, $rem3: none, $rem4: none) {
+    @if $rem4 != none {
+        @if $important == yes {
+            #{$property}: $rem * 10px $rem2 * 10px $rem3 * 10px $rem4 * 10px !important;
+            #{$property}: $rem * 1rem $rem2 * 1rem $rem3 * 1rem $rem4 * 1rem !important;
+        }
+        @else {
+            #{$property}: $rem * 10px $rem2 * 10px $rem3 * 10px $rem4 * 10px;
+            #{$property}: $rem * 1rem $rem2 * 1rem $rem3 * 1rem $rem4 * 1rem;
+        }
+    }
+    @else if $rem3 != none {
+        @if $important == yes {
+            #{$property}: $rem * 10px $rem2 * 10px $rem3 * 10px !important;
+            #{$property}: $rem * 1rem $rem2 * 1rem $rem3 * 1rem !important;
+        }
+        @else {
+            #{$property}: $rem * 10px $rem2 * 10px $rem3 * 10px;
+            #{$property}: $rem * 1rem $rem2 * 1rem $rem3 * 1rem;
+        }
+    }
+    @else if $rem2 != none {
+        @if $important == yes {
+            #{$property}: $rem * 10px $rem2 * 10px !important;
+            #{$property}: $rem * 1rem $rem2 * 1rem !important;
+        }
+        @else {
+            #{$property}: $rem * 10px $rem2 * 10px;
+            #{$property}: $rem * 1rem $rem2 * 1rem;
+        }
+    }
+    @else if $rem != none {
+        @if $important == yes {
+            #{$property}: $rem * 10px !important;
+            #{$property}: $rem * 1rem !important;
+        }
+        @else {
+            #{$property}: $rem * 10px;
+            #{$property}: $rem * 1rem;
+        }
+    }
+}
+
+@mixin width-minus($fallback, $width, $minus) {
+    width: $fallback;
+    width: calc(#{$width} - #{$minus});
+    width: -webkit-calc(#{$width} - #{$minus});
+    width: -ms-calc(#{$width} - #{$minus});
+    width: -o-calc(#{$width} - #{$minus});
+    width: -moz-calc(#{$width} - #{$minus});
+}
+
+%pointer-item {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@mixin pointer-item () {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@mixin force-box-sizing ($box-sizing) {
+    -moz-box-sizing: $box-sizing !important;
+    -webkit-box-sizing: $box-sizing !important;
+    box-sizing: $box-sizing !important;
+}
+
+%OpenSans-Light {
+    font-family: 'Open Sans Light', 'Segoe UI Light', Helvetica, Arial, sans-serif;
+}
+
+@mixin OpenSans-Light (){
+    font-family: 'Open Sans Light', 'Segoe UI Light', Helvetica, Arial, sans-serif;
+}
+
+%OpenSans {
+    font-family: 'Open Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+@mixin OpenSans () {
+    font-family: 'Open Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+%OpenSansBold {
+    font-family: 'Open Sans Bold', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+@mixin OpenSansBold () {
+    font-family: 'Open Sans Bold', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+%OpenSansItalic {
+    font-family: 'Open Sans Italic', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+@mixin OpenSansItalic () {
+    font-family: 'Open Sans Italic', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
