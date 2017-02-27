@@ -1,149 +1,210 @@
-$media-miniPhone: "(max-width:482px)";
-$media-650-device: "(max-device-width:650px)";
-$media-phone: "(max-width:767px)";
-$media-tablet: "(min-width:768px) and (max-width:991px)";
-$media-minTablet: "(min-width:768px)";
-$media-maxTablet: "(max-width:991px)";
-$media-desktop: "(min-width:992px) and (max-width:1199px)";
-$media-minDesktop: "(min-width:992px)";
-$media-maxDesktop: "(max-width:1199px)";
-$media-wideDesktop: "(min-width:1200p)";
+// media queries
+$media-phone-mini: '(max-width:482px)';
+$media-650-device: '(max-device-width:650px)';
+$media-phone: '(max-width:767px)';
+$media-tablet: '(min-width:768px) and (max-width:991px)';
+$media-tablet-min: '(min-width:768px)';
+$media-tablet-max: '(max-width:991px)';
+$media-desktop: '(min-width:992px) and (max-width:1199px)';
+$media-desktop-min: '(min-width:992px)';
+$media-desktop-max: '(max-width:1199px)';
+$media-wide-desktop: '(min-width:1200px)';
 
-$black-box-shadow: rgba(0,0,0,0.2);
-$colors-lightest-green: #BCD534;
-$colors-light-green: #96C93F;
-$colors-dark-green: #3f6d34;
-$colors-light-grey: #f1f1f2;
-$colors-transparent-white: rgba(255, 255, 255, 0.5);
-$colors-ribbon-grey: rgb(239,239,239);
-$colors-ribbon-grey-opaque: rgba(239,239,239,1);
-$colors-purple: #440a3c;
-$colors-dark-blue: #3278bd;
-$colors-light-blue: #00adef;
-$colors-red: #b71237;
-$colors-orange: #f47c40;
-$colors-logo-orange: #F79420;
-$colors-yellow: #f6bc17;
-$colors-pink: #cd1d5d;
-$colors-alternating-grey-1: #58585B;
-$colors-alternating-grey-2: #404041;
-$colors-alternating-grey-3: #D1D2D4;
-$colors-alternating-grey-4: #CCC;
-$colors-black: #000000;
-$colors-white: #FFFFFF;
-$colors-tile-hover: rgba(255, 255, 255, .7);
 
-%black-shadow {
-    box-shadow: 0 1px 4px $black-box-shadow;
-    box-shadow: 0 .1rem .4rem $black-box-shadow;
+// shadow colors
+$colors-in-shadow-1: rgba(65, 64, 66, .6);
+$colors-in-shadow-2: rgba(65, 64, 66, .2);
+
+$colors-out-shadow: rgba(0, 0, 0, .2);
+
+// colors
+$colors: (
+  black: #414042,
+  grey: #a9a9a9,
+  grey-light: #c3c3c3,
+  grey-lighter: gainsboro,
+  grey-dark: #909090,
+  grey-darker: #767676,
+  white: #fff,
+  beige: #f2f2ea,
+  red: #f44336,
+  red-light: #f77066,
+  red-lighter: #f99d97,
+  red-dark: #ea1c0d,
+  red-darker: #ba160a,
+  pink: #e91e63,
+  pink-light: #ee4c83,
+  pink-lighter: #ca61dc,
+  pink-dark: #c1143e,
+  pink-darker: #930e3b,
+  purple: #9c27b0,
+  purple-light: #bc37d3,
+  purple-lighter: #ca61dc,
+  purple-dark: #771e86,
+  purple-darker: #52145d,
+  blue: #2196f3,
+  blue-light: #51adf6,
+  blue-lighter: #82c4f8,
+  blue-dark: #0c7cd5,
+  blue-darker: #0960a5,
+  green: #4caf50,
+  green-light: #6ec071,
+  green-lighter: #92cf94,
+  green-dark: #3d8b40,
+  green-darker: #2d682f,
+  cyan: #00bcd4,
+  cyan-light: #08e3ff,
+  cyan-lighter: #3be9ff,
+  cyan-dark: #008fa1,
+  cyan-darker: #00626e,
+  yellow: #ffeb3b,
+  yellow-light: #fff06e,
+  yellow-lighter: #fff5a1,
+  yellow-dark: #ffe608,
+  yellow-darker: #d4be00,
+  orange: #ff9800,
+  orange-light: #ffad33,
+  orange-lighter: #ffc166,
+  orange-dark: #cc7a00,
+  orange-darker: #995b00,
+  brown: #795548,
+  brown-light: #996b5b,
+  brown-lighter: #af8778,
+  brown-dark: #593f35,
+  brown-darker: #392822,
+  brand: #ac162c,
+  brand-light: #d91c38,
+  brand-lighter: #e7415a,
+  brand-dark: #7f1020,
+  brand-darker: #520a15,
+  info: #2196f3,
+  info-light: #51adf6,
+  info-lighter: #82c4f8,
+  info-dark: #0c7cd5,
+  info-darker: #0960a5,
+  warning: #ff9800,
+  warning-light: #ffad33,
+  warning-lighter: #ffc166,
+  warning-dark: #cc7a00,
+  warning-darker: #995b00,
+  success: #4caf50,
+  success-light: #6ec071,
+  success-lighter: #92cf94,
+  success-dark: #3d8b40,
+  success-darker: #2d682f,
+  error: #f44336,
+  error-light: #f77066,
+  error-lighter: #f99d97,
+  error-dark: #ea1c0d,
+  error-darker: #ba160a,
+  default: #909090,
+  disabled: #909090,
+  quiet: #909090,
+  ribbon-grey: #efefef,
+);
+
+@mixin generate-color-classes {
+  @each $name, $color in $colors {
+    .u-color-#{$name} {
+      color: $color;
+    }
+
+    .u-bg-#{$name} {
+      background-color: $color;
+    }
+
+    .u-fill-#{$name} {
+      fill: $color;
+    }
+
+    .u-border-#{$name} {
+      border-color: $color;
+    }
+  }
 }
 
-@mixin black-shadow () {
-    box-shadow: 0 1px 4px $black-box-shadow;
-    box-shadow: 0 .1rem .4rem $black-box-shadow;
+// @include generate-color-classes;
+
+// elevation and box shadows
+@mixin generate-shadow-classes {
+  .u-elevation-high {
+    box-shadow: 0 1px 3px 0 $colors-out-shadow;
+  }
+
+  .u-elevation-higher {
+    box-shadow: 0 2px 6px 0 $colors-out-shadow;
+  }
+
+  .u-elevation-highest {
+    box-shadow: 0 3px 9px 0 $colors-out-shadow;
+  }
+
+  .u-elevation-low {
+    box-shadow: inset 0 0 1px $colors-in-shadow-1, inset 0 2px 4px -2px $colors-in-shadow-2;
+  }
+
+  .u-elevation-lower {
+    box-shadow: inset 0 0 1px $colors-in-shadow-1, inset 0 4px 8px -4px $colors-in-shadow-2;
+  }
+
+  .u-elevation-lowest {
+    box-shadow: inset 0 0 1px $colors-in-shadow-1, inset 0 6px 12px -6px $colors-in-shadow-2;
+  }
 }
 
-@mixin font-size($remSize) {
-    font-size: $remSize * 10px;
-    font-size: $remSize * 1rem;
+// @include generate-shadow-classes;
+
+
+@mixin elevation-high {
+  box-shadow: 0 1px 3px 0 $colors-out-shadow;
 }
 
-@mixin rem-prop($property, $important:no, $rem:none, $rem2: none, $rem3: none, $rem4: none) {
-    @if $rem4 != none {
-        @if $important == yes {
-            #{$property}: $rem * 10px $rem2 * 10px $rem3 * 10px $rem4 * 10px !important;
-            #{$property}: $rem * 1rem $rem2 * 1rem $rem3 * 1rem $rem4 * 1rem !important;
-        }
-        @else {
-            #{$property}: $rem * 10px $rem2 * 10px $rem3 * 10px $rem4 * 10px;
-            #{$property}: $rem * 1rem $rem2 * 1rem $rem3 * 1rem $rem4 * 1rem;
-        }
-    }
-    @else if $rem3 != none {
-        @if $important == yes {
-            #{$property}: $rem * 10px $rem2 * 10px $rem3 * 10px !important;
-            #{$property}: $rem * 1rem $rem2 * 1rem $rem3 * 1rem !important;
-        }
-        @else {
-            #{$property}: $rem * 10px $rem2 * 10px $rem3 * 10px;
-            #{$property}: $rem * 1rem $rem2 * 1rem $rem3 * 1rem;
-        }
-    }
-    @else if $rem2 != none {
-        @if $important == yes {
-            #{$property}: $rem * 10px $rem2 * 10px !important;
-            #{$property}: $rem * 1rem $rem2 * 1rem !important;
-        }
-        @else {
-            #{$property}: $rem * 10px $rem2 * 10px;
-            #{$property}: $rem * 1rem $rem2 * 1rem;
-        }
-    }
-    @else if $rem != none {
-        @if $important == yes {
-            #{$property}: $rem * 10px !important;
-            #{$property}: $rem * 1rem !important;
-        }
-        @else {
-            #{$property}: $rem * 10px;
-            #{$property}: $rem * 1rem;
-        }
-    }
+@mixin elevation-higher {
+  box-shadow: 0 2px 6px 0 $colors-out-shadow;
+}
+
+@mixin elevation-highest {
+  box-shadow: 0 3px 9px 0 $colors-out-shadow;
+}
+
+@mixin elevation-low {
+  box-shadow: inset 0 0 1px $colors-in-shadow-1, inset 0 2px 4px -2px $colors-in-shadow-2;
+}
+
+@mixin elevation-lower {
+  box-shadow: inset 0 0 1px $colors-in-shadow-1, inset 0 4px 8px -4px $colors-in-shadow-2;
+}
+
+@mixin elevation-lowest {
+  box-shadow: inset 0 0 1px $colors-in-shadow-1, inset 0 6px 12px -6px $colors-in-shadow-2;
 }
 
 @mixin width-minus($fallback, $width, $minus) {
-    width: $fallback;
-    width: calc(#{$width} - #{$minus});
-    width: -webkit-calc(#{$width} - #{$minus});
-    width: -ms-calc(#{$width} - #{$minus});
-    width: -o-calc(#{$width} - #{$minus});
-    width: -moz-calc(#{$width} - #{$minus});
+  width: $fallback;
+  width: calc(#{$width} - #{$minus});
 }
 
-%pointer-item {
-    text-decoration: none;
-    cursor: pointer;
-}
-
-@mixin pointer-item () {
-    text-decoration: none;
-    cursor: pointer;
+@mixin pointer-item {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 @mixin force-box-sizing ($box-sizing) {
-    -moz-box-sizing: $box-sizing !important;
-    -webkit-box-sizing: $box-sizing !important;
-    box-sizing: $box-sizing !important;
+  box-sizing: $box-sizing !important;
 }
 
-%OpenSans-Light {
-    font-family: 'Open Sans Light', 'Segoe UI Light', Helvetica, Arial, sans-serif;
+@mixin opensans-light () {
+  font-family: 'Open Sans Light', 'Segoe UI Light', Helvetica, Arial, sans-serif;
 }
 
-@mixin OpenSans-Light (){
-    font-family: 'Open Sans Light', 'Segoe UI Light', Helvetica, Arial, sans-serif;
+@mixin opensans () {
+  font-family: 'Open Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
-%OpenSans {
-    font-family: 'Open Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+@mixin opensans-bold () {
+  font-family: 'Open Sans Bold', 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
-@mixin OpenSans () {
-    font-family: 'Open Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
-}
-
-%OpenSansBold {
-    font-family: 'Open Sans Bold', 'Segoe UI', Helvetica, Arial, sans-serif;
-}
-
-@mixin OpenSansBold () {
-    font-family: 'Open Sans Bold', 'Segoe UI', Helvetica, Arial, sans-serif;
-}
-
-%OpenSansItalic {
-    font-family: 'Open Sans Italic', 'Segoe UI', Helvetica, Arial, sans-serif;
-}
-
-@mixin OpenSansItalic () {
-    font-family: 'Open Sans Italic', 'Segoe UI', Helvetica, Arial, sans-serif;
+@mixin opensans-italic () {
+  font-family: 'Open Sans Italic', 'Segoe UI', Helvetica, Arial, sans-serif;
 }
