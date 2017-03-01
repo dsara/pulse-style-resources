@@ -208,3 +208,7 @@ $colors: (
 @mixin opensans-italic () {
   font-family: 'Open Sans Italic', 'Segoe UI', Helvetica, Arial, sans-serif;
 }
+
+@mixin sofia-pro {
+  font-family: 'sofia-pro', 'Century Gothic', 'Merriweather Sans', sans-serif;
+}
