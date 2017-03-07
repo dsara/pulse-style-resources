@@ -219,6 +219,18 @@ $radiuses: (
   font-family: 'sofia-pro', 'Century Gothic', 'Merriweather Sans', sans-serif;
 }
 
+@mixin font-weight-light {
+  font-weight: 300;
+}
+
+@mixin font-weight-normal {
+  font-weight: 400;
+}
+
+@mixin font-weight-bold {
+  font-weight: 500;
+}
+
 @mixin sofia-pro-normal {
   @include sofia-pro;
   @include font-weight-normal;
@@ -232,18 +244,6 @@ $radiuses: (
 @mixin sofia-pro-bold {
   @include sofia-pro;
   @include font-weight-bold;
-}
-
-@mixin font-weight-light {
-  font-weight: 300;
-}
-
-@mixin font-weight-normal {
-  font-weight: 400;
-}
-
-@mixin font-weight-bold {
-  font-weight: 500;
 }
 
 @mixin text-transform-default {
