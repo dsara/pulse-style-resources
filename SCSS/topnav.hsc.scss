@@ -1,0 +1,173 @@
+@import 'uu.sp.commons';
+
+.uu-pulse-hsc-trichotomy {
+  background-color: map-get($colors, grey);
+  border-bottom: 1px solid map-get($colors, black);
+  height: 34px;
+  margin: 0;
+  overflow: visible;
+  width: inherit;
+
+  @media #{$media-phone} {
+    display: none;
+  }
+
+  #hscBarBackground {
+    background-color: map-get($colors, grey);
+    border-bottom: 1px solid map-get($colors, black);
+    height: 34px;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .uu-pulse-hsc-trichotomy-top-nav {
+    height: 34px;
+    margin: 0;
+    overflow: hidden;
+    padding-left: 0;
+    width: auto;
+
+    ul {
+      height: 34px;
+      margin-bottom: 0;
+      padding: 0;
+
+      li {
+        height: 49px;
+        height: -webkit-calc(100% - 2px);
+        height: -ms-calc(100% - 2px);
+        height: -o-calc(100% - 2px);
+        height: -moz-calc(100% - 2px);
+        height: calc(100% - 2px);
+
+        a {
+          height: 49px;
+        }
+      }
+
+      .icon-health-li-words {
+        float: left;
+        list-style-type: none;
+        margin-bottom: 0px;
+        margin-top: 1px;
+
+        a {
+          @include sofia-pro;
+          background-color: map-get($colors, black);
+          border-right: 1px solid map-get($colors, white);
+          color: map-get($colors, white);
+          display: inline-block;
+          font-size: 13px;
+          padding: 5px 10px;
+          text-align: center;
+          height: 32px;
+          line-height: 24px;
+
+          &:hover {
+            background-color: map-get($colors, brand);
+            color: map-get($colors, white);
+          }
+        }
+      }
+
+      .icon-hospital-resources-li {
+        float: left;
+        list-style-type: none;
+        margin-bottom: 0;
+        margin-top: 1px;
+
+        a {
+          background-color: map-get($colors, black);
+          border-right: 1px solid map-get($colors, white);
+          color: map-get($colors, white);
+          display: inline-block;
+          padding: 0 10px;
+          text-align: center;
+          text-decoration: none;
+          height: 32px;
+          line-height: 32px;
+          font-size: 26px;
+
+          &:hover {
+            background-color: map-get($colors, brand);
+            color: map-get($colors, white);
+          }
+
+          &:active {
+            text-decoration: none;
+          }
+        }
+
+        #Top_HealthSciences {
+          cursor: pointer;
+
+          &:hover {
+            background-color: map-get($colors, brand);
+            border-right: 1px solid map-get($colors, white);
+            cursor: pointer;
+          }
+
+          .icon-hospital-resources {
+            &:before,
+            &:hover {
+              color: map-get($colors, white);
+              content: '\e602';
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #searchInputBoxTop {
+    margin-top: 5px;
+    padding-left: 14px;
+    padding-right: 0;
+    position: absolute;
+    right: 0;
+
+    div {
+     background: none repeat scroll 0% 0% map-get($colors, white);
+     border: 1px solid map-get($colors, black);
+    }
+
+    .ms-textSmall {
+      border: 0px none;
+      margin-bottom: 2px;
+      margin-left: 4px;
+      margin-top: 2px;
+      width: 85%;
+      width: calc(100% - 46px);
+      width: -webkit-calc(100% - 46px);
+      width: -ms-calc(100% - 46px);
+      width: -o-calc(100% - 46px);
+      width: -moz-calc(100% - 46px);
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    a {
+      width: 22px;
+      height: 23px;
+      float: right;
+
+      &:hover {
+          background-color: map-get($colors, brand);
+          color: map-get($colors, white);
+      }
+
+      .icon-search {
+          line-height: 23px;
+          padding: 4px;
+      }
+    }
+
+    #LoadingResults {
+      img {
+        height: 16px;
+      }
+    }
+  }
+}

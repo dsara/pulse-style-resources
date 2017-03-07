@@ -1,0 +1,331 @@
+@import 'uu.sp.commons';
+
+$left-nav-width: 200px;
+$side-nav-color: #808080;
+
+@mixin side-nav-defaults {
+  // border-top: 1px dotted $side-nav-color;
+  color: map-get($colors, black);
+  font-size: 14px !important;
+  line-height: 18px !important;
+  padding: 5px 5px 5px 20px !important;
+  text-align: left;
+
+}
+
+@mixin side-nav-hover {
+  &:hover {
+    background-color: map-get($colors, brand);
+    // border-top: 1px dotted $side-nav-color;
+    color: map-get($colors, white);
+
+    > .leftnav-child-mark {
+      color: map-get($colors, white);
+    }
+  }
+}
+
+// Left Site Icon and Navigation
+.uu-pulse-side-nav {
+  float: left;
+  width: 200px;
+
+  @media #{$media-tablet-max} {
+    @include elevation-high;
+    left: -400px;
+    display: block !important;
+    transition: left 1s, top 1s, height 1s;
+    position: fixed;
+    top: 102px;
+    height: 100%;
+    z-index: 200000;
+    background-color: map-get($colors, grey-lighter);
+    border-right: 1px solid map-get($colors, brand);
+    border-top: 1px solid map-get($colors, brand);
+    overflow: auto;
+
+    #Refinement {
+      padding-left: 30px;
+    }
+  }
+
+  @media #{$media-tablet} {
+    height: calc(100% - 102px);
+  }
+
+  @media #{$media-phone} {
+    height: calc(100% - 68px);
+  }
+
+  &.uu-pulse-side-nav-slide-out {
+    // @include elevation-high;
+    // background-color: map-get($colors, grey-lighter);
+    // border: 1px solid map-get($colors, brand);
+    // border-left: none;
+    // display: block !important;
+    // position: absolute;
+    // width: 50%;
+    // z-index: 10000;
+
+    left: 0;
+
+    /*@media (max-width: 450px) {
+      width: 75%;
+    }
+
+    @media #{$media-tablet} {
+      top: -108px;
+    }
+
+    @media #{$media-phone} {
+      top: -128px;
+    }
+
+    #Refinement {
+      padding-left: 30px;
+    }*/
+  }
+
+  // Site Icon
+  .uu-pulse-site-icon {
+
+    .uu-pulse-site-icon-img {
+      display: block;
+      max-width: 200px;
+      width: 100%;
+      margin: auto;
+    }
+  }
+
+  // Left Navigation
+  .uu-pulse-left-nav-bar {
+    margin-top: 12px;
+    position: relative;
+
+    @media #{$media-tablet-max} {
+      margin-top: 0;
+    }
+
+    .uu-pulse-side-nav-links-close {
+      background-color: map-get($colors, brand);
+      border-bottom: 3px solid map-get($colors, grey-lighter);
+      cursor: pointer;
+      padding: 5px;
+      display: block;
+      color: white;
+    }
+
+
+    // Group and Permissions Section
+    .ms-ql-additionaltopsection {
+
+      .ms-core-listMenu-root ul {
+        // padding-left: 0 !important;
+
+        .ms-core-listMenu-item {
+          // padding-left: 20px !important;
+        }
+      }
+    }
+
+    // Left Navigation Items
+    .uu-pulse-side-nav-links {
+      position: relative;
+    }
+
+    .uu-pulse-side-nav-links .ms-core-listMenu-root {
+      background-color: map-get($colors, grey-lighter);
+
+      li {
+        display: block;
+        list-style: none outside none;
+        width: 100%;
+
+        // all links
+        a {
+          @include side-nav-defaults;
+          @include side-nav-hover();
+          cursor: pointer;
+          display: block;
+          width: 100%;
+        }
+
+        // sub links
+        ul li > a {
+          margin-left: -20px;
+          padding-left: 40px !important;
+          width: auto;
+
+          span {
+            &.additional-background {
+              display: block;
+              // padding-left: 20px;
+            }
+          }
+        }
+
+        // non link entries
+        > span {
+          &.ms-displayInline {
+            @include side-nav-defaults;
+            cursor: default;
+            display: block;
+            width: auto;
+          }
+        }
+
+        // edit at bottom
+        &.ms-navedit-editArea {
+          border: 0;
+          margin: 0 !important;
+
+          a {
+            border-bottom: none;
+            border-top: none;
+            font-size: .9em !important;
+            width: 100%;
+          }
+
+          .ms-navedit-editSpan a {
+            &:hover {
+              background: none !important;
+              border-top: none;
+              color: map-get($colors, white);
+            }
+          }
+        }
+
+        // currently selected item
+        &.selected > a {
+          //border-right: 5px solid map-get($colors, brand);
+          background-color: map-get($colors, brand);
+          color: map-get($colors, white);
+        }
+      }
+    }
+
+    // Site Contents Item
+    #ctl00_PlaceHolderLeftNavBar_PlaceHolderQuickLaunchBottom_idNavLinkViewAll {
+      @include side-nav-defaults();
+      @include side-nav-hover();
+      background-color: map-get($colors, grey-lighter);
+      cursor: pointer;
+      display: block;
+      width: 100%;
+
+      &:hover {
+        color: map-get($colors, white) !important;
+
+        .ms-splinkbutton-text {
+          color: map-get($colors, white);
+        }
+      }
+    }
+
+    // Left Nav HR Separators
+    .ms-core-listMenu-separatorLine {
+      border: 1px dotted map-get($colors, grey);
+      //margin: 0 0 0 -20px;
+      margin: 0;
+    }
+
+    // Left Nav Nested Items Left Padding
+    .ms-core-listMenu-verticalBox > .ms-core-listMenu-root ul {
+      padding-left: 20px;
+    }
+
+    // Left Nav Items Color Correction
+    .ms-navedit-editLinksText > span > .ms-metadata:hover, .ms-navedit-editLinksText > span:hover > .ms-metadata,
+    .ms-navedit-editLinksText:hover > span > .ms-metadata, .ms-core-listMenuEdit > tr > .ms-navedit-linkCell > .ms-core-listMenu-item:hover {
+      color: map-get($colors, brand);
+    }
+
+    .ms-tv-box {
+      margin: 0;
+      background-color: map-get($colors, grey-lighter);
+      padding: 10px 0;
+
+      .ms-KFMenu {
+        width: 195px !important;
+        margin: 0;
+
+        div {
+          box-sizing: content-box;
+        }
+
+        .ms-KFHead {
+          h3 {
+            min-width: 150px !important;
+          }
+
+          div {
+            min-width: 150px !important;
+          }
+        }
+
+        .ms-KFLabelAndBodyContainer {
+          padding-right: 0;
+
+          .ms-KFLabel {
+            min-width: 150px !important;
+          }
+        }
+      }
+    }
+
+    .ms-core-sideNavBox-removeLeftMargin {
+        margin: 0;
+    }
+  }
+}
+
+// Left Nav Calendar and Calendar Page
+.uu-pulse-left-nav-bar {
+  #DatePickerDiv {
+    // margin-left: -20px;
+  }
+
+  .ms-picker-footer a {
+    color: map-get($colors, black);
+  }
+
+  .ms-quickLaunch table.ms-picker-table td.ms-picker-monthselected {
+    border: 1px solid map-get($colors, brand);
+  }
+
+  table.ms-picker-table td.ms-picker-today {
+    border: 1px solid map-get($colors, brand);
+  }
+
+  .ms-acal-apanel-color {
+    background-color: map-get($colors, brand);
+  }
+}
+
+tr td div.ms-acal-today {
+  border-top: 1px solid map-get($colors, brand);
+  color: map-get($colors, brand);
+}
+
+tr td div.ms-acal-today:hover {
+  border-top: 1px solid map-get($colors, brand);
+  color: map-get($colors, brand-dark);
+}
+
+.ms-acal-summary-dayrow > th > div:hover {
+  border-bottom: 1px solid map-get($colors, brand);
+  border-top: 1px solid map-get($colors, brand);
+  cursor: pointer;
+}
+
+.ms-acal-week-top td.ms-acal-hover div, .ms-acal-summary-dayrow td.ms-acal-hover div, .ms-acal-summary-dayrow th.ms-acal-hover {
+  border-color: map-get($colors, brand) !important;
+  text-decoration: underline;
+}
+
+// Blogs
+@media #{$media-phone} {
+  .BlogSideNav {
+    width: 98% !important;
+  }
+}

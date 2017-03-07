@@ -1,0 +1,118 @@
+@import 'uu.sp.commons';
+
+@mixin uu-pulse-content-nav-button {
+  @include elevation-high;
+  position: fixed;
+  top: 102px;
+  left: 0;
+  z-index: 200000;
+  padding: 0 5px;
+  border-bottom: none;
+  background-color: rgba(239,239,239, 0.78);
+  color: map-get($colors, black);
+  cursor: pointer;
+  font-size: 12px;
+  font-size: 16px;
+  padding: 5px;
+  transition: top 1s;
+
+  &:hover {
+    background-color: map-get($colors, grey);
+    color: map-get($colors, white);
+  }
+
+  @media #{$media-phone} {
+    top: 68px;
+  }
+
+  @media #{$media-desktop-min} {
+    display: none;
+  }
+}
+
+@mixin load-workspace-css ($type) {
+  #s4-workspace {
+    &.workspaceFullWidth {
+      width: 100% !important;
+    }
+  }
+
+  #contentRow {
+    padding-top: 5px;
+    position: relative;
+
+    @if $type == 'site' {
+      &.uu-pulse-side-nav-shown {
+        .uu-pulse-content-box {
+          float: left;
+
+          @media #{$media-tablet-max} {
+            padding: 0 5px;
+            width: 100%;
+          }
+
+          @media #{$media-desktop-min} {
+            padding-left: 15px;
+            width: calc(100% - 200px);
+          }
+        }
+        @include uu-pulse-content-nav-button;
+      }
+
+      &.uu-pulse-side-nav-hidden {
+        .uu-pulse-content-nav-button {
+          display: none !important;
+        }
+
+        .uu-pulse-side-nav {
+          display: none !important;
+        }
+
+        .uu-pulse-content-box {
+          float: left;
+          width: 100%;
+        }
+      }
+    }
+
+    @if $type == 'team' {
+      &.uu-pulse-content-box {
+        float: left;
+
+        @media #{$media-phone} {
+          width: 100%;
+        }
+
+        @media #{$media-tablet-max} {
+          padding: 0 5px;
+        }
+
+        @media #{$media-desktop-min} {
+          padding-left: 15px;
+        }
+
+        @media #{$media-desktop} {
+          width: 740px;
+        }
+
+        @media (min-width: 1200px) and (max-width: 1499px) {
+          width: 940px;
+        }
+
+        @media (min-width: 1500px) and (max-width: 1699px) {
+          width: 1240px;
+        }
+
+        @media (min-width: 1700px) and (max-width: 1899px) {
+          width: 1440px;
+        }
+
+        @media (min-width: 1900px) {
+          width: 1640px;
+        }
+      }
+
+      @include uu-pulse-content-nav-button;
+    }
+  }
+}

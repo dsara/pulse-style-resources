@@ -1,0 +1,76 @@
+@import 'uu.sp.commons';
+
+@mixin search-button-dimensions {
+  width: 23px;
+  height: 23px;
+}
+
+
+// Title, Site Search Box, and Breadcrumb
+.uu-pulse-page-title-and-search {
+  // padding: 5px;
+  padding: 2px 0;
+
+  // Title
+  #pageContentTitle {
+    @media #{$media-tablet-min} {
+      // padding-bottom: 4px;
+      padding-bottom: 2px;
+    }
+
+    #pageContentTitleSite {
+      @include pointer-item;
+    }
+  }
+
+  // Site Search Box
+  .siteSearchBox {
+    @media #{$media-tablet-min} {
+      padding-top: 6px;
+    }
+
+    @media #{$media-phone} {
+      padding-right: 0;
+    }
+
+    .ms-srch-sb {
+      font-size: 15px;
+      height: 25px;
+      width: 100%;
+
+      > input {
+        @include width-minus(82%, 100%, 50px);
+        height: 100%;
+      }
+
+      > .ms-srch-sb-navLink,
+      > .ms-srch-sb-searchLink {
+        @include search-button-dimensions;
+      }
+    }
+
+    .ms-srch-sb-border,
+    .ms-srch-sb-borderFocused {
+      background-color: map-get($colors, white);
+      border: 1px solid map-get($colors, black);
+
+      &:hover {
+        border: 1px solid map-get($colors, brand);
+      }
+    }
+
+    .ms-srch-sb-navLink-menuOpen {
+      background-color: map-get($colors, grey);
+    }
+  }
+
+  // Breadcrumb
+  #siteBreadcrumb {
+    padding-bottom: 5px;
+    padding-left: 1px;
+
+    > span:first-of-type > span:last-of-type {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import 'uu.sp.commons';
+
+@mixin load-container-css ($type) {
+  @if $type == 'team' {
+    .container {
+      @media (min-width: 1500px) and (max-width: 1699px) {
+        width: 1470px;
+      }
+      @media (min-width: 1700px) and (max-width: 1899px) {
+        width: 1670px;
+      }
+      @media (min-width: 1900px) {
+        width: 1870px;
+      }
+    }
+  }
+}
+
+.uu-pulse-authenticated-wrapper {
+  background-color: map-get($colors , white);
+}

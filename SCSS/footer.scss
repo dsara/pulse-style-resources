@@ -1,0 +1,83 @@
+@import 'uu.sp.commons';
+
+.uu-pulse-footer {
+  border-top: 1px solid map-get($colors, grey);
+  margin: 15px 0 0;
+  padding-top: 15px;
+
+  ul {
+    list-style-type: none;
+    padding: 4px 0;
+  }
+
+  .uu-pulse-footer-employee,
+  .uu-pulse-footer-fineprint,
+  .uu-pulse-footer-social {
+    @media #{$media-phone} {
+      padding-top: 6px;
+    }
+  }
+
+  .uu-pulse-footer-logo {
+
+    img {
+      width: 250px;
+    }
+
+    h5 {
+      font-size: 20px;
+    }
+  }
+
+  .uu-pulse-footer-employee {
+
+    span {
+      font-size: 18.5px;
+    }
+  }
+
+  .uu-pulse-footer-feedback {
+
+    @media #{$media-phone} {
+      text-align: center;
+    }
+
+    .text-right {
+      @media #{$media-phone} {
+        text-align: center;
+      }
+    }
+  }
+
+  .uu-pulse-footer-social {
+    > div {
+      padding: 4px 0;
+
+      div {
+        display: inline;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .uu-pulse-footer-backtotop {
+    border-top: 1px solid map-get($colors, grey);
+    color: map-get($colors, brand);
+    cursor: pointer;
+    margin: 5px 0 0;
+    padding: 10px;
+  }
+}
+
+// Start HD Mobile
+@media (max-device-width: 1200px) {
+  .uu-pulse-footer {
+    .col-sm-6 {
+      width: 100%;
+    }
+
+    .col-sm-2 {
+      width: 33.33%;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@import 'uu.sp.commons';
+
+// Search Results
+.uu-pulse-content-box {
+
+  .ms-srch-item {
+
+    @media #{$media-tablet-max} {
+      width: 100%;
+    }
+
+    .ms-srch-item-icon {
+      margin-top: 0;
+    }
+
+    .ms-srch-item-title {
+      margin: 2px;
+    }
+  }
+
+  #SearchBox {
+    width: 100%;
+  }
+}
+
+@media #{$media-tablet-max} {
+  .ms-srch-hover-outerContainer {
+    display: none !important;
+  }
+}
+
+@media #{$media-phone} {
+  .ms-srch-ellipsis {
+    font-size: medium;
+    white-space: normal;
+  }
+
+  .ms-srch-item {
+    width: inherit !important;
+  }
+
+  .ms-srch-item-path {
+    -ms-word-break: break-all !important;
+    width: inherit !important;
+    word-break: break-all !important;
+  }
+}
+
+.ms-srch-sbLarge > input {
+  @include width-minus(82%, 100%, 66px);
+}
+
+.ms-srch-result {
+  margin-top: 0 !important;
+
+  #Paging {
+    margin: 10px 0 !important;
+  }
+}
+
+.ms-srch-result-groups {
+  margin-bottom: 10px !important;
+}
+
+#UpScopeLinkTop {
+  margin: 0 !important;
+  padding: 0 0 8px !important;
+  width: 100% !important;
+}
+
+#UpScopeLinkBottom {
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+#searchIcon {
+  display: none !important;
+}

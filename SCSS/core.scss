@@ -1,0 +1,463 @@
+@import 'uu.sp.commons';
+
+// mixins and variables
+@mixin hover-behavior($hover-color, $hover-decoration) {
+  color: $hover-color;
+  text-decoration: $hover-decoration;
+  text-decoration-color: $hover-color;
+}
+
+$selected-background-color: #ff0;
+
+$solid-border: 1px solid map-get($colors , brand);
+
+// fonts
+@font-face {
+  font-family: 'Open Sans Light';
+  font-style: normal;
+  font-weight: normal; // font-weight: 300
+  src: url(/_layouts/15/commons/fonts/opensans/light/opensans-light-webfont.eot);
+  src: url(/_layouts/15/commons/fonts/opensans/light/opensans-light-webfont.eot?#iefix) format('embedded-opentype'),
+       url(/_layouts/15/commons/fonts/opensans/light/opensans-light-webfont.woff) format('woff'),
+       url(/_layouts/15/commons/fonts/opensans/light/opensans-light-webfont.ttf) format('truetype'),
+       url("/_layouts/15/commons/fonts/opensans/light/opensans-light-webfont.svg#Open Sans Light") format('svg');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal; // font-weight: 400
+  src: url(/_layouts/15/commons/fonts/opensans/regular/opensans-regular-webfont.eot);
+  src: url(/_layouts/15/commons/fonts/opensans/regular/opensans-regular-webfont.eot?#iefix) format('embedded-opentype'),
+       url(/_layouts/15/commons/fonts/opensans/regular/opensans-regular-webfont.woff) format('woff'),
+       url(/_layouts/15/commons/fonts/opensans/regular/opensans-regular-webfont.ttf) format('truetype'),
+       url("/_layouts/15/commons/fonts/opensans/regular/opensans-regular-webfont.svg#Open Sans"), format('svg');
+}
+
+@font-face {
+  font-family: 'Open Sans Bold';
+  font-style: normal;
+  font-weight: normal; // font-weight: 700
+  src: url(/_layouts/15/commons/fonts/opensans/bold/opensans-bold-webfont.eot);
+  src: url(/_layouts/15/commons/fonts/opensans/bold/opensans-bold-webfont.eot?#iefix) format('embedded-opentype'),
+       url(/_layouts/15/commons/fonts/opensans/bold/opensans-bold-webfont.woff) format('woff'),
+       url(/_layouts/15/commons/fonts/opensans/bold/opensans-bold-webfont.ttf) format('truetype'),
+       url("/_layouts/15/commons/fonts/opensans/bold/opensans-bold-webfont.svg#Open Sans Bold"), format('svg');
+}
+
+@font-face {
+  font-weight: normal; // font-weight: 700
+  font-style: normal;
+  font-family: 'Open Sans Italic';
+  src: url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.eot);
+  src: url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.eot?#iefix) format('embedded-opentype'),
+       url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.woff) format('woff'), 
+       url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.ttf) format('truetype'),
+       url("/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.svg#Open Sans Italic"), format('svg');
+}
+
+@include generate-color-classes;
+@include generate-shadow-classes;
+@include generate-button-classes;
+
+body,
+.ms-core-defaultFont,
+#pageStatusBar,
+.ms-status-msg,
+.js-callout-body,
+h4,
+h5,
+h6,
+.ms-h4,
+.ms-h5,
+.ms-h6,
+input[type=button],
+input[type=reset],
+input[type=submit],
+button,
+.ms-viewselector-currentView,
+.ms-core-navigation,
+.ms-taskdate-daysvalue,
+.ms-taskdate-daysunit,
+.ms-metadata,
+.ms-descriptiontext,
+.ms-secondaryCommandLink,
+.ms-calloutLink:link,
+a.ms-calloutLink:visited,
+.ms-calloutLinkDisabled,
+.ms-commandLink,
+.ms-commandLink:visited,
+.ms-secondaryCommandLink,
+.ms-secondaryCommandLink:visited,
+.ms-rteStyle-Normal,
+.ms-rteThemeFontFace-1,
+.js-folder-preview-count,
+.ms-core-listMenu-verticalBox > .ms-core-listMenu-root > li > .ms-core-listMenu-item,
+.ms-core-listMenu-verticalBox > .ms-core-listMenu-root > li > .ms-core-listMenuEdit,
+.ms-core-listMenu-heading,
+.ms-tv-header,
+.ms-blog-skinSelector,
+.ms-cui-ribbon,
+.ms-cui-menu,
+.ms-cui-toolbar-toolbar,
+.ms-cui-contextmenu-inner,
+.ms-cui-cb-input,
+.ms-cui-tb,
+.ms-cui-spn-txtbx {
+  @include sofia-pro;
+  color: map-get($colors, brand);
+  font-weight: 300;
+}
+
+body,
+.ms-core-defaultFont,
+#pageStatusBar,
+.ms-status-msg,
+.js-callout-body {
+  font-size: 14px;
+  color: map-get($colors, black);
+}
+
+.ms-cui-ribbon,
+.ms-cui-menu,
+.ms-cui-toolbar-toolbar {
+  font-size: 12px;
+}
+
+h1,
+.ms-h1,
+h2,
+.ms-h2,
+h3,
+.ms-h3,
+.ms-headerFont,
+.ms-core-pageTitle,
+.ms-core-pageTitle a,
+.ms-textXLarge,
+.ms-textLarge,
+.ms-emptyMode,
+.ms-attractMode,
+.ms-webpart-titleText.ms-webpart-titleText,
+.ms-webpart-titleText > a,
+.ms-largeNumber,
+.ms-rteThemeFontFace-2,
+.ms-dlg-heading,
+h2.ms-dlg-heading {
+  @include sofia-pro;
+  color: map-get($colors, brand);
+}
+
+.ms-rteFontFace-13 {
+  @include sofia-pro;
+  -ms-name: 'Sofia Pro';
+}
+
+// main
+#s4-workspace {
+  overflow: visible;
+}
+
+#suiteBar,
+#s4-ribbonrow,
+#s4-workspace {
+  background: map-get($colors , white);
+}
+
+// system
+.ms-linksection-listItem a,
+.ms-descriptiontext a,
+.ms-textSmall,
+.ms-storefront-listitem a,
+.ms-splinkbutton-text,
+.ms-menutoolbar .ms-toolbar a,
+.ms-storefront-mngnoresults h3 a,
+.ms-vh2-nofilter a,
+a,
+a:visited,
+.ms-link,
+.ms-link:visited,
+.ms-formdescription a,
+.ms-subtleLink:hover,
+.ms-heroCommandLink,
+.ms-accentText {
+  color: map-get($colors, brand);
+}
+
+h1,
+#pageTitle,
+.ms-core-pageTitle,
+.ms-core-pageTitle span,
+.ms-core-pageTitle a,
+#pageContentTitle,
+.ms-storefront-selectanchor,
+.ms-core-header .ms-core-listMenu-horizontalBox .ms-core-listMenu-selected:link,
+.ms-core-header .ms-core-listMenu-horizontalBox .ms-core-listMenu-selected:visited,
+.ms-core-header .ms-core-listMenu-horizontalBox .ms-core-listMenu-selected,
+.ms-core-header .ms-tv-selected:link,
+.ms-heroCommandLink:hover {
+  color: map-get($colors, brand);
+}
+
+.ms-storefront-appiconspan {
+  background-color: map-get($colors, brand);
+  color: map-get($colors, brand);
+}
+
+.ms-menutoolbar .ms-toolbar .ms-core-menu-itemDescription {
+  color: #cccccc;
+}
+
+.ms-vl-sectionHeaderRow .ms-alignRight .ms-calloutLink:hover,
+.ms-vl-apptitleouter .ms-draggable:hover,
+.ms-storefront-mngnoresults h3 a:hover,
+#appadd-link:hover,
+.js-callout-action .ms-calloutLink:hover {
+  @include hover-behavior(map-get($colors, brand-dark), none);
+}
+
+a:hover,
+#DeltaPlaceHolderMain a:hover {
+  @include hover-behavior(map-get($colors, brand-dark), none);
+}
+
+.ms-ButtonHeightWidth:hover {
+  border: $solid-border;
+  background: map-get($colors, grey);
+  color: map-get($colors, brand);
+}
+
+#ctl00_PlaceHolderMain_ctl00_RptControls_btnOk {
+  border: $solid-border;
+  color: map-get($colors, brand);
+}
+
+.ms-vl-applist .ms-vl-recent {
+  background: map-get($colors, brand);
+  color: map-get($colors, white);
+}
+
+.ms-webpart-menuLink,
+.ms-siteactions-normal a,
+.ms-cui-TabRowRight a span:first-child,
+.ms-dlgCloseBtn,
+.ms-dlgCloseBtn span,
+.ms-InlineSearch-Outline-Baseline,
+.js-callout-headerArea,
+.js-callout-closeButton,
+.js-callout-closeButtonImage {
+  @include force-box-sizing(content-box)
+}
+
+// common
+body,
+.ms-dlgFrameContainer {
+  overflow: auto;
+}
+
+.ms-siteactions-normal li[text="Getting started"] {
+  display: none;
+}
+
+.ms-core-deltaSuiteBarRight > div {
+  display: inline-block;
+}
+
+.ms-core-menu-box {
+  position: inherit;
+}
+
+h2 {
+  line-height: 1.16;
+  padding-bottom: 8px;
+}
+
+.ms-link:hover {
+  text-decoration: underline;
+}
+
+.ms-featurestatus {
+  background: map-get($colors, brand);
+}
+
+.ms-button-emphasize {
+  border-color: map-get($colors, brand);
+  background: map-get($colors, brand);
+  color: map-get($colors, white);
+}
+
+input[type="button"]:hover,
+input[type=submit]:hover,
+input[type=button]:hover,
+input[type=reset]:hover,
+button:hover {
+  border: 1px solid map-get($colors, brand);
+  background: map-get($colors, grey);
+  color: map-get($colors, brand);
+}
+
+.ms-dlgFrameContainer body {
+  background: map-get($colors, white) !important;
+}
+
+input {
+  &[type='checkbox'] {
+    margin: 0 0 0 4px;
+  }
+}
+
+.ms-authoringcontrols input:hover,
+.ms-authoringcontrols textarea:hover,
+.sp-peoplepicker-topLevel:hover,
+.ms-core-form-line textarea:hover {
+  border-color: map-get($colors, brand-dark);
+}
+
+.s4-itm-selected .s4-itm-cbx,
+.s4-itm-selected > .ms-vb-imgFirstCell.ms-vb-imgFirstCell {
+  background-color: map-get($colors, brand);
+}
+
+.s4-itm-selected .ms-list-itemLink-td,
+.s4-itm-selected .ms-list-itemLink-td:hover,
+.s4-itm-selected:hover .ms-list-itemLink-td {
+  background-color: map-get($colors, grey);
+}
+
+.s4-itm-selected {
+  > * {
+    background-color: map-get($colors, info-lighter);
+  }
+
+  > .ms-vb-imgFirstCell {
+    border-right-color: map-get($colors, info-lighter);
+  }
+}
+
+.s4-itm-selected .ms-list-itemLink-td:hover .ms-ellipsis-icon,
+.s4-itm-selected:hover .ms-ellipsis-icon {
+  left: -37px;
+  top: -202px;
+}
+
+.ms-inputBoxActive,
+.ms-inputBoxActive:hover,
+.ms-taxonomy-fieldeditor .ms-inputBox:hover,
+.ms-inputuserfield:hover,
+.ms-profileeditor select:focus,
+.ms-profileeditor .ms-inputBox:focus,
+.ms-profileeditor .ms-long:focus,
+.ms-profileeditor .ms-inputBox:hover
+.ms-profileeditor .ms-long:hover {
+  border: $solid-border;
+}
+
+.ms-listviewtable {
+  td > div.ms-core-menu-box {
+    top: 8px !important;
+  }
+}
+
+#onetIDListForm {
+  width: 100%;
+}
+
+// blog
+.ms-blog-postBox .ms-blog-postBoxDate .ms-textSmall {
+  color: map-get($colors, white);
+}
+.ms-blog-postBox .ms-blog-postBoxDate {
+  background-color: map-get($colors, brand);
+  border-color: map-get($colors, brand);
+}
+
+// datasheet view
+.jsgrid-widget-dock {
+  @include force-box-sizing(content-box);
+
+  > div.jsgrid-widget-cell {
+    @include force-box-sizing(content-box);
+
+    > img {
+      @include force-box-sizing(content-box);
+      vertical-align: inherit;
+    }
+  }
+}
+
+#jsgrid_combobox {
+
+  .cb-textbox {
+    @include force-box-sizing(content-box);
+  }
+
+  .combobox-img {
+    @include force-box-sizing(content-box);
+
+    &:hover {
+      border: 0;
+      border-left: $solid-border;
+    }
+  }
+}
+
+.ms-wpadder-cell .ms-wpadder-items div img {
+  padding-right: 5px;
+}
+
+// hd mobile
+@media (max-device-width: 767px) { 
+    .container{
+        width:100%;
+    }
+}
+
+// follow notify
+.ms-trcnoti-ctr {
+  // right: auto;
+  // left: 650px;
+
+  .ms-trcnoti-host {
+    margin: 0;
+  }
+}
+
+// content pages, news link mod
+.article-content a,
+.article-content a:link,
+.article-content a:visited,
+.NewsSummary a,
+.NewsSummary a:link,
+.NewsSummary a:visited,
+.ms-blog-postBody .ms-rtestate-field a,
+.ms-blog-postBody .ms-rtestate-field a:link,
+.ms-blog-postBody .ms-rtestate-field a:visited,
+#Pulse-LP-tier1-body a,
+#Pulse-LP-tier1-body a:link,
+#Pulse-LP-tier1-body a:visited {
+    color: map-get($colors, brand);
+    text-decoration: underline;
+}
+
+.ms-alternatingstrong .ms-vb a:link, 
+.ms-alternatingstrong .ms-vb2 a:link, 
+.ms-alternatingstrong .ms-vb-user a:link, 
+.ms-alternatingstrong .ms-vb a:visited, 
+.ms-alternatingstrong .ms-vb2 a:visited, 
+.ms-alternatingstrong .ms-vb-user a:visited, 
+.ms-alternatingstrong .ms-vb a:visited:hover, 
+.ms-alternatingstrong .ms-vb2 a:visited:hover, 
+.ms-alternatingstrong .ms-vb-user a:visited:hover {
+  color: map-get($colors, brand);
+}
+
+.article-content a:hover,
+.NewsSummary a:hover,
+.ms-blog-postBody .ms-rtestate-field a:hover,
+#Pulse-LP-tier1-body a:hover {
+	color: map-get($colors, brand-dark);
+  text-decoration: underline !important;
+}
+
+.ms-vb-icon {
+  padding-top: 3px;
+}

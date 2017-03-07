@@ -1,0 +1,12 @@
+@import 'uu.sp.commons';
+
+@media #{$media-phone} {
+  .ms-webpartzone-cell {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+.ms-wpContentDivSpace {
+  @include force-box-sizing(content-box);
+}

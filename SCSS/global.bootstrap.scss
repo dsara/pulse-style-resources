@@ -1,0 +1,54 @@
+@import 'uu.sp.commons';
+
+// columns
+.noBSPadding {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.noBSPaddingLeft {
+  padding-left: 0 !important;
+}
+
+.noBSPaddingRight {
+  padding-right: 0 !important;
+}
+
+// rows
+.row {
+  margin: 0;
+}
+
+//blockquotes
+blockquote {
+  font-size: 14px;
+}
+
+// buttons
+.ms-promlink-button {
+  @include force-box-sizing(content-box);
+}
+
+// dialogs
+.js-callout-closeButton {
+  @include force-box-sizing(content-box);
+}
+
+.ms-dlgTitleBtns {
+  margin-right: 0;
+}
+
+// ribbon
+.ms-cui-group {
+  span,
+  a,
+  input {
+    @include force-box-sizing(content-box);
+  }
+}
+
+// form controls
+.form-control {
+  border-radius: 0;
+  transition: none;
+}
