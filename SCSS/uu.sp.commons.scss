@@ -19,88 +19,94 @@ $colors-out-shadow: rgba(0, 0, 0, .2);
 
 // colors
 $colors: (
-  black: #414042,
-  grey: #a9a9a9,
-  grey-light: #c3c3c3,
-  grey-lighter: #f2f2f2,
-  grey-dark: #909090,
-  grey-darker: #767676,
-  white: #fff,
-  beige: #f2f2ea,
-  red: #f44336,
-  red-light: #f77066,
-  red-lighter: #f99d97,
-  red-dark: #ea1c0d,
-  red-darker: #ba160a,
-  pink: #e91e63,
-  pink-light: #ee4c83,
-  pink-lighter: #ca61dc,
-  pink-dark: #c1143e,
-  pink-darker: #930e3b,
-  purple: #9c27b0,
-  purple-light: #bc37d3,
-  purple-lighter: #ca61dc,
-  purple-dark: #771e86,
-  purple-darker: #52145d,
-  blue: #2196f3,
-  blue-light: #51adf6,
-  blue-lighter: #82c4f8,
-  blue-dark: #0c7cd5,
-  blue-darker: #0960a5,
-  green: #4caf50,
-  green-light: #6ec071,
-  green-lighter: #92cf94,
-  green-dark: #3d8b40,
-  green-darker: #2d682f,
-  cyan: #00bcd4,
-  cyan-light: #08e3ff,
-  cyan-lighter: #3be9ff,
-  cyan-dark: #008fa1,
-  cyan-darker: #00626e,
-  yellow: #ffeb3b,
-  yellow-light: #fff06e,
-  yellow-lighter: #fff5a1,
-  yellow-dark: #ffe608,
-  yellow-darker: #d4be00,
-  orange: #ff9800,
-  orange-light: #ffad33,
-  orange-lighter: #ffc166,
-  orange-dark: #cc7a00,
-  orange-darker: #995b00,
-  brown: #795548,
-  brown-light: #996b5b,
-  brown-lighter: #af8778,
-  brown-dark: #593f35,
-  brown-darker: #392822,
-  brand: #ac162c,
-  brand-light: #d91c38,
-  brand-lighter: #e7415a,
-  brand-dark: #7f1020,
-  brand-darker: #520a15,
-  info: #2196f3,
-  info-light: #51adf6,
-  info-lighter: #82c4f8,
-  info-dark: #0c7cd5,
-  info-darker: #0960a5,
-  warning: #ff9800,
-  warning-light: #ffad33,
-  warning-lighter: #ffc166,
-  warning-dark: #cc7a00,
-  warning-darker: #995b00,
-  success: #4caf50,
-  success-light: #6ec071,
-  success-lighter: #92cf94,
-  success-dark: #3d8b40,
-  success-darker: #2d682f,
-  error: #f44336,
-  error-light: #f77066,
-  error-lighter: #f99d97,
-  error-dark: #ea1c0d,
-  error-darker: #ba160a,
-  default: #909090,
-  disabled: #909090,
-  quiet: #909090,
-  ribbon-grey: #efefef,
+  'black': #414042,
+  'grey-light': #c3c3c3,
+  'grey-lighter': #f2f2f2,
+  'grey': #a9a9a9,
+  'grey-dark': #909090,
+  'grey-darker': #767676,
+  'white': #fff,
+  'beige': #f2f2ea,
+  'red-light': #f77066,
+  'red-lighter': #f99d97,
+  'red': #f44336,
+  'red-dark': #ea1c0d,
+  'red-darker': #ba160a,
+  'pink-light': #ee4c83,
+  'pink-lighter': #ca61dc,
+  'pink': #e91e63,
+  'pink-dark': #c1143e,
+  'pink-darker': #930e3b,
+  'purple-light': #bc37d3,
+  'purple-lighter': #ca61dc,
+  'purple': #9c27b0,
+  'purple-dark': #771e86,
+  'purple-darker': #52145d,
+  'blue-light': #51adf6,
+  'blue-lighter': #82c4f8,
+  'blue': #2196f3,
+  'blue-dark': #0c7cd5,
+  'blue-darker': #0960a5,
+  'green-light': #6ec071,
+  'green-lighter': #92cf94,
+  'green': #4caf50,
+  'green-dark': #3d8b40,
+  'green-darker': #2d682f,
+  'cyan-light': #08e3ff,
+  'cyan-lighter': #3be9ff,
+  'cyan': #00bcd4,
+  'cyan-dark': #008fa1,
+  'cyan-darker': #00626e,
+  'yellow-light': #fff06e,
+  'yellow-lighter': #fff5a1,
+  'yellow': #ffeb3b,
+  'yellow-dark': #ffe608,
+  'yellow-darker': #d4be00,
+  'orange-light': #ffad33,
+  'orange-lighter': #ffc166,
+  'orange': #ff9800,
+  'orange-dark': #cc7a00,
+  'orange-darker': #995b00,
+  'brown-light': #996b5b,
+  'brown-lighter': #af8778,
+  'brown': #795548,
+  'brown-dark': #593f35,
+  'brown-darker': #392822,
+  'brand-light': #d91c38,
+  'brand-lighter': #e7415a,
+  'brand': #ac162c,
+  'brand-dark': #7f1020,
+  'brand-darker': #520a15,
+  'info-light': #51adf6,
+  'info-lighter': #82c4f8,
+  'info': #2196f3,
+  'info-dark': #0c7cd5,
+  'info-darker': #0960a5,
+  'warning-light': #ffad33,
+  'warning-lighter': #ffc166,
+  'warning': #ff9800,
+  'warning-dark': #cc7a00,
+  'warning-darker': #995b00,
+  'success-light': #6ec071,
+  'success-lighter': #92cf94,
+  'success': #4caf50,
+  'success-dark': #3d8b40,
+  'success-darker': #2d682f,
+  'error-light': #f77066,
+  'error-lighter': #f99d97,
+  'error': #f44336,
+  'error-dark': #ea1c0d,
+  'error-darker': #ba160a,
+  'default': #909090,
+  'disabled': #909090,
+  'quiet': #909090,
+  'ribbon-grey': #efefef,
+);
+
+$radiuses: (
+  none: 0,
+  default: 3px,
+  round: 30px,
 );
 
 @mixin generate-color-classes {
@@ -212,3 +218,177 @@ $colors: (
 @mixin sofia-pro {
   font-family: 'sofia-pro', 'Century Gothic', 'Merriweather Sans', sans-serif;
 }
+
+@mixin sofia-pro-normal {
+  @include sofia-pro;
+  @include font-weight-normal;
+}
+
+@mixin sofia-pro-light {
+  @include sofia-pro;
+  @include font-weight-light;
+}
+
+@mixin sofia-pro-bold {
+  @include sofia-pro;
+  @include font-weight-bold;
+}
+
+@mixin font-weight-light {
+  font-weight: 300;
+}
+
+@mixin font-weight-normal {
+  font-weight: 400;
+}
+
+@mixin font-weight-bold {
+  font-weight: 500;
+}
+
+@mixin text-transform-default {
+  text-transform: uppercase;
+}
+
+@mixin button-default {
+  @include elevation-high;
+  @include text-transform-default;
+}
+
+@mixin generate-button-classes {
+  .btn {
+    @include button-default;
+  }
+}
+
+// @mixin a-button {
+//   @include elevation-high;
+//   @include text-transform-default;
+//   background-color: map-get($colors, 'white');
+//   border: 1px solid map-get($colors, 'black');
+//   border-radius: 3px;
+//   color: map-get($colors, 'black');
+//   cursor: pointer;
+//   display: inline-block;
+//   font-family: inherit;
+//   font-size: 10px;
+//   font-weight: 500;
+//   letter-spacing: 1px;
+//   line-height: normal;
+//   margin: 0;
+//   max-width: 100%;
+//   outline: 0;
+//   overflow: hidden;
+//   padding: 5px 30px;
+//   text-align: center;
+//   text-decoration: none;
+//   text-overflow: ellipsis;
+//   user-select: none;
+//   vertical-align: middle;
+//   white-space: wrap;
+// }
+
+// @mixin generate-button-classes {
+//   .a-button {
+//     @include a-button;
+
+//     &:not(:disabled):not(.disabled) {
+//       &:hover {
+//         background-color: map-get($colors, 'brand');
+//         border: 1px solid map-get($colors, 'brand');
+//         color: map-get($colors, 'white');
+//       }
+
+//       &:focus {
+//         border-color: map-get($colors, 'blue');
+//         box-shadow: inset 0 0 0 2px map-get($colors, 'blue-light');
+//       }
+//     }
+
+//     &.a-button-brand {
+//       background-color: map-get($colors, 'white');
+//       border: 1px solid map-get($colors, 'black');
+//       color: map-get($colors, 'brand');
+//     }
+
+//     &.a-button-info {
+//       background-color: map-get($colors, 'white');
+//       border: 1px solid map-get($colors, 'info');
+//       color: map-get($colors, 'info');
+
+//       &:not(:disabled):not(.disabled) {
+//         &:hover {
+//           background-color: map-get($colors, 'info');
+//           border: 1px solid map-get($colors, 'info');
+//         }
+//       }
+//     }
+
+//     &.a-button-warning {
+//       background-color: map-get($colors, 'white');
+//       border: 1px solid map-get($colors, 'warning');
+
+//       &:not(:disabled):not(.disabled) {
+//         &:hover {
+//           background-color: map-get($colors, 'warning');
+//           border: 1px solid map-get($colors, 'warning');
+//         }
+//       }
+//     }
+
+//     &.a-button-error {
+//       background-color: map-get($colors, 'white');
+//       border: 1px solid map-get($colors, 'error');
+
+//       &:not(:disabled):not(.disabled) {
+//         &:hover {
+//           background-color: map-get($colors, 'error');
+//           border: 1px solid map-get($colors, 'error');
+//         }
+//       }
+//     }
+
+//     &:disabled,
+//     .disabled {
+//       cursor: not-allowed;
+//       opacity: .5;
+//     }
+
+//     &.a-button-xsmall {
+//       font-size: 11.2px;
+//     }
+
+//     &.a-button-medium {
+//       font-size: 14px;
+//     }
+
+//     &.a-button-large {
+//       font-size: 20px;
+//     }
+
+//     &.a-button-xlarge {
+//       font-size: 24px;
+//     }
+
+//     &.a-button-super {
+//       font-size: 32px;
+//     }
+
+//     &.a-button-square {
+//       border-radius: map-get($radiuses, 'none');
+//     }
+
+//     &.a-button-round {
+//       border-radius: map-get($radiuses, 'round');
+//     }
+
+//     &.a-button-expand {
+//       display: inline-block;
+//       margin-left: 0;
+//       margin-right: 0;
+//       padding-left: 5px;
+//       padding-right: 5px;
+//       width: 100%;
+//     }
+//   }
+// }
