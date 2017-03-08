@@ -179,7 +179,7 @@ export namespace Ribbon {
     function setIsntSrcolledIntoView(ribbonRow: HTMLDivElement, ribbonWhiteSpace: HTMLDivElement, masterpageType: string) {
         ribbonRow.classList.add("dockRibbon");
         if (masterpageType == 'team' || masterpageType == 'site') {
-            ribbonRow.style.width = getComputedStyle(document.getElementsByClassName("container").item(0)).width;
+            // ribbonRow.style.width = getComputedStyle(document.getElementsByClassName("container").item(0)).width;
         }
         ribbonWhiteSpace.style.height = getComputedStyle(ribbonRow).height;
     }
