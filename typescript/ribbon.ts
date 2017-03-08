@@ -24,28 +24,35 @@ export namespace Ribbon {
 
             // change ribbon location on window scroll
             window.addEventListener("scroll", ev => {
-                setRibbonMenuStatus(masterpageType);
-                setRibbonToolTipStatus(masterpageType);
-                if (doesPageNeedFixedRibbon()) {
-                    if (window.innerWidth < 768) {
-                        setIsntSrcolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
-                    } else {
-                        if (isScrolledIntoView(dockElement, masterpageType)) {
-                            setIsScrolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
-                        }
-                        else {
-                            setIsntSrcolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
-                        }
-                    }
-                }
-                else {
-                    ribbonRow.classList.remove("dockRibbon");
-                    if (masterpageType == "app") {
-                        ribbonRow.style.width = "";
-                    }
-                    ribbonWhiteSpace.style.height = "0";
-                }
+                scrollEventActions(dockElement, masterpageType);
+                // setRibbonMenuStatus(masterpageType);
+                // setRibbonToolTipStatus(masterpageType);
+                // if (doesPageNeedFixedRibbon()) {
+                //     if (window.innerWidth < 768) {
+                //         setIsntSrcolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
+                //     } else {
+                //         if (isScrolledIntoView(dockElement, masterpageType)) {
+                //             setIsScrolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
+                //         }
+                //         else {
+                //             setIsntSrcolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
+                //         }
+                //     }
+                // }
+                // else {
+                //     ribbonRow.classList.remove("dockRibbon");
+                //     if (masterpageType == "app") {
+                //         ribbonRow.style.width = "";
+                //     }
+                //     ribbonWhiteSpace.style.height = "0";
+                // }
             });
+
+            document.body.addEventListener("click", ev => {
+                if (Utilities.findAncestor((ev.target as HTMLElement), "uu-pulse-ribbon") != null) {
+                    scrollEventActions(dockElement, masterpageType);
+                }
+            });     
 
             // change ribbon location on window resize
             window.addEventListener("resize", ev => {
@@ -66,6 +73,33 @@ export namespace Ribbon {
                     }
                }
             });
+        }
+    }
+
+    function scrollEventActions(dockElement: HTMLDivElement, masterpageType: string) {
+        let ribbonRow = Utilities.getCachedElementById("s4-ribbonrow") as HTMLDivElement;
+        let ribbonWhiteSpace = Utilities.getCachedElementById("ribbonWhiteSpace") as HTMLDivElement;
+
+        setRibbonMenuStatus(masterpageType);
+        setRibbonToolTipStatus(masterpageType);
+        if (doesPageNeedFixedRibbon()) {
+            if (window.innerWidth < 768) {
+                setIsntSrcolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
+            } else {
+                if (isScrolledIntoView(dockElement, masterpageType)) {
+                    setIsScrolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
+                }
+                else {
+                    setIsntSrcolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
+                }
+            }
+        }
+        else {
+            ribbonRow.classList.remove("dockRibbon");
+            if (masterpageType == "app") {
+                ribbonRow.style.width = "";
+            }
+            ribbonWhiteSpace.style.height = "0";
         }
     }
 

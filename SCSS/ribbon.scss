@@ -60,7 +60,7 @@
         z-index: 200000;
 
         @media #{$media-phone} {
-          top: 34px;
+          top: 42px;
         }
 
         @if $type == 'app' {
