@@ -4,8 +4,13 @@
   .uu-pulse-content-nav-button {
     @include elevation-high;
     background-color: map-get($colors, grey-lighter);
+    border-bottom: 0;
+    color: map-get($colors, black);
+    cursor: pointer;
+    font-size: 16px;
+    left: 0;
     opacity: .78;
-    border-bottom: none;
+    padding: 5px;
     position: fixed;
 
     @if $type == 'site' or $type == 'team' {
@@ -15,15 +20,8 @@
       top: 177px;
     }
 
-    left: 0;
-    z-index: 200000;
-    padding: 0 5px;
-    color: map-get($colors, black);
-    cursor: pointer;
-    font-size: 12px;
-    font-size: 16px;
-    padding: 5px;
     transition: top 1s;
+    z-index: 200000;
 
     &:hover {
       background-color: map-get($colors, grey);
@@ -53,7 +51,7 @@
   }
 
   #contentRow {
-    @if $type == 'site' or @if $type == 'team' {
+    @if $type == 'site' or $type == 'team' {
       padding-top: 5px;
     }
     @if $type == 'app' {
