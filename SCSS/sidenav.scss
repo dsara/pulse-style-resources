@@ -3,20 +3,49 @@
 $left-nav-width: 200px;
 $side-nav-color: #808080;
 
-@mixin side-nav-defaults {
+@mixin apps-search-button-dimensions {
+  height: 28px;
+  width: 23px;
+}
+
+@mixin side-nav-defaults ($type) {
   // border-top: 1px dotted $side-nav-color;
-  color: map-get($colors, black);
-  font-size: 14px !important;
-  line-height: 18px !important;
+  @if $type == 'team' or $type == 'site' {
+    color: map-get($colors, black);
+    font-size: 14px !important;
+    line-height: 18px !important;
+  }
+  @if $type == 'app' {
+    color: map-get($colors, white);
+    font-size: 17px !important;
+    line-height: 38px !important;
+    font-weight: 300;
+  }
   padding: 5px 5px 5px 20px !important;
   text-align: left;
 
 }
 
+@mixin side-nav-links-close ($type) {
+  .uu-pulse-side-nav-links-close {
+    background-color: map-get($colors, brand);
+    @if $type == 'team' or $type == 'site' {
+      border-bottom: 3px solid map-get($colors, grey-lighter);
+    }
+    @if $type == 'app' {
+      border-bottom: 3px solid map-get($colors, black);
+      margin-top: -5px;
+    }
+    color: map-get($colors, white);
+    cursor: pointer;
+    display: block;
+    padding: 5px;
+  }
+}
+
 @mixin side-nav-hover {
   &:hover {
     background-color: map-get($colors, brand);
-    // border-top: 1px dotted $side-nav-color;
     color: map-get($colors, white);
 
     > .leftnav-child-mark {
@@ -26,306 +55,404 @@ $side-nav-color: #808080;
 }
 
 // Left Site Icon and Navigation
-.uu-pulse-side-nav {
-  float: left;
-  width: 200px;
-
-  @media #{$media-tablet-max} {
-    @include elevation-high;
-    left: -400px;
-    display: block !important;
-    transition: left 1s, top 1s, height 1s;
-    position: fixed;
-    top: 102px;
-    height: 100%;
-    z-index: 200000;
-    background-color: map-get($colors, grey-lighter);
-    border-right: 1px solid map-get($colors, brand);
-    border-top: 1px solid map-get($colors, brand);
-    overflow: auto;
-
-    #Refinement {
-      padding-left: 30px;
+@mixin load-sidenav-css ($type) {
+  .uu-pulse-side-nav {
+    float: left;
+    @if $type == 'site' or $type == 'team' {
+      width: 200px;
     }
-  }
+    @if $type == 'app' {
+      width: 220px;
+      padding-top: 5px;
+      background-color: map-get($colors, black);
+    }
 
-  @media #{$media-tablet} {
-    height: calc(100% - 102px);
-  }
+    @media #{$media-tablet-max} {
+      @include elevation-high;
+      left: -400px;
+      display: block !important;
+      transition: left 1s, top 1s, height 1s;
+      position: fixed;
+      top: 102px;
+      height: 100%;
+      z-index: 200000;
+      background-color: map-get($colors, grey-lighter);
+      border-right: 1px solid map-get($colors, brand);
+      border-top: 1px solid map-get($colors, brand);
+      overflow: auto;
 
-  @media #{$media-phone} {
-    height: calc(100% - 68px);
-  }
-
-  &.uu-pulse-side-nav-slide-out {
-    // @include elevation-high;
-    // background-color: map-get($colors, grey-lighter);
-    // border: 1px solid map-get($colors, brand);
-    // border-left: none;
-    // display: block !important;
-    // position: absolute;
-    // width: 50%;
-    // z-index: 10000;
-
-    left: 0;
-
-    /*@media (max-width: 450px) {
-      width: 75%;
+      #Refinement {
+        padding-left: 30px;
+      }
     }
 
     @media #{$media-tablet} {
-      top: -108px;
+      height: calc(100% - 102px);
     }
 
     @media #{$media-phone} {
-      top: -128px;
+      height: calc(100% - 68px);
     }
 
-    #Refinement {
-      padding-left: 30px;
-    }*/
-  }
-
-  // Site Icon
-  .uu-pulse-site-icon {
-
-    .uu-pulse-site-icon-img {
-      display: block;
-      max-width: 200px;
-      width: 100%;
-      margin: auto;
-    }
-  }
-
-  // Left Navigation
-  .uu-pulse-left-nav-bar {
-    margin-top: 12px;
-    position: relative;
-
-    @media #{$media-tablet-max} {
-      margin-top: 0;
+    &.uu-pulse-side-nav-slide-out {
+      left: 0;
     }
 
-    .uu-pulse-side-nav-links-close {
-      background-color: map-get($colors, brand);
-      border-bottom: 3px solid map-get($colors, grey-lighter);
-      cursor: pointer;
-      padding: 5px;
-      display: block;
-      color: white;
+    // Site Icon
+    .uu-pulse-site-icon {
+
+      .uu-pulse-site-icon-img {
+        display: block;
+        max-width: 200px;
+        width: 100%;
+        margin: auto;
+      }
     }
 
+    // side nav search that only exits on app masterpages
+    @if $type == 'app' {
+      .uu-pulse-side-nav-search {
+        padding: 10px 9px 4px;
 
-    // Group and Permissions Section
-    .ms-ql-additionaltopsection {
+        .ms-helperText {
+          color: #cccccc;
+          font-size: 13px;
+          padding-left: 5px;
+        }
 
-      .ms-core-listMenu-root ul {
-        // padding-left: 0 !important;
+        .siteSearchBox {
 
-        .ms-core-listMenu-item {
-          // padding-left: 20px !important;
+          .ms-srch-sb {
+            height: 25px;
+            width: 100%;
+
+            > input {
+              @include width-minus(82%, 100%, 50px);
+              height: 100%;
+              color: $colors-white;
+            }
+
+            > .ms-srch-sb-navLink,
+            > .ms-srch-sb-searchLink {
+              @include search-button-dimensions;
+
+              > img {
+
+                &.ms-srch-sb-navImg {
+                  top: -32px;
+
+                  &:hover {
+                    top: -32px;
+                  }
+                }
+
+                &.ms-srch-sb-searchImg {
+                  top: -54px;
+
+                  &:hover {
+                    top: -66px;
+                  }
+                }
+              }
+            }
+          }
+
+          .ms-srch-sb-border,
+          .ms-srch-sb-borderFocused {
+            background-color: map-get($colors, black);
+            border: 1px solid map-get($colors, grey);
+            height: 30px;
+
+            /*&:hover {
+              border: 1px solid $colors-dark-green;
+            }*/
+          }
+
+          .ms-srch-sb-navLink-menuOpen {
+            background-color: $colors-light-green;
+          }
         }
       }
     }
 
-    // Left Navigation Items
-    .uu-pulse-side-nav-links {
-      position: relative;
+    @if $type == 'app' {
+      @include side-nav-links-close($type);
     }
 
-    .uu-pulse-side-nav-links .ms-core-listMenu-root {
-      background-color: map-get($colors, grey-lighter);
+    // Left Navigation
+    .uu-pulse-left-nav-bar {
+      position: relative;
+      @if $type == 'team' or $type == 'site' {
+        margin-top: 12px;
+      }
+      @if $type == 'app' {
+        margin-top: 5px;
+        background-color: map-get($colors, gray-lighter);
+      }
 
-      li {
-        display: block;
-        list-style: none outside none;
-        width: 100%;
+      @media #{$media-tablet-max} {
+        margin-top: 0;
+      }
 
-        // all links
-        a {
-          @include side-nav-defaults;
-          @include side-nav-hover();
-          cursor: pointer;
-          display: block;
-          width: 100%;
-        }
+      @if $type == 'team' or $type == 'site' {
+        @include side-nav-links-close($type);
+      }
+      
+      // Group and Permissions Section
+      @if $type == 'app' {
+        .ms-ql-additionaltopsection {
 
-        // sub links
-        ul li > a {
-          margin-left: -20px;
-          padding-left: 40px !important;
-          width: auto;
+          .ms-core-listMenu-root ul {
+            padding-left: 0 !important;
 
-          span {
-            &.additional-background {
-              display: block;
-              // padding-left: 20px;
+            .ms-core-listMenu-item {
+              padding-left: 20px !important;
             }
           }
         }
+      }
 
-        // non link entries
-        > span {
-          &.ms-displayInline {
-            @include side-nav-defaults;
-            cursor: default;
-            display: block;
-            width: auto;
-          }
+      // Left Navigation Items
+      .uu-pulse-side-nav-links {
+        position: relative;
+      }
+
+      .uu-pulse-side-nav-links .ms-core-listMenu-root {
+        @if $type == 'team' or $type == 'site' {
+          background-color: map-get($colors, grey-lighter);
+        }
+        @if $type == 'app' {
+          background-color: map-get($colors, black);
         }
 
-        // edit at bottom
-        &.ms-navedit-editArea {
-          border: 0;
-          margin: 0 !important;
+        li {
+          display: block;
+          list-style: none outside none;
+          width: 100%;
 
+          // all links
           a {
-            border-bottom: none;
-            border-top: none;
-            font-size: .9em !important;
+            @include side-nav-defaults ($type);
+            @include side-nav-hover;
+            cursor: pointer;
+            display: block;
             width: 100%;
           }
 
-          .ms-navedit-editSpan a {
-            &:hover {
-              background: none !important;
+          // sub links
+          ul li > a {
+            margin-left: -20px;
+            @if $type == 'team' or $type == 'site' {
+              padding-left: 40px !important;
+            }
+            width: auto;
+
+            span {
+              &.additional-background {
+                display: block;
+                @if $type == 'app' {
+                  padding-left: 20px;
+                }
+              }
+            }
+          }
+
+          // non link entries
+          > span {
+            &.ms-displayInline {
+              @include side-nav-defaults ($type);
+              cursor: default;
+              display: block;
+              width: auto;
+            }
+          }
+
+          // edit at bottom
+          &.ms-navedit-editArea {
+            border: 0;
+            margin: 0 !important;
+
+            @if $type == 'app' {
+              img {
+                display: none;
+              }
+
+              &:hover {
+                background-color: map-get($colors, brand);
+              }
+
+              .ms-metadata {
+                color: map-get($colors, white);
+              }
+            }
+
+            a {
+              border-bottom: none;
               border-top: none;
-              color: map-get($colors, white);
+              font-size: .9em !important;
+              width: 100%;
+            }
+
+            @if $type == 'site' or $type == 'team' {
+              .ms-navedit-editSpan a {
+                &:hover {
+                  background: none !important;
+                  border-top: none;
+                  color: map-get($colors, white);
+                }
+              }
+            }
+          }
+
+          // currently selected item
+          &.selected > a {
+            //border-right: 5px solid map-get($colors, brand);
+            background-color: map-get($colors, brand);
+            color: map-get($colors, white);
+          }
+        }
+      }
+
+      // Site Contents Item
+      #ctl00_PlaceHolderLeftNavBar_PlaceHolderQuickLaunchBottom_idNavLinkViewAll {
+        @include side-nav-defaults($type);
+        @include side-nav-hover;
+        @if $type == 'team' or $type == 'site' {
+          background-color: map-get($colors, grey-lighter);
+        }
+        @if $type == 'app' {
+          background-color: map-get($colors, black);
+        }
+        cursor: pointer;
+        display: block;
+        width: 100%;
+
+        @if $type == 'app' {
+          .ms-splinkbutton-text {
+            color: map-get($colors, white);
+          }
+        }
+
+        &:hover {
+          color: map-get($colors, white) !important;
+
+          .ms-splinkbutton-text {
+            color: map-get($colors, white);
+          }
+        }
+      }
+
+      // Left Nav HR Separators
+      .ms-core-listMenu-separatorLine {
+        border: 1px dotted map-get($colors, grey);
+        @if $type == 'site' or $type == 'team' {
+          margin: 0;
+        }
+        @if $type == 'app' {
+          margin: 0 0 0 -20px;
+        }
+      }
+
+      // Left Nav Nested Items Left Padding
+      .ms-core-listMenu-verticalBox > .ms-core-listMenu-root ul {
+        padding-left: 20px;
+      }
+
+      // Left Nav Items Color Correction
+      .ms-navedit-editLinksText > span > .ms-metadata:hover, .ms-navedit-editLinksText > span:hover > .ms-metadata,
+      .ms-navedit-editLinksText:hover > span > .ms-metadata, .ms-core-listMenuEdit > tr > .ms-navedit-linkCell > .ms-core-listMenu-item:hover {
+        color: map-get($colors, brand);
+      }
+
+      .ms-tv-box {
+        margin: 0;
+        background-color: map-get($colors, grey-lighter);
+        padding: 10px 0;
+
+        .ms-KFMenu {
+          width: 195px !important;
+          margin: 0;
+
+          div {
+            box-sizing: content-box;
+          }
+
+          .ms-KFHead {
+            h3 {
+              min-width: 150px !important;
+            }
+
+            div {
+              min-width: 150px !important;
+            }
+          }
+
+          .ms-KFLabelAndBodyContainer {
+            padding-right: 0;
+
+            .ms-KFLabel {
+              min-width: 150px !important;
             }
           }
         }
+      }
 
-        // currently selected item
-        &.selected > a {
-          //border-right: 5px solid map-get($colors, brand);
-          background-color: map-get($colors, brand);
-          color: map-get($colors, white);
-        }
+      .ms-core-sideNavBox-removeLeftMargin {
+          margin: 0;
+      }
+    }
+  }
+
+  // Left Nav Calendar and Calendar Page
+  .uu-pulse-left-nav-bar {
+    @if $type == 'app' {   
+      #DatePickerDiv {
+        margin-left: -20px;
       }
     }
 
-    // Site Contents Item
-    #ctl00_PlaceHolderLeftNavBar_PlaceHolderQuickLaunchBottom_idNavLinkViewAll {
-      @include side-nav-defaults();
-      @include side-nav-hover();
-      background-color: map-get($colors, grey-lighter);
-      cursor: pointer;
-      display: block;
-      width: 100%;
-
-      &:hover {
-        color: map-get($colors, white) !important;
-
-        .ms-splinkbutton-text {
-          color: map-get($colors, white);
-        }
-      }
+    .ms-picker-footer a {
+      color: map-get($colors, black);
     }
 
-    // Left Nav HR Separators
-    .ms-core-listMenu-separatorLine {
-      border: 1px dotted map-get($colors, grey);
-      //margin: 0 0 0 -20px;
-      margin: 0;
+    .ms-quickLaunch table.ms-picker-table td.ms-picker-monthselected {
+      border: 1px solid map-get($colors, brand);
     }
 
-    // Left Nav Nested Items Left Padding
-    .ms-core-listMenu-verticalBox > .ms-core-listMenu-root ul {
-      padding-left: 20px;
+    table.ms-picker-table td.ms-picker-today {
+      border: 1px solid map-get($colors, brand);
     }
 
-    // Left Nav Items Color Correction
-    .ms-navedit-editLinksText > span > .ms-metadata:hover, .ms-navedit-editLinksText > span:hover > .ms-metadata,
-    .ms-navedit-editLinksText:hover > span > .ms-metadata, .ms-core-listMenuEdit > tr > .ms-navedit-linkCell > .ms-core-listMenu-item:hover {
-      color: map-get($colors, brand);
-    }
-
-    .ms-tv-box {
-      margin: 0;
-      background-color: map-get($colors, grey-lighter);
-      padding: 10px 0;
-
-      .ms-KFMenu {
-        width: 195px !important;
-        margin: 0;
-
-        div {
-          box-sizing: content-box;
-        }
-
-        .ms-KFHead {
-          h3 {
-            min-width: 150px !important;
-          }
-
-          div {
-            min-width: 150px !important;
-          }
-        }
-
-        .ms-KFLabelAndBodyContainer {
-          padding-right: 0;
-
-          .ms-KFLabel {
-            min-width: 150px !important;
-          }
-        }
-      }
-    }
-
-    .ms-core-sideNavBox-removeLeftMargin {
-        margin: 0;
+    .ms-acal-apanel-color {
+      background-color: map-get($colors, brand);
     }
   }
-}
 
-// Left Nav Calendar and Calendar Page
-.uu-pulse-left-nav-bar {
-  #DatePickerDiv {
-    // margin-left: -20px;
+  tr td div.ms-acal-today {
+    border-top: 1px solid map-get($colors, brand);
+    color: map-get($colors, brand);
   }
 
-  .ms-picker-footer a {
-    color: map-get($colors, black);
+  tr td div.ms-acal-today:hover {
+    border-top: 1px solid map-get($colors, brand);
+    color: map-get($colors, brand-dark);
   }
 
-  .ms-quickLaunch table.ms-picker-table td.ms-picker-monthselected {
-    border: 1px solid map-get($colors, brand);
+  .ms-acal-summary-dayrow > th > div:hover {
+    border-bottom: 1px solid map-get($colors, brand);
+    border-top: 1px solid map-get($colors, brand);
+    cursor: pointer;
   }
 
-  table.ms-picker-table td.ms-picker-today {
-    border: 1px solid map-get($colors, brand);
+  .ms-acal-week-top td.ms-acal-hover div, .ms-acal-summary-dayrow td.ms-acal-hover div, .ms-acal-summary-dayrow th.ms-acal-hover {
+    border-color: map-get($colors, brand) !important;
+    text-decoration: underline;
   }
 
-  .ms-acal-apanel-color {
-    background-color: map-get($colors, brand);
-  }
-}
-
-tr td div.ms-acal-today {
-  border-top: 1px solid map-get($colors, brand);
-  color: map-get($colors, brand);
-}
-
-tr td div.ms-acal-today:hover {
-  border-top: 1px solid map-get($colors, brand);
-  color: map-get($colors, brand-dark);
-}
-
-.ms-acal-summary-dayrow > th > div:hover {
-  border-bottom: 1px solid map-get($colors, brand);
-  border-top: 1px solid map-get($colors, brand);
-  cursor: pointer;
-}
-
-.ms-acal-week-top td.ms-acal-hover div, .ms-acal-summary-dayrow td.ms-acal-hover div, .ms-acal-summary-dayrow th.ms-acal-hover {
-  border-color: map-get($colors, brand) !important;
-  text-decoration: underline;
-}
-
-// Blogs
-@media #{$media-phone} {
-  .BlogSideNav {
-    width: 98% !important;
+  // Blogs
+  @media #{$media-phone} {
+    .BlogSideNav {
+      width: 98% !important;
+    }
   }
 }

@@ -14,6 +14,17 @@
       }
     }
   }
+
+  @if $type == 'app' {
+    .uu-pulse-container {
+      width: 100%;
+    }
+
+    #DeltaPlaceHolderMain {
+      padding-top: 10px;
+      padding-right: 10px;
+    }
+  }
 }
 
 .uu-pulse-authenticated-wrapper {

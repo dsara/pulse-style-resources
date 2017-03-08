@@ -1,155 +1,183 @@
 @import 'uu.sp.commons';
 
-.uu-pulse-ribbon {
+@mixin load-ribbon-css ($type) {
+  .uu-pulse-ribbon {
 
-  .uu-pulse-ribbon-row {
+    @if $type == 'app' {
+      @media #{$media-desktop-min} {
+        margin-left: -10px;
+        width: calc(100% + 10px);
+      }
+    }
 
-    .ms-cui-tt:not(.ms-cui-tt-s),
-    .ms-cui-tt.ms-cui-tt-s.ms-browseTab {
-      .ms-cui-tt-span {
-        color: map-get($colors, white) !important;
+    .uu-pulse-ribbon-row {
+      @if $type == 'app' {
+        width: 100%;
+      }
 
-        &:hover {
+      .ms-cui-tt:not(.ms-cui-tt-s),
+      .ms-cui-tt.ms-cui-tt-s.ms-browseTab {
+        .ms-cui-tt-span {
+          color: map-get($colors, white) !important;
+
+          &:hover {
+            color: map-get($colors, black) !important;
+          }
+        }
+      }
+
+      .ms-cui-tt.ms-cui-tt-s:not(.ms-browseTab) {
+        .ms-cui-tt-span {
           color: map-get($colors, black) !important;
         }
       }
-    }
 
-    .ms-cui-tt.ms-cui-tt-s:not(.ms-browseTab) {
-      .ms-cui-tt-span {
-        color: map-get($colors, black) !important;
+      .ms-cui-tt-a,
+      .ms-cui-cg {
+        margin-top: 0;
       }
-    }
 
-    .ms-cui-tt-a,
-    .ms-cui-cg {
-      margin-top: 0;
-    }
+      .ms-cui-TabRowLeft {
+        padding: 0;
+      }
 
-    .ms-cui-TabRowLeft {
-      padding: 0;
-    }
+      .ms-promotedActionButton {
+        vertical-align: top;
 
-    .ms-promotedActionButton {
-      vertical-align: top;
+        .ms-promotedActionButton-text {
+          color: map-get($colors, white) !important;
+          font-size: 12px;
+        }
+
+        .ms-promotedActionButton-icon {
+          margin-bottom: 3px;
+        }
+      }
+
+      &.dockRibbon {
+        position: fixed !important;
+        top: 0px;
+        z-index: 200000;
+
+        @media #{$media-phone} {
+          top: 34px;
+        }
+
+        @if $type == 'app' {
+          @media #{$media-desktop-min} {
+            .ms-cui-TabRowRight {
+              position: fixed;
+              right: 0;
+            }
+          }
+        }
+      }
+
+      .ms-core-webpartadder {
+        z-index: 2000;
+      }
+
+      .uu-pulse-ribbon-background {
+        background-color: map-get($colors, black);
+        // height:100%;
+        height: 34px;
+        position: absolute;
+        z-index: -1;
+        // border-top: 2px solid map-get($colors, black);
+      }
+
+      .uu-pulse-ribbon-global-nav {
+        background-color: map-get($colors, black);
+        // border-top: 2px solid map-get($colors, black);
+        // width: 100%;
+      }
 
       .ms-promotedActionButton-text {
-        color: map-get($colors, white) !important;
-        font-size: 12px;
-      }
-
-      .ms-promotedActionButton-icon {
-        margin-bottom: 3px;
-      }
-    }
-
-    &.dockRibbon {
-      position: fixed !important;
-      top: 0px;
-      z-index: 200000;
-
-      @media #{$media-phone} {
-        top: 34px;
-      }
-    }
-
-    .ms-core-webpartadder {
-      z-index: 2000;
-    }
-
-    .uu-pulse-ribbon-background {
-      background-color: map-get($colors, black);
-      // height:100%;
-      height: 34px;
-      position: absolute;
-      z-index: -1;
-      // border-top: 2px solid map-get($colors, black);
-    }
-
-    .uu-pulse-ribbon-global-nav {
-      background-color: map-get($colors, black);
-      // border-top: 2px solid map-get($colors, black);
-      // width: 100%;
-    }
-
-    .ms-promotedActionButton-text {
-      @media #{$media-phone} {
-        display: none;
-      }
-    }
-
-    .ms-promotedActionButton {
-      @media #{$media-phone} {
-        margin-right: 3px !important;
-      }
-    }
-
-    .ms-dd-button {
-      @media #{$media-phone} {
-        margin-left: 0 !important;
-      }
-    }
-
-    .ms-cui-tts-scale-2 .ms-cui-tt-a {
-      @media #{$media-phone} {
-        width: inherit !important;
-      }
-    }
-
-    .ms-cui-topBar2 {
-        border-bottom: none !important;
-
-        .ms-cui-tts {
-            height: 34px;
+        @media #{$media-phone} {
+          display: none;
         }
+      }
 
-        .ms-cui-TabRowRight {
-            height: 34px;
-            line-height: 32px;
+      .ms-promotedActionButton {
+        @media #{$media-phone} {
+          margin-right: 3px !important;
         }
+      }
+
+      .ms-dd-button {
+        @media #{$media-phone} {
+          margin-left: 0 !important;
+        }
+      }
+
+      .ms-cui-tts-scale-2 .ms-cui-tt-a {
+        @media #{$media-phone} {
+          width: inherit !important;
+        }
+      }
+
+      .ms-cui-topBar2 {
+          border-bottom: none !important;
+
+          .ms-cui-tts {
+              height: 34px;
+          }
+
+          .ms-cui-TabRowRight {
+              height: 34px;
+              line-height: 32px;
+          }
+      }
     }
-  }
-}
 
-#fullscreenmodebox {
-  display:none;
-}
-
-.ms-cui-group {
-  span,
-  a,
-  input {
-    @include force-box-sizing(content-box);
-  }
-}
-
-.ms-cui-gallery-td {
-  @include force-box-sizing(content-box);
-
-  div {
-    @include force-box-sizing(content-box);
-  }
-}
-
-.ms-cui-menu {
-  @include force-box-sizing(content-box);
-  border: 1px solid map-get($colors, brand);
-  z-index: 2000000 !important;
-  // position: fixed !important;
-}
-
-body {
-  &.uu-pulse-docked-ribbon-menus {
-    > .ms-cui-menu {
-      position: fixed !important;
-      z-index: 200000;
+    @if $type == 'app' {
+      #ribbonWhiteSpace {
+        width: 100%;
+        background-color: map-get($colors, white);
+      }
     }
   }
 
-  &.uu-pulse-docked-ribbon-tooltips {
-    > .ms-cui-tooltip {
-      position: fixed !important;
-      z-index: 200000;
+  #fullscreenmodebox {
+    display:none;
+  }
+
+  .ms-cui-group {
+    span,
+    a,
+    input {
+      @include force-box-sizing(content-box);
+    }
+  }
+
+  .ms-cui-gallery-td {
+    @include force-box-sizing(content-box);
+
+    div {
+      @include force-box-sizing(content-box);
+    }
+  }
+
+  .ms-cui-menu {
+    @include force-box-sizing(content-box);
+    border: 1px solid map-get($colors, brand);
+    z-index: 2000000 !important;
+    // position: fixed !important;
+  }
+
+  body {
+    &.uu-pulse-docked-ribbon-menus {
+      > .ms-cui-menu {
+        position: fixed !important;
+        z-index: 200000;
+      }
+    }
+
+    &.uu-pulse-docked-ribbon-tooltips {
+      > .ms-cui-tooltip {
+        position: fixed !important;
+        z-index: 200000;
+      }
     }
   }
 }

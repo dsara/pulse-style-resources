@@ -1,15 +1,23 @@
 @import 'uu.sp.commons';
 
-@mixin uu-pulse-content-nav-button {
+@mixin uu-pulse-content-nav-button ($type) {
   .uu-pulse-content-nav-button {
     @include elevation-high;
+    background-color: map-get($colors, grey-lighter);
+    opacity: .78;
+    border-bottom: none;
     position: fixed;
-    top: 102px;
+
+    @if $type == 'site' or $type == 'team' {
+      top: 102px;
+    }
+    @if $type == 'app' {
+      top: 177px;
+    }
+
     left: 0;
     z-index: 200000;
     padding: 0 5px;
-    border-bottom: none;
-    background-color: rgba(239,239,239, 0.78);
     color: map-get($colors, black);
     cursor: pointer;
     font-size: 12px;
@@ -23,7 +31,12 @@
     }
 
     @media #{$media-phone} {
-      top: 68px;
+      @if $type == 'site' or $type == 'team' {
+        top: 68px;
+      }
+      @if $type == 'app' {
+        top: 143px;
+      }
     }
 
     @media #{$media-desktop-min} {
@@ -40,7 +53,12 @@
   }
 
   #contentRow {
-    padding-top: 5px;
+    @if $type == 'site' or @if $type == 'team' {
+      padding-top: 5px;
+    }
+    @if $type == 'app' {
+      padding-top: 0;
+    }
     position: relative;
 
     @if $type == 'site' {
@@ -59,7 +77,7 @@
           }
         }
 
-        @include uu-pulse-content-nav-button;
+        @include uu-pulse-content-nav-button($type);
       }
 
       &.uu-pulse-side-nav-hidden {
@@ -78,44 +96,66 @@
       }
     }
 
-    @if $type == 'team' {
+    @if $type == 'team' or $type == 'app' {
       .uu-pulse-content-box {
         float: left;
 
-        @media #{$media-phone} {
-          width: 100%;
+        @if $type == 'app' {
+          @include width-minus(80%, 100%, 220px);
+          padding-left: 10px;
+          padding-top: 5px;
+
+          #DeltaPlaceHolderMain {
+            @media #{$media-tablet-max} {
+              padding: 0 15px;
+            }
+          }
+        }
+
+        @if $type == 'team' {
+          @media #{$media-phone} {
+            width: 100%;
+          }
         }
 
         @media #{$media-tablet-max} {
-          padding: 0 5px;
+          @if $type == 'team' {
+            padding: 0 5px;
+          }
+          @if $type == 'app' {
+            padding-left: 0;
+            width: 100%;
+          }
         }
 
-        @media #{$media-desktop-min} {
-          padding-left: 15px;
-        }
+        @if $type == 'team' {
+          @media #{$media-desktop-min} {
+            padding-left: 15px;
+          }
 
-        @media #{$media-desktop} {
-          width: 740px;
-        }
+          @media #{$media-desktop} {
+            width: 740px;
+          }
 
-        @media (min-width: 1200px) and (max-width: 1499px) {
-          width: 940px;
-        }
+          @media (min-width: 1200px) and (max-width: 1499px) {
+            width: 940px;
+          }
 
-        @media (min-width: 1500px) and (max-width: 1699px) {
-          width: 1240px;
-        }
+          @media (min-width: 1500px) and (max-width: 1699px) {
+            width: 1240px;
+          }
 
-        @media (min-width: 1700px) and (max-width: 1899px) {
-          width: 1440px;
-        }
+          @media (min-width: 1700px) and (max-width: 1899px) {
+            width: 1440px;
+          }
 
-        @media (min-width: 1900px) {
-          width: 1640px;
+          @media (min-width: 1900px) {
+            width: 1640px;
+          }
         }
       }
 
-      @include uu-pulse-content-nav-button;
+      @include uu-pulse-content-nav-button($type);
     }
   }
 }
