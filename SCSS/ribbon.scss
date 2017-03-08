@@ -59,6 +59,10 @@
         top: 0px;
         z-index: 200000;
 
+        @if $type == 'site' or $type == 'team' {
+          width: 100%;
+        }
+
         @media #{$media-phone} {
           top: 42px;
         }
