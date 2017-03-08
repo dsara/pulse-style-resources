@@ -173,13 +173,20 @@ export namespace Ribbon {
         if (masterpageType == 'app') {
             ribbonRow.style.width = "";
         }
+        if (masterpageType == 'team' || masterpageType == 'site') {
+            ribbonRow.style.marginLeft = "";
+        }
         ribbonWhiteSpace.style.height = "0";
     }
 
     function setIsntSrcolledIntoView(ribbonRow: HTMLDivElement, ribbonWhiteSpace: HTMLDivElement, masterpageType: string) {
         ribbonRow.classList.add("dockRibbon");
+        let authenticatedWrapper = Utilities.getCachedElementById("authenticatedWrapper") as HTMLDivElement;
         if (masterpageType == 'team' || masterpageType == 'site') {
-            // ribbonRow.style.width = getComputedStyle(document.getElementsByClassName("container").item(0)).width;
+            if (authenticatedWrapper) {
+                ribbonRow.style.marginLeft = "-" + getComputedStyle(authenticatedWrapper).left;
+            }
+            //ribbonRow.style.width = getComputedStyle(document.getElementsByClassName("container").item(0)).width;
         }
         ribbonWhiteSpace.style.height = getComputedStyle(ribbonRow).height;
     }
@@ -189,7 +196,7 @@ export namespace Ribbon {
             return (elem.getBoundingClientRect().bottom > 0 ? true : false);
         } 
         if (masterpageType == 'app')  {
-        return (elem.getBoundingClientRect().bottom > (window.innerWidth < 768 ? 42 : 0) ? true : false);
+            return (elem.getBoundingClientRect().bottom > (window.innerWidth < 768 ? 42 : 0) ? true : false);
         }
     }
 
