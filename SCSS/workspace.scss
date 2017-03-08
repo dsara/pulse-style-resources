@@ -79,7 +79,7 @@
     }
 
     @if $type == 'team' {
-      &.uu-pulse-content-box {
+      .uu-pulse-content-box {
         float: left;
 
         @media #{$media-phone} {
