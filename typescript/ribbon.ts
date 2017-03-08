@@ -64,11 +64,11 @@ export namespace Ribbon {
                     } else {
                         if (isScrolledIntoView(dockElement, masterpageType)) {
                             setIsScrolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
-                            ribbonRow.style.width = "";
+                            // ribbonRow.style.width = "";
                         }
                         else {
                             setIsntSrcolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
-                            ribbonRow.style.width = getComputedStyle(document.getElementsByClassName("container").item(0)).width;
+                            // ribbonRow.style.width = getComputedStyle(document.getElementsByClassName("container").item(0)).width;
                         }
                     }
                }
