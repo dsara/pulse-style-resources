@@ -105,7 +105,7 @@ a.ms-calloutLink:visited,
 .ms-cui-tb,
 .ms-cui-spn-txtbx {
   @include sofia-pro;
-  color: map-get($colors, brand);
+  color: map-get($colors, black);
   font-weight: 300;
 }
 
@@ -144,7 +144,7 @@ h3,
 .ms-dlg-heading,
 h2.ms-dlg-heading {
   @include sofia-pro;
-  color: map-get($colors, brand);
+  color: map-get($colors, black);
 }
 
 .ms-rteFontFace-13 {
