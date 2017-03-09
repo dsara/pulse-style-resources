@@ -188,10 +188,9 @@ $suite-bar-height: 40px; // normally 43px
       .uu-pulse-suite-bar-right-atoz {
         @include sofia-pro;
         display: none;
-        float: right;
         height: $suite-bar-height;
         position: absolute;
-        right: 0;
+        right: -1px;
         text-transform: uppercase;
         top: $suite-bar-height;
         z-index: 10000;
@@ -199,6 +198,8 @@ $suite-bar-height: 40px; // normally 43px
         ul {
           @include elevation-high;
           // background-color: map-get($colors, white);
+          border: 1px solid map-get($colors, white);
+          border-top: 0;
           margin: 0;
           padding: 0;
           width: 200px;
@@ -230,6 +231,12 @@ $suite-bar-height: 40px; // normally 43px
             }
 
             &:last-child {
+              border: 0;
+            }
+          }
+
+          &:last-child {
+            a {
               border: 0;
             }
           }
