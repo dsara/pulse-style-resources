@@ -129,7 +129,7 @@ $side-nav-color: #808080;
             > input {
               @include width-minus(82%, 100%, 50px);
               height: 100%;
-              color: $colors-white;
+              color: map-get($colors, white);
             }
 
             > .ms-srch-sb-navLink,
@@ -162,14 +162,10 @@ $side-nav-color: #808080;
             background-color: map-get($colors, black);
             border: 1px solid map-get($colors, grey);
             height: 30px;
-
-            /*&:hover {
-              border: 1px solid $colors-dark-green;
-            }*/
           }
 
           .ms-srch-sb-navLink-menuOpen {
-            background-color: $colors-light-green;
+            background-color: map-get($colors, brand);
           }
         }
       }
