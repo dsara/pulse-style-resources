@@ -186,46 +186,22 @@ $suite-bar-height: 40px; // normally 43px
       }
 
       .uu-pulse-suite-bar-right-atoz {
+        @include sofia-pro;
+        display: none;
         float: right;
         height: $suite-bar-height;
         position: absolute;
         right: 0;
-        z-index: 10000;
-        top: $suite-bar-height;
-        // width: 100%;
-        display: none;
-        @include sofia-pro;
         text-transform: uppercase;
-
-        // @media #{$media-tablet-max} {
-        //   position: absolute;
-        //   right: 0;
-        //   z-index: 10000;
-        //   top: $suite-bar-height;
-        // }
-
-        // @media #{$media-tablet} {
-        //   width: 175px;
-        // }
-
-        // @media #{$media-phone} {
-        //   width: 100%;
-        // }
+        top: $suite-bar-height;
+        z-index: 10000;
 
         ul {
           @include elevation-high;
-          background-color: map-get($colors, white);
+          // background-color: map-get($colors, white);
           margin: 0;
           padding: 0;
           width: 200px;
-
-          // @media #{$media-tablet-max} {
-          //   width: 100%;
-          // }
-
-          // @media #{$media-desktop-min} {
-          //   width: 200px;
-          // }
 
           > li:first-child {
             border-top: 4px solid map-get($colors, black);
@@ -233,50 +209,29 @@ $suite-bar-height: 40px; // normally 43px
         }
 
         ul li {
-          float: left;
           list-style-type: none;
           margin: 0;
 
-          //@media #{$media-tablet-max} {
-            float: none;
-          //}
-
           a {
-
-            &:first-child {
-              //@media #{$media-tablet-max} {
-              //border-top: 1px solid map-get($colors, grey);
-              //}
-            }
-
-            span.icon-calendar {
-              line-height: 8px;
-            }
-
-            background-color: map-get($colors, white);
-            border-left: 1px solid map-get($colors, grey-light);
-            border-top: 1px solid map-get($colors, grey-light);
-            color: map-get($colors, brand);
-            display: inline-block;
-            font-size: 12px;
-            height: $suite-bar-height;
-            // line-height: 15px;
+            background-color: map-get($colors, brand);
+            border-bottom: 1px solid map-get($colors, white); 
+            border-top: 0;
+            color: map-get($colors, white);
+            display: block;
+            font-size: 14px;
+            height: 36px;
             line-height: 7px;
             padding: 14px;
             text-align: center;
+            width: 100%;
 
             &:hover {
               background-color: map-get($colors, black);
             }
 
-            //@media #{$media-tablet-max} {
-              border: 1px solid map-get($colors, grey);
-              border-bottom: none;
-              border-top: none;
-              width: 100%;
-              background-color: map-get($colors, brand);
-              color: map-get($colors, white);
-            //}
+            &:last-child {
+              border: 0;
+            }
           }
         }
       }
