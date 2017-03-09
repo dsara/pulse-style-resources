@@ -112,7 +112,7 @@ img[src*="spcommon"] {
   }
 
   h5 {
-    font-size: 14px;
+    @include font-size-normal;
   }
 
   a,

@@ -231,6 +231,10 @@ $radiuses: (
   font-weight: 500;
 }
 
+@mixin font-size-normal {
+  font-size: 14px;
+}
+
 @mixin sofia-pro-normal {
   @include sofia-pro;
   @include font-weight-normal;

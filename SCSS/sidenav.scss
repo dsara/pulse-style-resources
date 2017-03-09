@@ -17,8 +17,8 @@ $side-nav-color: #808080;
   }
   @if $type == 'app' {
     color: map-get($colors, white);
-    font-size: 17px !important;
-    line-height: 38px !important;
+    font-size: 16px;
+    line-height: 38px;
     font-weight: 300;
   }
   padding: 5px 5px 5px 20px !important;
@@ -62,7 +62,7 @@ $side-nav-color: #808080;
       width: 200px;
     }
     @if $type == 'app' {
-      width: 220px;
+      width: 230px;
       padding-top: 5px;
       background-color: map-get($colors, black);
     }
@@ -76,7 +76,12 @@ $side-nav-color: #808080;
       top: 102px;
       height: 100%;
       z-index: 200000;
-      background-color: map-get($colors, grey-lighter);
+      @if $type == 'site' or $type == 'team' {
+        background-color: map-get($colors, grey-lighter);
+      }
+      @if $type == 'app' {
+        background-color: map-get($colors, black);
+      }
       border-right: 1px solid map-get($colors, brand);
       border-top: 1px solid map-get($colors, brand);
       overflow: auto;
@@ -115,8 +120,8 @@ $side-nav-color: #808080;
         padding: 10px 9px 4px;
 
         .ms-helperText {
+          @include font-size-normal;
           color: #cccccc;
-          font-size: 13px;
           padding-left: 5px;
         }
 
@@ -128,8 +133,9 @@ $side-nav-color: #808080;
 
             > input {
               @include width-minus(82%, 100%, 50px);
-              height: 100%;
+              @include font-size-normal;
               color: map-get($colors, white);
+              height: 100%;
             }
 
             > .ms-srch-sb-navLink,

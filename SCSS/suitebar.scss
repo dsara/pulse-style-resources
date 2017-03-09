@@ -13,397 +13,401 @@
 
 $suite-bar-height: 40px; // normally 43px
 
-.uu-pulse-suite-bar-whitespace {
-  height: $suite-bar-height;
-  z-index: -1;
-
-  @media #{$media-phone} {
-    display: block;
-  }
-
-  @media #{$media-tablet-min} {
-    display: none;
-  }
-}
-
-.uu-pulse-suite-bar {
-  background-color: map-get($colors, white);
-  border-bottom: 2px solid map-get($colors, black);
-
-  @media #{$media-phone} {
-    border-bottom: 1px solid map-get($colors, grey);
-    position: fixed;
-    top: 0;
-    z-index: 100000;
-  }
-
-  #hscBarBackground {
-    border-bottom: 2px solid map-get($colors, black);
-    height: 42px;
-    position: absolute;
-    z-index: -1;
-  }
-
-  .uu-pulse-suite-bar-left {
-    background-color: map-get($colors, white);
+@mixin load-suitebar-css ($type) {
+  .uu-pulse-suite-bar-whitespace {
     height: $suite-bar-height;
-    padding-left: 0;
-    padding-right: 0;
-
-    .ms-core-brandingText {
-      padding-left: 0;
-    }
-
-    .uu-pulse-home-logo-anchor {
-      img {
-        height: 40px; //32px;
-        padding: 5px 3px;
-
-        @media #{$media-phone} {
-          background-color: map-get($colors, white);
-          left: -15px;
-          position: absolute;
-        }
-      }
-    }
-  }
-
-  .uu-pulse-suite-bar-right {
-    position: relative;
+    z-index: -1;
 
     @media #{$media-phone} {
-      position: fixed;
-      right: 0;
+      display: block;
     }
 
-    .uu-pulse-suite-bar-right-welcome {
-      background-color: map-get($colors, brand);
-      float: right;
+    @media #{$media-tablet-min} {
+      display: none;
+    }
+  }
+
+  .uu-pulse-suite-bar {
+    background-color: map-get($colors, white);
+    border-bottom: 2px solid map-get($colors, black);
+
+    @media #{$media-phone} {
+      border-bottom: 1px solid map-get($colors, grey);
+      position: fixed;
+      top: 0;
+      z-index: 100000;
+    }
+
+    #hscBarBackground {
+      border-bottom: 2px solid map-get($colors, black);
+      height: 42px;
+      position: absolute;
+      z-index: -1;
+    }
+
+    .uu-pulse-suite-bar-left {
+      background-color: map-get($colors, white);
       height: $suite-bar-height;
+      padding-left: 0;
+      padding-right: 0;
 
-      @media #{$media-tablet-max} {
-        top: 0;
+      .ms-core-brandingText {
+        padding-left: 0;
       }
 
-      .ms-core-deltaSuiteBarRight {
-        padding: 7px 0;
-      }
+      .uu-pulse-home-logo-anchor {
+        img {
+          height: 40px; //32px;
+          padding: 5px 3px;
 
-      .ms-core-menu-root {
-        color: map-get($colors, white);
-        display: inline-block;
-        margin-top: 3px;
-      }
-
-      #DeltaSuiteBarRight {
-        padding-top: 5px;
-
-        #welcomeMenuBox span a {
-          color: map-get($colors, white);
-          margin-top: 3px;
-        }
-      }
-
-      #DeltaSuiteLinks {
-        background-color: map-get($colors, white);
-      }
-
-      .ms-welcome-root {
-        border-right: 1px solid map-get($colors, white);
-        cursor: pointer;
-        font-size: 13px;
-        height: $suite-bar-height;
-        margin-top: -5px;
-        padding-top: 2px;
-        text-transform: uppercase;
-
-        .ms-core-menu-arrow {
-          height: 8px !important;
-        }
-      }
-
-      .ms-siteactions-root {
-        margin-left: -3px;
-        margin-right: -1px;
-
-        .ms-siteactions-normal {
-          height: $suite-bar-height + 2;
-          margin-top: -7.5px;
-          padding-top: 3px;
-          text-transform: uppercase;
-
-          .ms-core-menu-buttonIcon {
-            left: -251px !important;
-            top: -102px !important;
+          @media #{$media-phone} {
+            background-color: map-get($colors, white);
+            @if $type == 'site' or $type == 'team' {
+              left: -15px;
+              position: absolute;
+            }
           }
         }
       }
-
-
     }
 
-    .uu-pulse-suite-bar-right-mobile-search,
-    .uu-pulse-suite-bar-right-mobile-menu {
-      background-color: map-get($colors, brand);
-      border-right: 1px solid map-get($colors, white);
-      color: map-get($colors, white);
-      cursor: pointer;
-      float: right;
-      height: $suite-bar-height;
-      line-height: $suite-bar-height;
-      padding: 0 10px;
+    .uu-pulse-suite-bar-right {
       position: relative;
-      font-size: 16px;
 
-      &.selected {
-        background-color: map-get($colors, black);
+      @media #{$media-phone} {
+        position: fixed;
+        right: 0;
       }
 
-      &:hover {
-        background-color: map-get($colors, black);
-      }
-    }
-
-    .uu-pulse-suite-bar-right-mobile-search-box {
-      @include elevation-high;
-      background-color: map-get($colors, black);
-      padding: 10px;
-      position: fixed;
-      right: 10px;
-      top: $suite-bar-height;
-      width: calc(100% - 20px);
-      z-index: 10000;
-
-      .input-group-addon {
+      .uu-pulse-suite-bar-right-welcome {
         background-color: map-get($colors, brand);
-        border-radius: 0;
+        float: right;
+        height: $suite-bar-height;
+
+        @media #{$media-tablet-max} {
+          top: 0;
+        }
+
+        .ms-core-deltaSuiteBarRight {
+          padding: 7px 0;
+        }
+
+        .ms-core-menu-root {
+          color: map-get($colors, white);
+          display: inline-block;
+          margin-top: 3px;
+        }
+
+        #DeltaSuiteBarRight {
+          padding-top: 5px;
+
+          #welcomeMenuBox span a {
+            color: map-get($colors, white);
+            margin-top: 3px;
+          }
+        }
+
+        #DeltaSuiteLinks {
+          background-color: map-get($colors, white);
+        }
+
+        .ms-welcome-root {
+          border-right: 1px solid map-get($colors, white);
+          cursor: pointer;
+          font-size: 13px;
+          height: $suite-bar-height;
+          margin-top: -5px;
+          padding-top: 2px;
+          text-transform: uppercase;
+
+          .ms-core-menu-arrow {
+            height: 8px !important;
+          }
+        }
+
+        .ms-siteactions-root {
+          margin-left: -3px;
+          margin-right: -1px;
+
+          .ms-siteactions-normal {
+            height: $suite-bar-height + 2;
+            margin-top: -7.5px;
+            padding-top: 3px;
+            text-transform: uppercase;
+
+            .ms-core-menu-buttonIcon {
+              left: -251px !important;
+              top: -102px !important;
+            }
+          }
+        }
+
+
+      }
+
+      .uu-pulse-suite-bar-right-mobile-search,
+      .uu-pulse-suite-bar-right-mobile-menu {
+        background-color: map-get($colors, brand);
+        border-right: 1px solid map-get($colors, white);
         color: map-get($colors, white);
         cursor: pointer;
+        float: right;
+        height: $suite-bar-height;
+        line-height: $suite-bar-height;
+        padding: 0 10px;
+        position: relative;
+        font-size: 16px;
+
+        &.selected {
+          background-color: map-get($colors, black);
+        }
+
+        &:hover {
+          background-color: map-get($colors, black);
+        }
       }
-    }
 
-    .uu-pulse-suite-bar-right-atoz {
-      float: right;
-      height: $suite-bar-height;
-      position: absolute;
-      right: 0;
-      z-index: 10000;
-      top: $suite-bar-height;
-      // width: 100%;
-      display: none;
-      @include sofia-pro;
-      text-transform: uppercase;
-
-      // @media #{$media-tablet-max} {
-      //   position: absolute;
-      //   right: 0;
-      //   z-index: 10000;
-      //   top: $suite-bar-height;
-      // }
-
-      // @media #{$media-tablet} {
-      //   width: 175px;
-      // }
-
-      // @media #{$media-phone} {
-      //   width: 100%;
-      // }
-
-      ul {
+      .uu-pulse-suite-bar-right-mobile-search-box {
         @include elevation-high;
-        background-color: map-get($colors, white);
-        margin: 0;
-        padding: 0;
-        width: 200px;
+        background-color: map-get($colors, black);
+        padding: 10px;
+        position: fixed;
+        right: 10px;
+        top: $suite-bar-height;
+        width: calc(100% - 20px);
+        z-index: 10000;
+
+        .input-group-addon {
+          background-color: map-get($colors, brand);
+          border-radius: 0;
+          color: map-get($colors, white);
+          cursor: pointer;
+        }
+      }
+
+      .uu-pulse-suite-bar-right-atoz {
+        float: right;
+        height: $suite-bar-height;
+        position: absolute;
+        right: 0;
+        z-index: 10000;
+        top: $suite-bar-height;
+        // width: 100%;
+        display: none;
+        @include sofia-pro;
+        text-transform: uppercase;
 
         // @media #{$media-tablet-max} {
+        //   position: absolute;
+        //   right: 0;
+        //   z-index: 10000;
+        //   top: $suite-bar-height;
+        // }
+
+        // @media #{$media-tablet} {
+        //   width: 175px;
+        // }
+
+        // @media #{$media-phone} {
         //   width: 100%;
         // }
 
-        // @media #{$media-desktop-min} {
-        //   width: 200px;
-        // }
-
-        > li:first-child {
-          border-top: 4px solid map-get($colors, black);
-        }
-      }
-
-      ul li {
-        float: left;
-        list-style-type: none;
-        margin: 0;
-
-        //@media #{$media-tablet-max} {
-          float: none;
-        //}
-
-        a {
-
-          &:first-child {
-            //@media #{$media-tablet-max} {
-            //border-top: 1px solid map-get($colors, grey);
-            //}
-          }
-
-          span.icon-calendar {
-            line-height: 8px;
-          }
-
+        ul {
+          @include elevation-high;
           background-color: map-get($colors, white);
-          border-left: 1px solid map-get($colors, grey-light);
-          border-top: 1px solid map-get($colors, grey-light);
-          color: map-get($colors, brand);
-          display: inline-block;
-          font-size: 12px;
-          height: $suite-bar-height;
-          // line-height: 15px;
-          line-height: 7px;
-          padding: 14px;
-          text-align: center;
+          margin: 0;
+          padding: 0;
+          width: 200px;
 
-          &:hover {
-            background-color: map-get($colors, black);
+          // @media #{$media-tablet-max} {
+          //   width: 100%;
+          // }
+
+          // @media #{$media-desktop-min} {
+          //   width: 200px;
+          // }
+
+          > li:first-child {
+            border-top: 4px solid map-get($colors, black);
           }
+        }
+
+        ul li {
+          float: left;
+          list-style-type: none;
+          margin: 0;
 
           //@media #{$media-tablet-max} {
-            border: 1px solid map-get($colors, grey);
-            border-bottom: none;
-            border-top: none;
-            width: 100%;
-            background-color: map-get($colors, brand);
-            color: map-get($colors, white);
+            float: none;
           //}
+
+          a {
+
+            &:first-child {
+              //@media #{$media-tablet-max} {
+              //border-top: 1px solid map-get($colors, grey);
+              //}
+            }
+
+            span.icon-calendar {
+              line-height: 8px;
+            }
+
+            background-color: map-get($colors, white);
+            border-left: 1px solid map-get($colors, grey-light);
+            border-top: 1px solid map-get($colors, grey-light);
+            color: map-get($colors, brand);
+            display: inline-block;
+            font-size: 12px;
+            height: $suite-bar-height;
+            // line-height: 15px;
+            line-height: 7px;
+            padding: 14px;
+            text-align: center;
+
+            &:hover {
+              background-color: map-get($colors, black);
+            }
+
+            //@media #{$media-tablet-max} {
+              border: 1px solid map-get($colors, grey);
+              border-bottom: none;
+              border-top: none;
+              width: 100%;
+              background-color: map-get($colors, brand);
+              color: map-get($colors, white);
+            //}
+          }
         }
       }
     }
   }
-}
 
-// core
-#ms-loading-box #ms-gearPageTitle .ms-dlgTitle,
-#notificationArea .ms-accentText {
-  color: map-get($colors, brand);
-}
-
-.ms-microblogInputFocus {
-  border: 1px solid map-get($colors, brand);
-}
-
-.ms-inlineSearch-searchImgSpanHoverHighlight {
-  background-color: map-get($colors, grey);
-  border: 1px solid map-get($colors, grey);
-}
-
-#NavDropdownListContainer {
-  border: 1px solid map-get($colors, brand);
-  background: map-get($colors, brand);
-  color: map-get($colors, white);
-
-  .ms-qSuggest-hListItem {
-    background: map-get($colors, grey);
-    color: map-get($colors, white);
+  // core
+  #ms-loading-box #ms-gearPageTitle .ms-dlgTitle,
+  #notificationArea .ms-accentText {
+    color: map-get($colors, brand);
   }
-}
 
-#suiteLinksBox {
-  background: map-get($colors, brand);
+  .ms-microblogInputFocus {
+    border: 1px solid map-get($colors, brand);
+  }
 
-  ul {
-    &.ms-core-suiteLinkList {
-      padding-right: 0;
+  .ms-inlineSearch-searchImgSpanHoverHighlight {
+    background-color: map-get($colors, grey);
+    border: 1px solid map-get($colors, grey);
+  }
+
+  #NavDropdownListContainer {
+    border: 1px solid map-get($colors, brand);
+    background: map-get($colors, brand);
+    color: map-get($colors, white);
+
+    .ms-qSuggest-hListItem {
+      background: map-get($colors, grey);
+      color: map-get($colors, white);
     }
   }
-}
 
-.ms-core-suiteLinkList {
-  height: $suite-bar-height;
-}
+  #suiteLinksBox {
+    background: map-get($colors, brand);
 
-.ms-core-suiteLink {
-  border-right: 1px solid map-get($colors, grey);
-  height: $suite-bar-height;
-  padding-left: 10px;
-  padding-right: 10px;
-
-  &:hover {
-    background: map-get($colors, black);
-  }
-}
-
-.ms-core-suiteLink-a {
-  height: $suite-bar-height;
-
-  &:hover {
-    background: map-get($colors, black);
-  }
-}
-
-.ms-welcome-hover {
-  @include backgroundBorderRight;
-  background: map-get($colors, black);
-  border-right-color: map-get($colors, grey);
-
-  &:hover {
-    background: map-get($colors, black);
-    border-right-color: map-get($colors, grey);
+    ul {
+      &.ms-core-suiteLinkList {
+        padding-right: 0;
+      }
+    }
   }
 
-  .ms-core-menu-root {
-      background: map-get($colors, black);
-      border-right-color: map-get($colors, grey);
+  .ms-core-suiteLinkList {
+    height: $suite-bar-height;
   }
-}
 
-.ms-siteactions-hover {
-  background: map-get($colors, black);
-  border-right-color: map-get($colors, grey);
-
-  &:hover {
-    background: map-get($colors, black);
-    border-right-color: map-get($colors, grey);
-  }
-}
-
-.ms-core-menu-box {
-  background: map-get($colors, black);
-}
-
-.ms-core-menu-item {
-  .ms-core-menu-title {
-    color: map-get($colors, white);
+  .ms-core-suiteLink {
+    border-right: 1px solid map-get($colors, grey);
+    height: $suite-bar-height;
+    padding-left: 10px;
+    padding-right: 10px;
 
     &:hover {
-      color: map-get($colors, white);
-      text-decoration:underline;
+      background: map-get($colors, black);
     }
   }
 
-  .ms-core-menu-itemDisabled {
+  .ms-core-suiteLink-a {
+    height: $suite-bar-height;
+
+    &:hover {
+      background: map-get($colors, black);
+    }
+  }
+
+  .ms-welcome-hover {
+    @include backgroundBorderRight;
+    background: map-get($colors, black);
+    border-right-color: map-get($colors, grey);
+
+    &:hover {
+      background: map-get($colors, black);
+      border-right-color: map-get($colors, grey);
+    }
+
+    .ms-core-menu-root {
+        background: map-get($colors, black);
+        border-right-color: map-get($colors, grey);
+    }
+  }
+
+  .ms-siteactions-hover {
+    background: map-get($colors, black);
+    border-right-color: map-get($colors, grey);
+
+    &:hover {
+      background: map-get($colors, black);
+      border-right-color: map-get($colors, grey);
+    }
+  }
+
+  .ms-core-menu-box {
+    background: map-get($colors, black);
+  }
+
+  .ms-core-menu-item {
     .ms-core-menu-title {
+      color: map-get($colors, white);
+
       &:hover {
+        color: map-get($colors, white);
+        text-decoration:underline;
+      }
+    }
+
+    .ms-core-menu-itemDisabled {
+      .ms-core-menu-title {
+        &:hover {
+          color: map-get($colors, white);
+        }
+      }
+    }
+  }
+
+  .ms-core-menu-list {
+    background: map-get($colors, brand);
+
+    li {
+      background: map-get($colors, brand);
+
+      a {
         color: map-get($colors, white);
       }
     }
   }
-}
 
-.ms-core-menu-list {
-  background: map-get($colors, brand);
+  .ms-core-menu-link {
+    color: map-get($colors, white);
 
-  li {
-    background: map-get($colors, brand);
-
-    a {
-      color: map-get($colors, white);
+    &:hover {
+      background: map-get($colors, black);
     }
-  }
-}
-
-.ms-core-menu-link {
-  color: map-get($colors, white);
-
-  &:hover {
-    background: map-get($colors, black);
   }
 }

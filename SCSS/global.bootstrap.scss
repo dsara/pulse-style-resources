@@ -21,7 +21,7 @@
 
 //blockquotes
 blockquote {
-  font-size: 14px;
+  @include font-size-normal;
 }
 
 // buttons

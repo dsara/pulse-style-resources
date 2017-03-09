@@ -7,13 +7,13 @@
 
 // form controls
 .pulse-form-control {
+  @include font-size-normal;
   background-color: #FFFFFF;
   background-image: none;
   border: 1px solid map-get($colors, brand);
   border-radius: 0;
   color: map-get($colors, black);
   display: block;
-  font-size: 14px;
   height: 34px;
   line-height: 1.42857;
   padding: 6px 12px;

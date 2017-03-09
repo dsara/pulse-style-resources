@@ -99,7 +99,7 @@
         float: left;
 
         @if $type == 'app' {
-          @include width-minus(80%, 100%, 220px);
+          @include width-minus(80%, 100%, 230px);
           padding-left: 10px;
           padding-top: 5px;
 
