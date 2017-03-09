@@ -134,7 +134,7 @@ $side-nav-color: #808080;
 
             > .ms-srch-sb-navLink,
             > .ms-srch-sb-searchLink {
-              @include search-button-dimensions;
+              @include app-search-button-dimensions;
 
               > img {
 
