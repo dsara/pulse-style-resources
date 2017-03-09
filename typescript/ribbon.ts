@@ -2,19 +2,14 @@ import {Utilities} from "./utilities";
 
 export namespace Ribbon {
     export function setupRibbon(masterpageType: string) {
-        let dockElement: HTMLDivElement = null;
-        if (masterpageType == 'site' || masterpageType == 'team') {
-            dockElement = Utilities.getCachedElementById("uu-pulse-suite-bar") as HTMLDivElement;
-        } else if (masterpageType == 'app') {
-            dockElement = Utilities.getCachedElementById("titleAndSearch") as HTMLDivElement;
-        }
+        let dockElement: HTMLDivElement = getDockElement(masterpageType);
         let ribbonRow = Utilities.getCachedElementById("s4-ribbonrow") as HTMLDivElement;
         let ribbonWhiteSpace = Utilities.getCachedElementById("ribbonWhiteSpace") as HTMLDivElement;
 
         if (dockElement && ribbonRow) {
             // initial setting of ribbon location
             if (doesPageNeedFixedRibbon()) {
-                if (isScrolledIntoView(dockElement, masterpageType)) {
+                if (isScrolledIntoView(masterpageType)) {
                     setIsScrolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
                 }
                 else {
@@ -24,33 +19,12 @@ export namespace Ribbon {
 
             // change ribbon location on window scroll
             window.addEventListener("scroll", ev => {
-                scrollEventActions(dockElement, masterpageType);
-                // setRibbonMenuStatus(masterpageType);
-                // setRibbonToolTipStatus(masterpageType);
-                // if (doesPageNeedFixedRibbon()) {
-                //     if (window.innerWidth < 768) {
-                //         setIsntSrcolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
-                //     } else {
-                //         if (isScrolledIntoView(dockElement, masterpageType)) {
-                //             setIsScrolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
-                //         }
-                //         else {
-                //             setIsntSrcolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
-                //         }
-                //     }
-                // }
-                // else {
-                //     ribbonRow.classList.remove("dockRibbon");
-                //     if (masterpageType == "app") {
-                //         ribbonRow.style.width = "";
-                //     }
-                //     ribbonWhiteSpace.style.height = "0";
-                // }
+                scrollEventActions(masterpageType);
             });
 
             document.body.addEventListener("click", ev => {
                 if (Utilities.findAncestor((ev.target as HTMLElement), "uu-pulse-ribbon") != null) {
-                    scrollEventActions(dockElement, masterpageType);
+                    scrollEventActions(masterpageType);
                 }
             });     
 
@@ -62,7 +36,7 @@ export namespace Ribbon {
                     if (window.innerWidth < 768) {
                         setIsntSrcolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
                     } else {
-                        if (isScrolledIntoView(dockElement, masterpageType)) {
+                        if (isScrolledIntoView(masterpageType)) {
                             setIsScrolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
                             // ribbonRow.style.width = "";
                         }
@@ -76,7 +50,18 @@ export namespace Ribbon {
         }
     }
 
-    function scrollEventActions(dockElement: HTMLDivElement, masterpageType: string) {
+    function getDockElement(masterpageType: string): HTMLDivElement {
+        let dockElement: HTMLDivElement = null;
+        if (masterpageType == 'site' || masterpageType == 'team' || (window.innerWidth < 992 && masterpageType == 'app')) {
+            dockElement = Utilities.getCachedElementById("uu-pulse-suite-bar") as HTMLDivElement;
+        } else if (masterpageType == 'app') {
+            dockElement = Utilities.getCachedElementById("titleAndSearch") as HTMLDivElement;
+        }
+        return dockElement;
+    }
+
+    function scrollEventActions(masterpageType: string) {
+        let dockElement = getDockElement(masterpageType);
         let ribbonRow = Utilities.getCachedElementById("s4-ribbonrow") as HTMLDivElement;
         let ribbonWhiteSpace = Utilities.getCachedElementById("ribbonWhiteSpace") as HTMLDivElement;
 
@@ -86,7 +71,7 @@ export namespace Ribbon {
             if (window.innerWidth < 768) {
                 setIsntSrcolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
             } else {
-                if (isScrolledIntoView(dockElement, masterpageType)) {
+                if (isScrolledIntoView(masterpageType)) {
                     setIsScrolledIntoView(ribbonRow, ribbonWhiteSpace, masterpageType);
                 }
                 else {
@@ -104,18 +89,11 @@ export namespace Ribbon {
     }
 
     function setRibbonMenuStatus(masterpageType: string) {
-        let dockElement: HTMLDivElement = null;
-        if (masterpageType == 'site' || masterpageType == 'team') {
-            dockElement = Utilities.getCachedElementById("uu-pulse-suite-bar") as HTMLDivElement;
-        } else if (masterpageType == 'app') {
-            dockElement = Utilities.getCachedElementById("titleAndSearch") as HTMLDivElement;
-        }
-
         let ribbonBar = Utilities.getCachedElementById("ribbonBar") as HTMLDivElement;
         let ribbonTopBars = document.getElementsByClassName("ms-cui-ribbonTopBars");
 
         if (doesPageNeedFixedRibbon()) {
-            if (!isScrolledIntoView(dockElement, masterpageType)) {
+            if (!isScrolledIntoView(masterpageType)) {
                 document.body.classList.add("uu-pulse-docked-ribbon-menus");
                 return;
             }
@@ -125,9 +103,9 @@ export namespace Ribbon {
             }
         } else {
             if (ribbonBar) {
-                if (!isScrolledIntoView(dockElement, masterpageType)) {
+                if (!isScrolledIntoView(masterpageType)) {
                     if (ribbonTopBars.length > 0) {
-                        if (isScrolledIntoView(ribbonTopBars.item(0) as HTMLDivElement, masterpageType)) {
+                        if (isScrolledIntoView(masterpageType, ribbonTopBars.item(0) as HTMLDivElement)) {
                             document.body.classList.add("uu-pulse-docked-ribbon-menus");
                             return;
                         }
@@ -145,15 +123,8 @@ export namespace Ribbon {
     }
 
     function setRibbonToolTipStatus(masterpageType: string) {
-        let dockElement: HTMLDivElement = null;
-        if (masterpageType == 'site' || masterpageType == 'team') {
-            dockElement = Utilities.getCachedElementById("uu-pulse-suite-bar") as HTMLDivElement;
-        } else if (masterpageType == 'app') {
-            dockElement = Utilities.getCachedElementById("titleAndSearch") as HTMLDivElement;
-        }
-
-        if (((masterpageType == 'site' || masterpageType == 'team') && doesPageNeedFixedRibbon()) || (masterpageType == 'app' && doesPageNeedFixedRibbon() && !isScrolledIntoView(dockElement, masterpageType))) {
-            if (!isScrolledIntoView(dockElement, masterpageType)) {
+        if (((masterpageType == 'site' || masterpageType == 'team') && doesPageNeedFixedRibbon()) || (masterpageType == 'app' && doesPageNeedFixedRibbon() && !isScrolledIntoView(masterpageType))) {
+            if (!isScrolledIntoView(masterpageType)) {
                 document.body.classList.add("uu-pulse-docked-ribbon-tooltips");
                 return;
             }
@@ -191,12 +162,19 @@ export namespace Ribbon {
         ribbonWhiteSpace.style.height = getComputedStyle(ribbonRow).height;
     }
 
-    function isScrolledIntoView(elem: HTMLDivElement, masterpageType: string) {
+    function isScrolledIntoView(masterpageType: string, elem: HTMLDivElement = null) {
+        let dockElement: HTMLDivElement = null;
+        if (elem) {
+            dockElement = elem;
+        } else {
+            dockElement = getDockElement(masterpageType);
+        }   
+
         if (masterpageType == 'site' || masterpageType == 'team') {
-            return (elem.getBoundingClientRect().bottom > 0 ? true : false);
+            return (dockElement.getBoundingClientRect().bottom > 0 ? true : false);
         } 
         if (masterpageType == 'app')  {
-            return (elem.getBoundingClientRect().bottom > (window.innerWidth < 768 ? 42 : 0) ? true : false);
+            return (dockElement.getBoundingClientRect().bottom > (window.innerWidth < 768 ? 42 : 0) ? true : false);
         }
     }
 

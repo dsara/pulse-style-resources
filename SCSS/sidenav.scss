@@ -121,6 +121,7 @@ $side-nav-color: #808080;
 
         .ms-helperText {
           @include font-size-normal;
+          @include font-weight-light;
           color: #cccccc;
           padding-left: 5px;
         }
@@ -134,6 +135,7 @@ $side-nav-color: #808080;
             > input {
               @include width-minus(82%, 100%, 50px);
               @include font-size-normal;
+              @include font-weight-light;
               color: map-get($colors, white);
               height: 100%;
             }

@@ -99,6 +99,40 @@
         float: left;
 
         @if $type == 'app' {
+          @media #{$media-tablet-max} {
+            display: flex;
+
+            .uu-pulse-page-title-and.search {
+              order: 2;
+            }
+
+            .uu-pulse-ribbon {
+              order: 1;
+            }
+
+            #DeltaPageStatusBar {
+              order: 3;
+            }
+
+            #alertsWrapper {
+              order: 4;
+            }
+
+            #Div2 {
+              order: 5;
+            }
+
+            #AjaxDelta3 {
+              order: 6;
+            }
+
+            #DeltaPlaceHolderMain {
+              order: 7;
+            }
+          }
+        }
+
+        @if $type == 'app' {
           @include width-minus(80%, 100%, 230px);
           padding-left: 10px;
           padding-top: 5px;
@@ -121,7 +155,7 @@
             padding: 0 5px;
           }
           @if $type == 'app' {
-            padding-left: 0;
+            padding: 0;
             width: 100%;
           }
         }

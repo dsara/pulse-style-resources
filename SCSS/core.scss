@@ -114,6 +114,7 @@ body,
 #pageStatusBar,
 .ms-status-msg,
 .js-callout-body {
+  @include font-size-normal;
   @include font-weight-normal;
   color: map-get($colors, black);
 }
