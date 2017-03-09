@@ -184,7 +184,7 @@ export namespace Ribbon {
         let authenticatedWrapper = Utilities.getCachedElementById("authenticatedWrapper") as HTMLDivElement;
         if (masterpageType == 'team' || masterpageType == 'site') {
             if (authenticatedWrapper) {
-                ribbonRow.style.marginLeft = "-" + getComputedStyle(authenticatedWrapper).left;
+                ribbonRow.style.marginLeft = (authenticatedWrapper.offsetLeft * -1) + "px";
             }
             //ribbonRow.style.width = getComputedStyle(document.getElementsByClassName("container").item(0)).width;
         }
