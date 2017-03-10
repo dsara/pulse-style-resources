@@ -124,14 +124,28 @@ export namespace Ribbon {
 
     function setRibbonToolTipStatus(masterpageType: string) {
         if (((masterpageType == 'site' || masterpageType == 'team') && doesPageNeedFixedRibbon()) || (masterpageType == 'app' && doesPageNeedFixedRibbon() && !isScrolledIntoView(masterpageType))) {
-            if (!isScrolledIntoView(masterpageType)) {
+            if (window.innerWidth < 768) {
                 document.body.classList.add("uu-pulse-docked-ribbon-tooltips");
                 return;
+            } else {
+                if (!isScrolledIntoView(masterpageType)) {
+                    document.body.classList.add("uu-pulse-docked-ribbon-tooltips");
+                    return;
+                }
+                if (masterpageType == 'app' && window.scrollY !== 0) {
+                    document.body.classList.add("uu-pulse-docked-ribbon-tooltips");
+                    return;
+                }
             }
-            if (masterpageType == 'app' && window.scrollY !== 0) {
-                document.body.classList.add("uu-pulse-docked-ribbon-tooltips");
-                return;
-            }
+            
+            // if (!isScrolledIntoView(masterpageType)) {
+            //     document.body.classList.add("uu-pulse-docked-ribbon-tooltips");
+            //     return;
+            // }
+            // if (masterpageType == 'app' && window.scrollY !== 0) {
+            //     document.body.classList.add("uu-pulse-docked-ribbon-tooltips");
+            //     return;
+            // }
         }
         if (document.body.classList.contains("uu-pulse-docked-ribbon-tooltips")) {
             document.body.classList.remove("uu-pulse-docked-ribbon-tooltips");
