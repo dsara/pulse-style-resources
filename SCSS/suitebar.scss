@@ -35,7 +35,7 @@ $suite-bar-height: 40px; // normally 43px
       border-bottom: 1px solid map-get($colors, grey);
       position: fixed;
       top: 0;
-      z-index: 100000;
+      z-index: 300000;
     }
 
     #hscBarBackground {
