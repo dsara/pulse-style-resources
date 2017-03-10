@@ -229,10 +229,6 @@ $suite-bar-height: 40px; // normally 43px
             &:hover {
               background-color: map-get($colors, black);
             }
-
-            &:last-child {
-              border: 0;
-            }
           }
 
           &:last-child {
