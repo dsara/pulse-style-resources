@@ -103,7 +103,7 @@ $suite-bar-height: 40px; // normally 43px
 
           #welcomeMenuBox span a {
             color: map-get($colors, white);
-            margin-top: 3px;
+            //margin-top: 3px;
           }
         }
 
@@ -332,6 +332,12 @@ $suite-bar-height: 40px; // normally 43px
 
   .ms-core-menu-box {
     background: map-get($colors, black);
+    width: 200px !important;
+    text-align: center;
+
+    .ms-core-menu-separator {
+      display: none;
+    }
   }
 
   .ms-core-menu-item {
@@ -358,6 +364,7 @@ $suite-bar-height: 40px; // normally 43px
 
     li {
       background: map-get($colors, brand);
+      border-bottom: 1px solid map-get($colors, white);
 
       a {
         color: map-get($colors, white);
