@@ -280,9 +280,12 @@ a:visited,
 .ms-webpart-titleText > a:active,
 .ms-pivotControl-surfacedOpt:hover,
 .ms-pivotControl-overflowDot:hover,
-.ms-pivotControl-surfacedOpt-selected,
-li.ms-storefront-selected {
+.ms-pivotControl-surfacedOpt-selected {
   @include hover-behavior(map-get($colors, brand-dark), none);
+}
+
+li.ms-storefront-selected {
+  color: map-get($colors, brand-dark) !important;
 }
 
 .ms-subtleEmphasisCommand:disabled {
