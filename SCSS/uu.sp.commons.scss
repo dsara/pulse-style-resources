@@ -231,21 +231,31 @@ $radiuses: (
   font-weight: 500;
 }
 
+$font-size-xlarge: 16px;
+
 @mixin font-size-xlarge {
   font-size: 16px;
 }
+
+$font-size-large: 15px;
 
 @mixin font-size-large {
   font-size: 15px;
 }
 
+$font-size-normal: 14px;
+
 @mixin font-size-normal {
   font-size: 14px;
 }
 
+$font-size-small: 13px;
+
 @mixin font-size-small {
   font-size: 13px;
 }
+
+$font-size-xsmall: 12px;
 
 @mixin font-size-xsmall {
   font-size: 12px;

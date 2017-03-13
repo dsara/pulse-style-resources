@@ -76,3 +76,76 @@
 #searchIcon {
   display: none !important;
 }
+
+.histogram_bar_inactive {
+  background-color: map-get($colors, grey-lighter);
+  border-left: 1px solid map-get($colors, grey-lighter);
+  border-right: 1px solid map-get($colors, grey-lighter);
+  border-top: 2px solid map-get($colors, grey);
+}
+
+.histogram_bar_active {
+  background-color: map-get($colors, grey);
+  border-left: 1px solid map-get($colors, grey);
+  border-right: 1px solid map-get($colors, grey);
+  border-top: 2px solid map-get($colors, brand);
+}
+
+.histogram_bar_active,
+.histogram_bar_inactive {
+  &:hover,
+  &:active {
+    background-color: map-get($colors, brand-lighter);
+    border-left: 1px solid map-get($colors, brand-lighter);
+    border-right: 1px solid map-get($colors, brand-lighter);
+    border-top: 2px solid map-get($colors, brand);
+  }
+}
+
+.slider_tick_inactive {
+  background-color: map-get($colors, grey-light);
+  border-top: 1px solid map-get($colors, grey-light);
+  border-bottom: 1px solid map-get($colors, grey-light);
+}
+
+.slider_tick_active {
+  background-color: map-get($colors, brand);
+  border-color: map-get($colors, brand);
+}
+
+.ms-srch-item-path {
+  color: map-get($colors, brand);
+}
+
+.ms-ref-ctrl .ms-ref-selSec .ms-ref-filterSel,
+.ms-ref-ctrl .ms-ref-allSec .ms-ref-filterSel {
+  color: map-get($colors, black);
+}
+
+.ms-srchnav-link-selected:link,
+.ms-srchnav-link-selected:visited {
+  color: map-get($colors, brand);
+}
+
+.ms-srchnav-link:hover,
+.ms-srchnav-link-selected:hover {
+  color: map-get($colors, brand-dark);
+}
+
+.ms-ref-name,
+.ms-srchnav-link,
+.ms-srchnav-link-selected {
+  color: map-get($colors, brand);
+}
+
+.ms-srchnav-link:hover,
+.ms-srchnav-link-selected:hover,
+.ms-ref-refiner #Value > a:hover,
+.ms-ref-unsel-toggle:hover {
+  color: map-get($colors, brand-dark);
+}
+
+.ms-ref-refiner #Value > a:hover,
+.ms-ref-unsel-toggle:hover {
+  color: map-get($colors, grey-lighter)
+}
