@@ -367,10 +367,15 @@ h2 {
 
 input,
 button {
-  .ms-button-emphasize {
+  &.ms-button-emphasize {
     border-color: map-get($colors, brand);
     background: map-get($colors, brand);
     color: map-get($colors, white);
+
+    &:hover {
+      color: map-get($colors, white);
+      background-color: map-get($colors, black);
+    }
   }
 }
 
@@ -381,7 +386,7 @@ button {
 
   &:hover {
     color: map-get($colors, white);
-    background-color: map-get($colors, brand-dark);
+    background-color: map-get($colors, black);
   }
 }
 
