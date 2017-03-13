@@ -103,6 +103,7 @@ $suite-bar-height: 40px; // normally 43px
 
           #welcomeMenuBox span a {
             color: map-get($colors, white);
+            text-decoration: none;
             //margin-top: 3px;
           }
         }
@@ -350,7 +351,7 @@ $suite-bar-height: 40px; // normally 43px
 
       &:hover {
         color: map-get($colors, white);
-        text-decoration:underline;
+        // text-decoration: underline;
       }
     }
 
