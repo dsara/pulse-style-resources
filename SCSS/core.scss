@@ -189,13 +189,27 @@ a:visited,
 .ms-link,
 .ms-link:visited,
 .ms-formdescription a,
-.ms-subtleLink:hover,
 .ms-heroCommandLink,
-.ms-accentText {
+.ms-heroCommandLink:visited,
+.ms-accentText,
+.ms-accentText:visited,
+.ms-subtleLink:link,
+.ms-subtleLink:visited,
+.ms-atMention:link,
+.ms-atMention:visited,
+.ms-hashTag:link,
+.ms-hashTag:visited,
+.ms-webpart-titleText > a:hover,
+.ms-grid-l {
   color: map-get($colors, brand);
 }
 
-h1,
+.ms-pivotControl-surfacedOpt:hover,
+.ms-pivotControl-overflowDot:hover,
+.ms-pivotControl-surfacedOpt-selected {
+  color: map-get($colors, brand);
+}
+
 #pageTitle,
 .ms-core-pageTitle,
 .ms-core-pageTitle span,
@@ -207,6 +221,11 @@ h1,
 .ms-core-header .ms-core-listMenu-horizontalBox .ms-core-listMenu-selected,
 .ms-core-header .ms-tv-selected:link,
 .ms-heroCommandLink:hover {
+  color: map-get($colors, brand);
+}
+
+.ms-core-form-heading,
+.ms-core-form-title {
   color: map-get($colors, brand);
 }
 
@@ -223,8 +242,27 @@ h1,
 .ms-vl-apptitleouter .ms-draggable:hover,
 .ms-storefront-mngnoresults h3 a:hover,
 #appadd-link:hover,
-.js-callout-action .ms-calloutLink:hover {
+.js-callout-action .ms-calloutLink:hover,
+.ms-subtleLink:hover,
+.ms-atMention:hover,
+.ms-hashTag:hover,
+.ms-subtleLink:active,
+.ms-atMention:active,
+.ms-hashTag:active,
+.ms-calloutLink:hover,
+.ms-commandLink:hover,
+.ms-secondaryCommandLink:hover,
+.ms-calloutLink:active,
+.ms-commandLink:active,
+.ms-secondaryCommandLink:active,
+.ms-webpart-titleText > a:active,
+.ms-subtleEmphasisCommand:hover,
+.ms-subtleEmphasisCommand:active {
   @include hover-behavior(map-get($colors, brand-dark), none);
+}
+
+.ms-subtleEmphasisCommand:disabled {
+  color: map-get($colors, grey-lighter);
 }
 
 a:hover,
@@ -291,10 +329,24 @@ h2 {
   background: map-get($colors, brand);
 }
 
-.ms-button-emphasize {
-  border-color: map-get($colors, brand);
-  background: map-get($colors, brand);
+input,
+button {
+  .ms-button-emphasize {
+    border-color: map-get($colors, brand);
+    background: map-get($colors, brand);
+    color: map-get($colors, white);
+  }
+}
+
+.ms-emphasis,
+.ms-grid-link {
   color: map-get($colors, white);
+  background-color: map-get($colors, brand);
+
+  &:hover {
+    color: map-get($colors, white);
+    background-color: map-get($colors, brand-dark);
+  }
 }
 
 input[type="button"]:hover,
@@ -320,8 +372,14 @@ input {
 .ms-authoringcontrols input:hover,
 .ms-authoringcontrols textarea:hover,
 .sp-peoplepicker-topLevel:hover,
-.ms-core-form-line textarea:hover {
+.ms-core-form-line textarea:hover,
+.ms-grid-selection {
   border-color: map-get($colors, brand-dark);
+}
+
+.ms-grid-selection {
+  border-right-color: transparent;
+  color: map-get($colors, brand);
 }
 
 .s4-itm-selected .s4-itm-cbx,
@@ -380,6 +438,10 @@ input {
 .ms-blog-postBox .ms-blog-postBoxDate {
   background-color: map-get($colors, brand);
   border-color: map-get($colors, brand);
+}
+
+.ms-core-needIEFilter .ms-welcome-root {
+  border-left: 0;
 }
 
 // datasheet view

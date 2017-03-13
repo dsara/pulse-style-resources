@@ -184,4 +184,47 @@
       }
     }
   }
+
+  .ms-cui-cg-gr,
+  .ms-cui-cg-db,
+  .ms-cui-cg-lb,
+  .ms-cui-cg-tl,
+  .ms-cui-cg-or,
+  .ms-cui-cg-mg,
+  .ms-cui-cg-yl,
+  .ms-cui-cg-pp {
+    &.ms-cui-cg {
+      border-top-color: map-get($colors, grey);
+    }
+
+    .ms-cui-ct-first,
+    .ms-cui-ct-last {
+      > .ms-cui-tt-a {
+        border-left-color: map-get($colors, grey);
+
+        &:hover {
+          border-left-color: map-get($colors, grey);
+        }
+      }
+    }
+  }
+
+  .ms-cui-ct-tabBody-gr,
+  .ms-cui-tabBody-gr,
+  .ms-cui-ct-tabBody-db,
+  .ms-cui-tabBody-db,
+  .ms-cui-ct-tabBody-lb,
+  .ms-cui-tabBody-lb,
+  .ms-cui-ct-tabBody-tl,
+  .ms-cui-tabBody-tl,
+  .ms-cui-ct-tabBody-or,
+  .ms-cui-tabBody-or,
+  .ms-cui-ct-tabBody-mg,
+  .ms-cui-tabBody-mg,
+  .ms-cui-ct-tabBody-yl,
+  .ms-cui-tabBody-yl,
+  .ms-cui-ct-tabBody-pp,
+  .ms-cui-tabBody-pp {
+    border-color: map-get($colors, grey) !important;
+  }
 }
