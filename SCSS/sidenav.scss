@@ -421,6 +421,8 @@ $side-nav-color: #808080;
 
     .ms-quickLaunch table.ms-picker-table td.ms-picker-monthselected {
       border: 1px solid map-get($colors, brand);
+      border-left-width: 2px;
+      border-right-width: 2px;
     }
 
     table.ms-picker-table td.ms-picker-today {

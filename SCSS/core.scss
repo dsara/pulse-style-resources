@@ -125,6 +125,11 @@ body,
   font-size: 12px;
 }
 
+.ms-textSmall,
+.ms-textXSmall {
+  @include font-size-small;
+}
+
 h1,
 .ms-h1,
 h2,
@@ -178,7 +183,6 @@ h2.ms-rteElement-H2 {
 // system
 .ms-linksection-listItem a,
 .ms-descriptiontext a,
-.ms-textSmall,
 .ms-storefront-listitem a,
 .ms-splinkbutton-text,
 .ms-menutoolbar .ms-toolbar a,
@@ -189,6 +193,7 @@ a:visited,
 .ms-link,
 .ms-link:visited,
 .ms-formdescription a,
+.ms-formdescription a:visited,
 .ms-heroCommandLink,
 .ms-heroCommandLink:visited,
 .ms-accentText,
@@ -199,8 +204,12 @@ a:visited,
 .ms-atMention:visited,
 .ms-hashTag:link,
 .ms-hashTag:visited,
-.ms-webpart-titleText > a:hover,
-.ms-grid-l {
+.ms-webpart-titleText > a,
+.ms-webpart-titleText > a:visited,
+.ms-sectionheader a,
+.ms-sectionheader a:visited,
+.ms-pivotControl-surfacedOpt,
+.ms-pivotControl-overflowDot {
   color: map-get($colors, brand);
 }
 
@@ -215,7 +224,7 @@ a:visited,
 .ms-core-pageTitle span,
 .ms-core-pageTitle a,
 #pageContentTitle,
-.ms-storefront-selectanchor,
+
 .ms-core-header .ms-core-listMenu-horizontalBox .ms-core-listMenu-selected:link,
 .ms-core-header .ms-core-listMenu-horizontalBox .ms-core-listMenu-selected:visited,
 .ms-core-header .ms-core-listMenu-horizontalBox .ms-core-listMenu-selected,
@@ -232,6 +241,13 @@ a:visited,
 .ms-storefront-appiconspan {
   background-color: map-get($colors, brand);
   color: map-get($colors, brand);
+}
+
+.ms-tileview-tile-selected,
+.ms-tileview-tile-selectionBox,
+.ms-tileview-tile-selectionBox > *,
+.ms-tileview-tile-selectionBox:hover > * {
+  background-color: map-get($colors, brand);
 }
 
 .ms-menutoolbar .ms-toolbar .ms-core-menu-itemDescription {
@@ -257,7 +273,15 @@ a:visited,
 .ms-secondaryCommandLink:active,
 .ms-webpart-titleText > a:active,
 .ms-subtleEmphasisCommand:hover,
-.ms-subtleEmphasisCommand:active {
+.ms-subtleEmphasisCommand:active,
+.ms-sectionheader a:hover,
+.ms-sectionheader a:active,
+.ms-webpart-titleText > a:hover,
+.ms-webpart-titleText > a:active,
+.ms-pivotControl-surfacedOpt:hover,
+.ms-pivotControl-overflowDot:hover,
+.ms-pivotControl-surfacedOpt-selected,
+li.ms-storefront-selected {
   @include hover-behavior(map-get($colors, brand-dark), none);
 }
 
