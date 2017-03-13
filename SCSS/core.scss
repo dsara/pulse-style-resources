@@ -424,11 +424,11 @@ input {
 
 .s4-itm-selected {
   > * {
-    background-color: map-get($colors, info-lighter);
+    background-color: map-get($colors, grey-light);
   }
 
   > .ms-vb-imgFirstCell {
-    border-right-color: map-get($colors, info-lighter);
+    border-right-color: map-get($colors, grey-light) !important;
   }
 }
 
