@@ -23,6 +23,12 @@
   }
 }
 
+.ms-srch-item:hover,
+.ms-srch-resultHover:hover,
+.edisc-SearchResultItemContainer:hover {
+  background-color: map-get($colors, grey-lighter);
+}
+
 @media #{$media-tablet-max} {
   .ms-srch-hover-outerContainer {
     display: none !important;
@@ -102,6 +108,12 @@
   }
 }
 
+.ajax__multi_slider_default .inner_rail_horizontal {
+  background-color: map-get($colors, brand);
+  border-top-color: map-get($colors, brand);
+  border-bottom-color: map-get($colors, brand);
+}
+
 .slider_tick_inactive {
   background-color: map-get($colors, grey-light);
   border-top: 1px solid map-get($colors, grey-light);
@@ -145,7 +157,6 @@
   color: map-get($colors, brand-dark);
 }
 
-.ms-ref-refiner #Value > a:hover,
 .ms-ref-unsel-toggle:hover {
   color: map-get($colors, grey-lighter)
 }
