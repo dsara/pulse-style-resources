@@ -325,6 +325,10 @@ a:hover,
   @include force-box-sizing(content-box)
 }
 
+input.ms-InlineSearch-SearchBox-Baseline {
+  margin-top: -5px !important;
+}
+
 // common
 body,
 .ms-dlgFrameContainer {
