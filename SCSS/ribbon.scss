@@ -197,13 +197,22 @@
       border-top-color: map-get($colors, grey);
     }
 
-    .ms-cui-ct-first,
-    .ms-cui-ct-last {
+    .ms-cui-ct-first {
       > .ms-cui-tt-a {
         border-left-color: map-get($colors, grey);
 
         &:hover {
           border-left-color: map-get($colors, grey);
+        }
+      }
+    }
+
+    .ms-cui-ct-last {
+      > .ms-cui-tt-a {
+        border-right-color: map-get($colors, grey);
+
+        &:hover {
+          border-right-color: map-get($colors, grey);
         }
       }
     }
