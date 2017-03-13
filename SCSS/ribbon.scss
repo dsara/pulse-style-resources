@@ -194,25 +194,25 @@
   .ms-cui-cg-yl,
   .ms-cui-cg-pp {
     &.ms-cui-cg {
-      border-top-color: map-get($colors, grey);
+      border-top-color: map-get($colors, grey) !important;;
     }
 
     .ms-cui-ct-first {
       > .ms-cui-tt-a {
-        border-left-color: map-get($colors, grey);
+        border-left-color: map-get($colors, grey) !important;
 
         &:hover {
-          border-left-color: map-get($colors, grey);
+          border-left-color: map-get($colors, grey) !important;
         }
       }
     }
 
     .ms-cui-ct-last {
       > .ms-cui-tt-a {
-        border-right-color: map-get($colors, grey);
+        border-right-color: map-get($colors, grey) !important;
 
         &:hover {
-          border-right-color: map-get($colors, grey);
+          border-right-color: map-get($colors, grey) !important;
         }
       }
     }
