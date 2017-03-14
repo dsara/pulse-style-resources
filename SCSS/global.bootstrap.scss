@@ -52,3 +52,13 @@ blockquote {
   border-radius: 0;
   transition: none;
 }
+
+// buttons
+
+.btn-default {
+  &:hover {
+    background-color: map-get($colors, brand);
+    border-color: map-get($colors, brand);
+    color: map-get($colors, white);
+  }
+}
