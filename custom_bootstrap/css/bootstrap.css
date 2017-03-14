@@ -5,8 +5,8 @@
  */
 
 /*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=0cc8b555e42634d190ee31f28d031c37)
- * Config saved to config.json and https://gist.github.com/0cc8b555e42634d190ee31f28d031c37
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=01eb6a79ee1d7e81bed3ace8ca587508)
+ * Config saved to config.json and https://gist.github.com/01eb6a79ee1d7e81bed3ace8ca587508
  */
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -3039,7 +3039,7 @@ select[multiple].input-lg {
 .btn:hover,
 .btn:focus,
 .btn.focus {
-  color: #414042;
+  color: #ac162c;
   text-decoration: none;
 }
 .btn:active,
@@ -3063,27 +3063,27 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 .btn-default {
-  color: #414042;
+  color: #ac162c;
   background-color: #ffffff;
-  border-color: #414042;
+  border-color: #ac162c;
 }
 .btn-default:focus,
 .btn-default.focus {
-  color: #414042;
+  color: #ac162c;
   background-color: #e6e6e6;
-  border-color: #010101;
+  border-color: #3b080f;
 }
 .btn-default:hover {
-  color: #414042;
+  color: #ac162c;
   background-color: #e6e6e6;
-  border-color: #222223;
+  border-color: #760f1e;
 }
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  color: #414042;
+  color: #ac162c;
   background-color: #e6e6e6;
-  border-color: #222223;
+  border-color: #760f1e;
 }
 .btn-default:active:hover,
 .btn-default.active:hover,
@@ -3094,9 +3094,9 @@ fieldset[disabled] a.btn {
 .btn-default:active.focus,
 .btn-default.active.focus,
 .open > .dropdown-toggle.btn-default.focus {
-  color: #414042;
+  color: #ac162c;
   background-color: #d4d4d4;
-  border-color: #010101;
+  border-color: #3b080f;
 }
 .btn-default:active,
 .btn-default.active,
@@ -3113,11 +3113,11 @@ fieldset[disabled] .btn-default:focus,
 .btn-default[disabled].focus,
 fieldset[disabled] .btn-default.focus {
   background-color: #ffffff;
-  border-color: #414042;
+  border-color: #ac162c;
 }
 .btn-default .badge {
   color: #ffffff;
-  background-color: #414042;
+  background-color: #ac162c;
 }
 .btn-primary {
   color: #ffffff;
