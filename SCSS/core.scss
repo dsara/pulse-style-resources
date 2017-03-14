@@ -368,6 +368,11 @@ body,
   background-color: map-get($colors, black);
   color: map-get($colors, white);
   text-decoration: none;
+
+  .ms-core-menu-label,
+  .ms-core-menu-sublabel {
+    color: map-get($colors, white);
+  }
 }
 
 h2 {

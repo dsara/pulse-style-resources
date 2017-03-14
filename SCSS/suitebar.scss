@@ -271,7 +271,7 @@ $suite-bar-height: 40px; // normally 43px
     color: map-get($colors, white);
 
     .ms-qSuggest-hListItem {
-      background: map-get($colors, grey);
+      background: map-get($colors, black);
       color: map-get($colors, white);
     }
   }
