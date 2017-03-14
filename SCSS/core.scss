@@ -413,6 +413,10 @@ button {
   }
 }
 
+.ms-vb2[aria-selected='true'] {
+  color: map-get($colors, white) !important;
+}
+
 input[type="button"],
 input[type=button],
 input[type=reset],
@@ -657,4 +661,47 @@ input {
       color: map-get($colors, brand) !important;
     }
   }
+}
+
+// calendar
+
+.ms-acal-item {
+  background-color: map-get($colors, brand);
+  color: map-get($colors, white);
+  border: 1px solid map-get($colors, brand);
+}
+
+.ms-acal-default-hover {
+  background-color: map-get($colors, black);
+  color: map-get($colors, white);
+  border: 1px solid map-get($colors, black);
+}
+
+// hovers
+
+.ms-vl-apptilehover:hover,
+.ms-cui-ctl-light-hoveredOver,
+.ms-cui-ctl-menu:hover,
+.ms-cui-ctl-menu:focus,
+.ms-cui-dd-arrow-button:hover,
+.ms-cui-dd-arrow-button:focus,
+.ms-cui-cb-input:hover,
+.ms-cui-cb-input:focus,
+.ms-cui-spn-btnup:hover,
+.ms-cui-spn-btnup:focus,
+.ms-cui-spn-btndown:hover,
+.ms-cui-spn-btndown:focus,
+.ms-cui-ctl-hoveredOver,
+.ms-cui-ctl-large-groupPopup:hover {
+  background-color: map-get($colors, grey-lighter);
+}
+
+#ms-designbuilder-cuicontainer .ms-cui-ctl-light-hoveredOver,
+#ms-designbuilder-cuicontainer .ms-cui-dd-arrow-button:hover,
+#ms-designbuilder-cuicontainer .ms-cui-dd-arrow-button:focus,
+.ms-core-needIEFilter #ms-designbuilder-cuicontainer .ms-cui-ctl-light-hoveredOver,
+.ms-core-needIEFilter #ms-designbuilder-cuicontainer .ms-cui-dd-arrow-button:hover,
+.ms-core-needIEFilter #ms-designbuilder-cuicontainer .ms-cui-dd-arrow-button:focus {
+  background-color: map-get($colors, grey-lighter);
+  border-color: map-get($colors, grey-light);
 }
