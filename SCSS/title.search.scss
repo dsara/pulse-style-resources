@@ -23,11 +23,16 @@
       > input {
         @include width-minus(82%, 100%, 50px);
         height: 100%;
+        margin-top: -2px;
       }
 
       > .ms-srch-sb-navLink,
       > .ms-srch-sb-searchLink {
         @include search-button-dimensions;
+
+        &:hover {
+          background-color: map-get($colors, grey-lighter);
+        }
       }
     }
 
