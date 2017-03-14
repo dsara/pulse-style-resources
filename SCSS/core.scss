@@ -109,6 +109,16 @@ a.ms-calloutLink:visited,
   color: map-get($colors, black);
 }
 
+.ms-metadata,
+.ms-descriptiontext {
+  @include font-size-small;
+}
+
+.ms-standardheader {
+  @include font-size-normal;
+  @include font-weight-bold;
+}
+
 body,
 .ms-core-defaultFont,
 #pageStatusBar,
@@ -421,15 +431,10 @@ button:hover {
   text-transform: uppercase;
 }
 
-input[type=password]:focus,
-input[type=text]:focus,
-select:focus,
-textarea:focus,
-.sp-peoplepicker-topLevelFocus,
-.ms-inputBoxActive,
-.ms-inputBox.ms-inputBoxActive:hover {
-  border: 1px solid map-get($colors, brand);
-}
+// textarea:focus,
+// {
+//   border: 1px solid map-get($colors, brand);
+// }
 
 .ms-dlgFrameContainer body {
   background: map-get($colors, white) !important;
