@@ -63,7 +63,10 @@ export namespace Search {
 
                 let oddDivs = upScopeLinkBottom.querySelectorAll("div:odd");
                 for (let i = 0; i < oddDivs.length; i++) {
-                    oddDivs.item(i).remove();
+                    // doesn't work in ie
+                    // oddDivs.item(i).remove();
+
+                    oddDivs.item(i).parentNode.removeChild(oddDivs.item(i));
                 }
             }
         }
