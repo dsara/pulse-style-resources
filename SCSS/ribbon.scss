@@ -242,3 +242,15 @@
     border-color: map-get($colors, grey) !important;
   }
 }
+
+html.ms-dialog {
+
+  #ribbonWhiteSpace {
+    display: none;
+  }
+
+  #s4-ribbonrow {
+    position: inherit;
+    top: 0;
+  }
+}
