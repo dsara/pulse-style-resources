@@ -560,6 +560,24 @@ input {
   }
 }
 
+.combobox-placeholder > .combobox-img {
+  border-color: map-get($colors, brand);
+}
+
+.listbox-panel, .combobox-dropdown {
+  border-color: map-get($colors, brand);
+}
+
+.cb-dp-rw {
+  background-color: map-get($colors, brand);
+  color: map-get($colors, white);
+
+  &:hover {
+    background-color: map-get($colors, black);
+    color: map-get($colors, white);
+  }
+}
+
 .ms-wpadder-cell .ms-wpadder-items div img {
   padding-right: 5px;
 }
