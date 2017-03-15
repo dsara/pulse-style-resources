@@ -413,8 +413,15 @@ button {
   }
 }
 
-.ms-vb2[aria-selected='true'] {
-  color: map-get($colors, white) !important;
+.ms-vb2,
+.ms-vb-title {
+  &[aria-selected='true'] {
+    color: map-get($colors, white) !important;
+
+    a {
+      color: map-get($colors, white) !important;
+    }
+  }
 }
 
 input[type="button"],
@@ -576,6 +583,13 @@ input {
     background-color: map-get($colors, black);
     color: map-get($colors, white);
   }
+}
+
+.ms-vb a.ms-listlink,
+.ms-vb2 a.ms-listlink,
+.ms-vb-user a.ms-listlink,
+.ms-vb a.ms-listlink:visited {
+  color: map-get($colors, brand);
 }
 
 .ms-wpadder-cell .ms-wpadder-items div img {
