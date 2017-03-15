@@ -83,6 +83,7 @@ export namespace SuiteBar {
     export function setupMobileButtons() {
         var mobileSearchIcon = Utilities.getCachedElementById("uu-pulse-suite-bar-right-mobile-search");
         var mobileSearchBox = Utilities.getCachedElementById("uu-pulse-suite-bar-right-mobile-search-box");
+        var mobileSearchInput = Utilities.getCachedElementById("uu-pulse-suite-bar-right-mobile-search-box-input") as HTMLInputElement;
 
         if (mobileSearchIcon) {
             mobileSearchIcon.addEventListener("click", ev => {
@@ -96,9 +97,11 @@ export namespace SuiteBar {
                 if (mobileSearchBox) {
                     if (mobileSearchBox.classList.contains("hidden")) {
                         mobileSearchBox.classList.remove("hidden");
+                        mobileSearchInput.focus();
                     }
                     else {
                         mobileSearchBox.classList.add("hidden");
+                        mobileSearchInput.blur();
                     }
                 }
             });
