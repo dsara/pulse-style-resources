@@ -737,3 +737,12 @@ input {
   background-color: map-get($colors, grey-lighter);
   border-color: map-get($colors, grey-light);
 }
+
+// blogs
+
+.ms-blog-postBox {
+  .ms-blog-dateText {
+    line-height: 17px;
+    color: map-get($colors, white);
+  }
+}
