@@ -56,7 +56,8 @@ blockquote {
 // buttons
 
 .btn-default {
-  &:hover,
+  &:hover:not(:disabled),
+  &:hover:not(.disabled),
   &.active,
   &:active {
     background-color: map-get($colors, brand);
