@@ -219,16 +219,34 @@ $radiuses: (
   font-family: 'sofia-pro', 'Century Gothic', 'Merriweather Sans', sans-serif;
 }
 
-@mixin font-weight-light {
-  font-weight: 300;
+$font-weight-lighter: 200;
+
+@mixin font-weight-lighter {
+  font-weight: $font-weight-lighter;
 }
+
+$font-weight-light: 300;
+
+@mixin font-weight-light {
+  font-weight: $font-weight-light;
+}
+
+$font-weight-normal: 400;
 
 @mixin font-weight-normal {
-  font-weight: 400;
+  font-weight: $font-weight-normal;
 }
 
+$font-weight-bold: 500;
+
 @mixin font-weight-bold {
-  font-weight: 500;
+  font-weight: $font-weight-bold;
+}
+
+$font-weight-bolder: 600;
+
+@mixin font-weight-bolder {
+  font-weight: $font-weight-bolder;
 }
 
 $font-size-xlarge: 16px;
