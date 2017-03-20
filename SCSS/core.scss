@@ -703,6 +703,62 @@ input {
   border: 1px solid map-get($colors, brand);
 }
 
+.ms-acal-color1 {
+  background-color: map-get($colors, cyan-darker);
+  color: map-get($colors, white);
+  border: 1px solid map-get($colors, cyan-darker);
+}
+
+.ms-acal-color2 {
+  background-color: map-get($colors, blue-darker);
+  color: map-get($colors, white);
+  border: 1px solid map-get($colors, blue-daker);
+}
+
+
+.ms-acal-color3 {
+  background-color: map-get($colors, green-dark);
+  color: map-get($colors, white);
+  border: 1px solid map-get($colors, green-dark);
+}
+
+.ms-acal-color4 {
+  background-color: map-get($colors, green-darker);
+  color: map-get($colors, white);
+  border: 1px solid map-get($colors, green-darker);
+}
+
+.ms-acal-color5 {
+  background-color: map-get($colors, brand);
+  color: map-get($colors, white);
+  border: 1px solid map-get($colors, brand);
+}
+
+.ms-acal-color6 {
+  background-color: map-get($colors, purple-darker);
+  color: map-get($colors, white);
+  border: 1px solid map-get($colors, purple-darker);
+}
+
+.ms-acal-color7 {
+  background-color: map-get($colors, cyan-dark);
+  color: map-get($colors, white);
+  border: 1px solid map-get($colors, cyan-dark);
+}
+
+.ms-acal-color8 {
+  background-color: map-get($colors, green-dark);
+  color: map-get($colors, white);
+  border: 1px solid map-get($colors, green-dark);
+}
+
+.ms-acal-color9 {
+  background-color: map-get($colors, brown-dark);
+  color: map-get($colors, white);
+  border: 1px solid map-get($colors, brown-dark);
+}
+
+
 .ms-acal-default-hover {
   background-color: map-get($colors, black);
   color: map-get($colors, white);

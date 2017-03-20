@@ -9,6 +9,14 @@ export namespace Previews {
                 }, 700);
             });
         }
+
+        var calendarColorSelection = document.querySelectorAll(".ms-authoringcontrols select[id*='OptionalSettings_ColorSection_DropDownListColor option");
+
+        if (calendarColorSelection.length > 0) {
+            for (var i = 0; i < calendarColorSelection.length; i++) {
+                calendarColorSelection.item(i).textContent = calendarColorSelection.item(i).textContent.split(',')[0];
+            }
+        }
     }
 
     function addPdfFileView() {
