@@ -69,5 +69,9 @@ blockquote {
     background-color: inherit;
     border-color: inherit;
     color: inherit;
+
+    &:hover {
+      border-color: map-get($colors, black);
+    }
   }
 }
