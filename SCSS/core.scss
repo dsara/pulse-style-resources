@@ -703,63 +703,73 @@ input {
   border: 1px solid map-get($colors, brand);
 }
 
-.ms-acal-color1 {
+.ms-acal-color1,
+.ms-acal-apanel-color1 {
   background-color: map-get($colors, cyan-darker);
   color: map-get($colors, white);
   border: 1px solid map-get($colors, cyan-darker);
 }
 
-.ms-acal-color2 {
+.ms-acal-color2,
+.ms-acal-apanel-color2 {
   background-color: map-get($colors, blue-darker);
   color: map-get($colors, white);
   border: 1px solid map-get($colors, blue-darker);
 }
 
 
-.ms-acal-color3 {
+.ms-acal-color3,
+.ms-acal-apanel-color3 {
   background-color: map-get($colors, green-dark);
   color: map-get($colors, white);
   border: 1px solid map-get($colors, green-dark);
 }
 
-.ms-acal-color4 {
+.ms-acal-color4,
+.ms-acale-apanel-color4 {
   background-color: map-get($colors, red-darker);
   color: map-get($colors, white);
   border: 1px solid map-get($colors, red-darker);
 }
 
-.ms-acal-color5 {
+.ms-acal-color5,
+.ms-acale-apanel-color5 {
   background-color: map-get($colors, purple-darker);
   color: map-get($colors, white);
   border: 1px solid map-get($colors, purple-darker);
 }
 
-.ms-acal-color6 {
+.ms-acal-color6,
+.ms-acale-apanel-color6 {
   background-color: map-get($colors, orange-dark);
   color: map-get($colors, white);
   border: 1px solid map-get($colors, orange-dark);
 }
 
-.ms-acal-color7 {
+.ms-acal-color7,
+.ms-acale-apanel-color7 {
   background-color: map-get($colors, brown-dark);
   color: map-get($colors, white);
   border: 1px solid map-get($colors, brown-dark);
 }
 
-.ms-acal-color8 {
+.ms-acal-color8,
+.ms-acale-apanel-color8 {
   background-color: map-get($colors, black);
   color: map-get($colors, white);
   border: 1px solid map-get($colors, black);
 }
 
-.ms-acal-color9 {
+.ms-acal-color9,
+.ms-acale-apanel-color9 {
   background-color: map-get($colors, brand);
   color: map-get($colors, white);
   border: 1px solid map-get($colors, brand);
 }
 
 
-.ms-acal-default-hover {
+.ms-acal-default-hover,
+.ms-acal-item-hover {
   background-color: map-get($colors, black);
   color: map-get($colors, white);
   border: 1px solid map-get($colors, black);
