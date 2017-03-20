@@ -56,12 +56,18 @@ blockquote {
 // buttons
 
 .btn-default {
-  &:hover:not(:disabled),
-  &:hover:not(.disabled),
+  &:hover,
   &.active,
   &:active {
     background-color: map-get($colors, brand);
     border-color: map-get($colors, brand);
     color: map-get($colors, white);
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: inherit;
+    border-color: inherit;
+    color: inherit;
   }
 }
