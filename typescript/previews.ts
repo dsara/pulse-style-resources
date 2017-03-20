@@ -10,11 +10,19 @@ export namespace Previews {
             });
         }
 
-        var calendarColorSelection = document.querySelectorAll(".ms-authoringcontrols select[id*='OptionalSettings_ColorSection_DropDownListColor option");
+        var calendarColorSelection = document.querySelectorAll(".ms-authoringcontrols select[id*='OptionalSettings_ColorSection_DropDownListColor'] option");
+        var colors = ["Cyan", "Blue", "Green", "Red", "Purple", "Orange", "Brown", "Black", "Brand Red"];
 
         if (calendarColorSelection.length > 0) {
             for (var i = 0; i < calendarColorSelection.length; i++) {
+                var calendarColorOption = calendarColorSelection.item(i) as HTMLOptionElement;
+
+                if (i < colors.length) {
+                    calendarColorSelection.item(i).setAttribute("title", colors[i]);
+                    calendarColorSelection.item(i).textContent = colors[i];
+                }
                 calendarColorSelection.item(i).textContent = calendarColorSelection.item(i).textContent.split(',')[0];
+                calendarColorSelection.item(i)
             }
         }
     }
