@@ -63,7 +63,7 @@ export namespace BreadCrumb {
                 let currentHref = (firstBreadCrumbSpans.item(i).querySelector("a") as HTMLAnchorElement).href;
                 if (currentHref) {
                     for (let j = 0; j < secondBreadCrumbSpans.length; j++) {
-                        if (j > i) {
+                        if (j > 0) {
                             if ((secondBreadCrumbSpans.item(j).querySelector("a") as HTMLAnchorElement).href === currentHref) {
                                 let secondSibling = secondBreadCrumbSpans.item(j).nextElementSibling;
                                 secondSibling.parentNode.removeChild(secondSibling);
