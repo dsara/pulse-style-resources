@@ -812,3 +812,17 @@ input {
     color: map-get($colors, white);
   }
 }
+
+// surveys
+
+.ms-surveyHBar,
+.ms-surveyVBar,
+.ms-surveyVBarBI {
+  background-color: map-get($colors, brand);
+  border-color: map-get($colors, brand);
+}
+
+.ms-surveyHBarB,
+.ms-surveyVBarB {
+  background-color: map-get($colors, grey-lighter);
+}
