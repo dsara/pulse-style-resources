@@ -30,6 +30,16 @@ export namespace BreadCrumb {
                 }
             }
 
+            // fixes breadcrumb links that are created in Term Driven navigation nodes to correctly have the right href
+            let breadCrumbAnchors = document.querySelectorAll(".uu-pulse-site-breadcrumb > span > span > a");
+
+            for (let i = 0; i < breadCrumbAnchors.length; i++) {
+                let breadCrumbHref = (breadCrumbAnchors.item(i) as HTMLAnchorElement).href;
+                if (breadCrumbHref.indexOf("/_layouts/15/listform.aspx") != -1) {
+                    (breadCrumbAnchors.item(i) as HTMLAnchorElement).href = decodeURIComponent(breadCrumbHref.substring(breadCrumbHref.indexOf("%2F")));
+                }
+            }
+
             // removes the dashes from the second part of the breadcrumb
             // this is common on publishing and wiki pages
             let secBreadcrumbLinks = document.querySelectorAll(".uu-pulse-site-breadcrumb > span[id*='SiteMapPath1'] > span > a");
@@ -39,35 +49,38 @@ export namespace BreadCrumb {
             }
 
             // variables to iterate through each breadcrumb
-            let firstBreadCrumbSpans = document.querySelectorAll(".uu-pulse-site-breadcrumb > span[id*='SitesMapPath'] > span");
-            let secondBreadCrumbSpans = document.querySelectorAll(".uu-pulse-site-breadcrumb > span[id*='SiteMapPath1'] > span");
+            var firstBreadCrumbAnchors = document.querySelectorAll(".uu-pulse-site-breadcrumb > span[id*='SitesMapPath'] > span > a");
+            var secondBreadCrumbAnchors = document.querySelectorAll(".uu-pulse-site-breadcrumb > span[id*='SiteMapPath1'] > span > a");
 
             // removes duplicates on second half of the breadcrumb that exist on the second half of the breadcrumb
-            for (let i = 0; i < secondBreadCrumbSpans.length; i++) {
-                let currentHref = (secondBreadCrumbSpans.item(i).querySelector("a") as HTMLAnchorElement).href;
+            for (let i = 0; i < secondBreadCrumbAnchors.length; i++) {
+                let currentHref = (secondBreadCrumbAnchors.item(i) as HTMLAnchorElement).href;
                 if (currentHref) {
-                    for (let j = 0; j < secondBreadCrumbSpans.length; j++) {
+                    for (let j = 0; j < secondBreadCrumbAnchors.length; j++) {
                         if (j > i) {
-                            if ((secondBreadCrumbSpans.item(j).querySelector("a") as HTMLAnchorElement).href === currentHref) {
-                                let secondSibling = secondBreadCrumbSpans.item(j).nextElementSibling;
+                            if ((secondBreadCrumbAnchors.item(j) as HTMLAnchorElement).href === currentHref) {
+                                let secondSibling = secondBreadCrumbAnchors.item(j).parentElement.nextElementSibling;
                                 secondSibling.parentNode.removeChild(secondSibling);
-                                secondBreadCrumbSpans.item(j).parentNode.removeChild(secondBreadCrumbSpans.item(j));
+                                secondBreadCrumbAnchors.item(j).parentElement.parentNode.removeChild(secondBreadCrumbAnchors.item(j).parentElement);
                             }
                         }
                     }
                 }
             }
 
+            firstBreadCrumbAnchors = document.querySelectorAll(".uu-pulse-site-breadcrumb > span[id*='SitesMapPath'] > span > a");
+            secondBreadCrumbAnchors = document.querySelectorAll(".uu-pulse-site-breadcrumb > span[id*='SiteMapPath1'] > span > a");
+
             // removes duplicates on second half of the breadcrumb that exist on the first half of the breadcrumb
-            for (let i = 0; i < firstBreadCrumbSpans.length; i++) {
-                let currentHref = (firstBreadCrumbSpans.item(i).querySelector("a") as HTMLAnchorElement).href;
+            for (let i = 0; i < firstBreadCrumbAnchors.length; i++) {
+                let currentHref = (firstBreadCrumbAnchors.item(i) as HTMLAnchorElement).href;
                 if (currentHref) {
-                    for (let j = 0; j < secondBreadCrumbSpans.length; j++) {
+                    for (let j = 0; j < secondBreadCrumbAnchors.length; j++) {
                         if (j > 0) {
-                            if ((secondBreadCrumbSpans.item(j).querySelector("a") as HTMLAnchorElement).href === currentHref) {
-                                let secondSibling = secondBreadCrumbSpans.item(j).nextElementSibling;
+                            if ((secondBreadCrumbAnchors.item(j) as HTMLAnchorElement).href === currentHref) {
+                                let secondSibling = secondBreadCrumbAnchors.item(j).parentElement.nextElementSibling;
                                 secondSibling.parentNode.removeChild(secondSibling);
-                                secondBreadCrumbSpans.item(j).parentNode.removeChild(secondBreadCrumbSpans.item(j));
+                                secondBreadCrumbAnchors.item(j).parentElement.parentNode.removeChild(secondBreadCrumbAnchors.item(j).parentElement);
                             }
                         }
                     }
@@ -75,6 +88,7 @@ export namespace BreadCrumb {
             }
 
             // removes the slash in the second half of the the breadcrumb if it is the only visible items
+            let secondBreadCrumbSpans = document.querySelectorAll(".uu-pulse-site-breadcrumb > span[id*='SiteMapPath1'] > span");
             let numVisibleSecondItems = 0;
             for (let i = 0; i < secondBreadCrumbSpans.length; i++) {
                 if ((secondBreadCrumbSpans.item(i) as HTMLSpanElement).offsetParent != null) {
