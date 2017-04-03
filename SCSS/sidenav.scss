@@ -302,6 +302,10 @@ $side-nav-color: #808080;
 
               &:hover {
                 background-color: map-get($colors, brand);
+
+                .ms-metadata {
+                  color: map-get($colors, white);
+                }
               }
 
               .ms-metadata {
