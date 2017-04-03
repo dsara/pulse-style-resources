@@ -16,10 +16,12 @@ $side-nav-color: #808080;
     line-height: 18px !important;
   }
   @if $type == 'app' {
-    color: map-get($colors, white);
-    font-size: 16px;
+    // color: map-get($colors, white);
+    color: map-get($colors, black);
+    font-size: 15px;
     line-height: 38px;
-    font-weight: 300;
+    font-weight: 400;
+    text-transform: uppercase;
   }
   padding: 5px 5px 5px 20px !important;
   text-align: left;
@@ -62,9 +64,10 @@ $side-nav-color: #808080;
       width: 200px;
     }
     @if $type == 'app' {
-      width: 230px;
+      // background-color: map-get($colors, black);
+      background-color: map-get($colors, grey-lighter);
       padding-top: 5px;
-      background-color: map-get($colors, black);
+      width: 230px;
     }
 
     @media #{$media-tablet-max} {
@@ -136,7 +139,7 @@ $side-nav-color: #808080;
               @include width-minus(82%, 100%, 50px);
               @include font-size-normal;
               @include font-weight-light;
-              color: map-get($colors, white);
+              color: map-get($colors, black);
               height: 100%;
             }
 
@@ -167,7 +170,8 @@ $side-nav-color: #808080;
 
           .ms-srch-sb-border,
           .ms-srch-sb-borderFocused {
-            background-color: map-get($colors, black);
+            // background-color: map-get($colors, black);
+            background-color: map-get($colors, grey-lighter);
             border: 1px solid map-get($colors, grey);
             height: 30px;
           }
@@ -226,7 +230,12 @@ $side-nav-color: #808080;
           background-color: map-get($colors, grey-lighter);
         }
         @if $type == 'app' {
-          background-color: map-get($colors, black);
+          // background-color: map-get($colors, black);
+          background-color: map-get($colors, grey-lighter);
+
+          > li {
+            border-bottom: 2px solid map-get($colors, white);
+          }
         }
 
         li {
@@ -251,6 +260,12 @@ $side-nav-color: #808080;
             }
             width: auto;
 
+            @if $type == 'app' {
+              line-height: 25px;
+              font-weight: 300;
+              text-transform: initial;
+            }
+
             span {
               &.additional-background {
                 display: block;
@@ -268,6 +283,10 @@ $side-nav-color: #808080;
               cursor: default;
               display: block;
               width: auto;
+
+              @if $type == 'app' {
+                @include side-nav-hover;
+              }
             }
           }
 
