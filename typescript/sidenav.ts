@@ -5,21 +5,55 @@ export namespace SideNav {
         if (masterpageType == "site") {
             var contentRow = Utilities.getCachedElementById("contentRow");
             var pulseSideNavLinks = Utilities.getCachedElementById("uu-pulse-side-nav-links") as HTMLDivElement;
+            var deltaPlaceHolderLeftNav = Utilities.getCachedElementById("DeltaPlaceHolderLeftNavBar") as HTMLDivElement;
+            var leftNavWebPartsZone = deltaPlaceHolderLeftNav.querySelector(".ms-webpart-zone") as HTMLDivElement;
 
-            if (pulseSideNavLinks.childElementCount === 0) {
-                if (contentRow) {
-                    contentRow.classList.remove("uu-pulse-side-nav-shown");
-                    contentRow.classList.add("uu-pulse-side-nav-hidden");
+            if (pulseSideNavLinks) {
+                if (pulseSideNavLinks.childElementCount === 0) {
+                    if (contentRow) {
+                        contentRow.classList.remove("uu-pulse-side-nav-shown");
+                        contentRow.classList.add("uu-pulse-side-nav-hidden");
+                    }
+                } else {
+                    if (contentRow) {
+                        contentRow.classList.remove("uu-pulse-side-nav-hidden");
+                        contentRow.classList.add("uu-pulse-side-nav-shown");
+                    }
+
+                    setupEvents();
                 }
-            } else {
+            } else if (leftNavWebPartsZone) {
                 if (contentRow) {
                     contentRow.classList.remove("uu-pulse-side-nav-hidden");
                     contentRow.classList.add("uu-pulse-side-nav-shown");
                 }
+                leftNavWebPartsZone.classList.add("uu-pulse-site-nav-links");
 
-                setupEvents();
+                var leftNavWebParts = leftNavWebPartsZone.querySelectorAll(".ms-webpartzone-cell");
+
+                for (let i = 0; i < leftNavWebParts.length; i++) {
+                    leftNavWebParts.item(i).classList.remove("ms-webpartzone-cell");
+                }
+            } else {
+                if (contentRow) {
+                    contentRow.classList.remove("uu-pulse-side-nav-shown");
+                    contentRow.classList.add("uu-pulse-side-nav-hidden");
+                }
             }
         } else if (masterpageType == "team" || masterpageType == "app") {
+            var deltaPlaceHolderLeftNav = Utilities.getCachedElementById("DeltaPlaceHolderLeftNavBar") as HTMLDivElement;
+            var leftNavWebPartsZone = deltaPlaceHolderLeftNav.querySelector(".ms-webpart-zone") as HTMLDivElement;
+
+            if (leftNavWebPartsZone) {
+                leftNavWebPartsZone.classList.add("uu-pulse-site-nav-links");
+
+                var leftNavWebParts = leftNavWebPartsZone.querySelectorAll(".ms-webpartzone-cell");
+
+                for (let i = 0; i < leftNavWebParts.length; i++) {
+                    leftNavWebParts.item(i).classList.remove("ms-webpartzone-cell");
+                }
+            }
+
             setupEvents();
         }
 

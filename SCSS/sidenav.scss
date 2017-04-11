@@ -252,6 +252,12 @@ $side-nav-color: #808080;
             width: 100%;
           }
 
+          span.ms-blog-quickLinksTitle {
+            @include side-nav-defaults ($type);
+            display: block;
+            width: 100%;
+          }
+
           // sub links
           ul li > a {
             margin-left: -20px;
