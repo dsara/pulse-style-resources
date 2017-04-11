@@ -89,8 +89,12 @@ export namespace BreadCrumb {
 
             // removes the slash in the second half of the the breadcrumb if it is the last item
             let secondBreadCrumbSpans = document.querySelectorAll(".uu-pulse-site-breadcrumb > span[id*='SiteMapPath1'] > span");
-            if ((secondBreadCrumbSpans.item(secondBreadCrumbSpans.length - 1) as HTMLSpanElement).textContent.trim() == "/") {
-                secondBreadCrumbSpans.item(secondBreadCrumbSpans.length - 1).parentNode.removeChild(secondBreadCrumbSpans.item(secondBreadCrumbSpans.length - 1));
+            if (secondBreadCrumbSpans.length > 0) {
+                if ((secondBreadCrumbSpans.item(secondBreadCrumbSpans.length - 1) as HTMLSpanElement).textContent.trim() == "/") {
+                    secondBreadCrumbSpans.item(secondBreadCrumbSpans.length - 1).parentNode.removeChild(secondBreadCrumbSpans.item(secondBreadCrumbSpans.length - 1));
+                }
+            } else {
+                
             }
         }
     }
