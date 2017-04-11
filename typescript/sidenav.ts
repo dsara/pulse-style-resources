@@ -27,7 +27,7 @@ export namespace SideNav {
                     contentRow.classList.remove("uu-pulse-side-nav-hidden");
                     contentRow.classList.add("uu-pulse-side-nav-shown");
                 }
-                leftNavWebPartsZone.classList.add("uu-pulse-site-nav-links");
+                leftNavWebPartsZone.classList.add("uu-pulse-side-nav-links");
 
                 var leftNavWebParts = leftNavWebPartsZone.querySelectorAll(".ms-webpartzone-cell");
 
@@ -45,7 +45,7 @@ export namespace SideNav {
             var leftNavWebPartsZone = deltaPlaceHolderLeftNav.querySelector(".ms-webpart-zone") as HTMLDivElement;
 
             if (leftNavWebPartsZone) {
-                leftNavWebPartsZone.classList.add("uu-pulse-site-nav-links");
+                leftNavWebPartsZone.classList.add("uu-pulse-side-nav-links");
 
                 var leftNavWebParts = leftNavWebPartsZone.querySelectorAll(".ms-webpartzone-cell");
 
