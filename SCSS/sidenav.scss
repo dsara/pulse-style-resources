@@ -35,7 +35,7 @@ $side-nav-color: #808080;
       border-bottom: 3px solid map-get($colors, grey-lighter);
     }
     @if $type == 'app' {
-      border-bottom: 3px solid map-get($colors, black);
+      border-bottom: 3px solid map-get($colors, grey-lighter);
       margin-top: -5px;
     }
     color: map-get($colors, white);
@@ -83,7 +83,7 @@ $side-nav-color: #808080;
         background-color: map-get($colors, grey-lighter);
       }
       @if $type == 'app' {
-        background-color: map-get($colors, black);
+        background-color: map-get($colors, grey-lighter);
       }
       border-right: 1px solid map-get($colors, brand);
       border-top: 1px solid map-get($colors, brand);
@@ -196,6 +196,10 @@ $side-nav-color: #808080;
       @if $type == 'app' {
         margin-top: 5px;
         background-color: map-get($colors, gray-lighter);
+
+        #Refinement {
+          margin-left: 15px;
+        }
       }
 
       @media #{$media-tablet-max} {
@@ -354,7 +358,7 @@ $side-nav-color: #808080;
           background-color: map-get($colors, grey-lighter);
         }
         @if $type == 'app' {
-          background-color: map-get($colors, black);
+          background-color: map-get($colors, grey-lighter);
         }
         cursor: pointer;
         display: block;
@@ -362,7 +366,7 @@ $side-nav-color: #808080;
 
         @if $type == 'app' {
           .ms-splinkbutton-text {
-            color: map-get($colors, white);
+            // color: map-get($colors, white);
           }
         }
 
