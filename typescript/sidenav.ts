@@ -7,6 +7,7 @@ export namespace SideNav {
             var pulseSideNavLinks = Utilities.getCachedElementById("uu-pulse-side-nav-links") as HTMLDivElement;
             var deltaPlaceHolderLeftNav = Utilities.getCachedElementById("DeltaPlaceHolderLeftNavBar") as HTMLDivElement;
             var leftNavWebPartsZone = deltaPlaceHolderLeftNav.querySelector(".ms-webpart-zone") as HTMLDivElement;
+            var refinementWebpart = deltaPlaceHolderLeftNav.querySelector("#Refinement") as HTMLDivElement;
 
             if (pulseSideNavLinks) {
                 if (pulseSideNavLinks.childElementCount === 0) {
@@ -34,6 +35,11 @@ export namespace SideNav {
                 for (let i = 0; i < leftNavWebParts.length; i++) {
                     leftNavWebParts.item(i).classList.remove("ms-webpartzone-cell");
                 }
+            } else if (refinementWebpart) {
+                if (contentRow) {
+                    contentRow.classList.remove("uu-pulse-side-nav-hidden");
+                    contentRow.classList.add("uu-pulse-side-nav-shown");
+                }            
             } else {
                 if (contentRow) {
                     contentRow.classList.remove("uu-pulse-side-nav-shown");
