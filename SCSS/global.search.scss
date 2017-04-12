@@ -10,11 +10,17 @@
     }
 
     .ms-srch-item-icon {
+      line-height: 26px;
       margin-top: 0;
     }
 
     .ms-srch-item-title {
       margin: 2px;
+    }
+
+    .ms-srch-item-link {
+      font-size: 20px;
+      line-height: 26px;
     }
   }
 
@@ -157,6 +163,18 @@
   color: map-get($colors, brand-dark);
 }
 
-.ms-ref-unsel-toggle:hover {
-  color: map-get($colors, grey-lighter)
+.ms-srch-result #PagingSelf a {
+  color: map-get($colors, brand-dark);
 }
+
+.ms-srch-result #PagingLink a {
+  color: map-get($colors, black);
+}
+
+.ms-srch-hover-siteViewerContainer {
+  border: 1px solid map-get($colors, black);
+}
+
+// .ms-ref-unsel-toggle:hover {
+//   color: map-get($colors, grey-lighter)
+// }
