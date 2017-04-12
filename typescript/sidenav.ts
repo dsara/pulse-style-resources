@@ -71,8 +71,6 @@ export namespace SideNav {
         window.addEventListener("scroll", ev => {
             sideNavSizeChange();
         });
-
-        window.addEventListener("DOM")
     }
 
     function setupEvents() {
