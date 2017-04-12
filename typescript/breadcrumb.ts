@@ -94,7 +94,7 @@ export namespace BreadCrumb {
                     secondBreadCrumbSpans.item(secondBreadCrumbSpans.length - 1).parentNode.removeChild(secondBreadCrumbSpans.item(secondBreadCrumbSpans.length - 1));
                 }
             } else {
-                let firstBreadCrumbSpans = document.querySelectorAll(".uu-pulse-site-breadcrumb > span[id*='SiteMapPath'] > span");
+                let firstBreadCrumbSpans = document.querySelectorAll(".uu-pulse-site-breadcrumb > span[id*='SitesMapPath'] > span");
 
                 if (firstBreadCrumbSpans.length > 0) {
                     (firstBreadCrumbSpans.item(firstBreadCrumbSpans.length -1) as HTMLSpanElement).style.display = "inherit";
