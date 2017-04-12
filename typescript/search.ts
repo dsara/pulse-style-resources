@@ -34,12 +34,12 @@ export namespace Search {
 
                 let upScopeChildren = upScopeLinkTop.children;
 
-                for (let i = 0; i < upScopeChildren.length; i+2) {
+                for (let i = 0; i < upScopeChildren.length; i += 2) {
                     (upScopeChildren.item(i) as HTMLDivElement).style.display = "";
                     (upScopeChildren.item(i) as HTMLDivElement).classList.add("noBSPadding", "col-sm-3");
                 }
 
-                for (let i = 1; i < upScopeChildren.length; i+2) {
+                for (let i = 1; i < upScopeChildren.length; i += 2) {
                     upScopeChildren.item(i).parentNode.removeChild(upScopeChildren.item(i));
                 }
 
@@ -65,12 +65,12 @@ export namespace Search {
 
                 let upScopeChildren = upScopeLinkBottom.children;
 
-                for (let i = 0; i < upScopeChildren.length; i+2) {
+                for (let i = 0; i < upScopeChildren.length; i += 2) {
                     (upScopeChildren.item(i) as HTMLDivElement).style.display = "";
                     (upScopeChildren.item(i) as HTMLDivElement).classList.add("noBSPadding", "col-sm-3");
                 }
 
-                for (let i = 1; i < upScopeChildren.length; i+2) {
+                for (let i = 1; i < upScopeChildren.length; i += 2) {
                     upScopeChildren.item(i).parentNode.removeChild(upScopeChildren.item(i));
                 }
 
