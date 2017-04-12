@@ -32,19 +32,30 @@ export namespace Search {
                 upScopeLinkTop.style.width = "";
                 upScopeLinkTop.classList.add("col-sm-12", "noBSPadding");
 
-                let colLength = 12 / upScopeLinkTop.querySelectorAll("div:even").length;
-                let colClass = "col-sm-" + colLength.toString();
+                let upScopeChildren = upScopeLinkTop.children;
 
-                let evenDivs = upScopeLinkTop.querySelectorAll("div:even");
-                for (let i = 0; i < evenDivs.length; i++) {
-                    (evenDivs.item(i) as HTMLDivElement).style.display = "";
-                    (evenDivs.item(i) as HTMLDivElement).classList.add("noBSPadding", colClass);
+                for (let i = 0; i < upScopeChildren.length; i+2) {
+                    (upScopeChildren.item(i) as HTMLDivElement).style.display = "";
+                    (upScopeChildren.item(i) as HTMLDivElement).classList.add("noBSPadding", "col-sm-3");
                 }
 
-                let oddDivs = upScopeLinkTop.querySelectorAll("div:odd");
-                for (let i = 0; i < oddDivs.length; i++) {
-                    oddDivs.item(i).remove();
+                for (let i = 1; i < upScopeChildren.length; i+2) {
+                    upScopeChildren.item(i).parentNode.removeChild(upScopeChildren.item(i));
                 }
+
+                // let colLength = 12 / upScopeLinkTop.querySelectorAll("div:even").length;
+                // let colClass = "col-sm-" + colLength.toString();
+
+                // let evenDivs = upScopeLinkTop.querySelectorAll("div:even");
+                // for (let i = 0; i < evenDivs.length; i++) {
+                //     (evenDivs.item(i) as HTMLDivElement).style.display = "";
+                //     (evenDivs.item(i) as HTMLDivElement).classList.add("noBSPadding", colClass);
+                // }
+
+                // let oddDivs = upScopeLinkTop.querySelectorAll("div:odd");
+                // for (let i = 0; i < oddDivs.length; i++) {
+                //     oddDivs.item(i).remove();
+                // }
             }
 
             if (upScopeLinkBottom) {
@@ -52,22 +63,33 @@ export namespace Search {
                 upScopeLinkBottom.style.width = "";
                 upScopeLinkBottom.classList.add("col-sm-12", "noBSPadding");
 
-                let colLength = 12 / upScopeLinkBottom.querySelectorAll("div:even").length;
-                let colClass = "col-sm-" + colLength.toString();
+                let upScopeChildren = upScopeLinkBottom.children;
 
-                let evenDivs = upScopeLinkBottom.querySelectorAll("div:even");
-                for (let i = 0; i < evenDivs.length; i++) {
-                    (evenDivs.item(i) as HTMLDivElement).style.display = "";
-                    (evenDivs.item(i) as HTMLDivElement).classList.add("noBSPadding", colClass);
+                for (let i = 0; i < upScopeChildren.length; i+2) {
+                    (upScopeChildren.item(i) as HTMLDivElement).style.display = "";
+                    (upScopeChildren.item(i) as HTMLDivElement).classList.add("noBSPadding", "col-sm-3");
                 }
 
-                let oddDivs = upScopeLinkBottom.querySelectorAll("div:odd");
-                for (let i = 0; i < oddDivs.length; i++) {
-                    // doesn't work in ie
-                    // oddDivs.item(i).remove();
-
-                    oddDivs.item(i).parentNode.removeChild(oddDivs.item(i));
+                for (let i = 1; i < upScopeChildren.length; i+2) {
+                    upScopeChildren.item(i).parentNode.removeChild(upScopeChildren.item(i));
                 }
+
+                // let colLength = 12 / upScopeLinkBottom.querySelectorAll("div:even").length;
+                // let colClass = "col-sm-" + colLength.toString();
+
+                // let evenDivs = upScopeLinkBottom.querySelectorAll("div:even");
+                // for (let i = 0; i < evenDivs.length; i++) {
+                //     (evenDivs.item(i) as HTMLDivElement).style.display = "";
+                //     (evenDivs.item(i) as HTMLDivElement).classList.add("noBSPadding", colClass);
+                // }
+
+                // let oddDivs = upScopeLinkBottom.querySelectorAll("div:odd");
+                // for (let i = 0; i < oddDivs.length; i++) {
+                //     // doesn't work in ie
+                //     // oddDivs.item(i).remove();
+
+                //     oddDivs.item(i).parentNode.removeChild(oddDivs.item(i));
+                // }
             }
         }
     }
