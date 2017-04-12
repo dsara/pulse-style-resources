@@ -40,6 +40,11 @@ export namespace SideNav {
                     contentRow.classList.remove("uu-pulse-side-nav-hidden");
                     contentRow.classList.add("uu-pulse-side-nav-shown");
                 }            
+            } else if (window.location.href.indexOf("/_layouts/15/osssearchresults.aspx") != -1) {
+                if (contentRow) {
+                    contentRow.classList.remove("uu-pulse-side-nav-hidden");
+                    contentRow.classList.add("uu-pulse-side-nav-shown");
+                }
             } else {
                 if (contentRow) {
                     contentRow.classList.remove("uu-pulse-side-nav-shown");
@@ -66,6 +71,8 @@ export namespace SideNav {
         window.addEventListener("scroll", ev => {
             sideNavSizeChange();
         });
+
+        window.addEventListener("DOM")
     }
 
     function setupEvents() {
