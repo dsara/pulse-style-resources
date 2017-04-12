@@ -165,10 +165,18 @@
 
 .ms-srch-result #PagingSelf a {
   color: map-get($colors, brand-dark);
+
+  &:hover {
+    color: map-get($colors, brand-dark);
+  }
 }
 
 .ms-srch-result #PagingLink a {
   color: map-get($colors, black);
+
+  &:hover {
+    color: map-get($colors, brand-dark);
+  }
 }
 
 .ms-srch-hover-siteViewerContainer {
