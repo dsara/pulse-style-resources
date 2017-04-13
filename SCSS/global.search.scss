@@ -3,7 +3,10 @@
 // Search Results
 .uu-pulse-content-box {
 
-  .ms-srch-item {
+  .ms-srch-item,
+  .ms-srch-bestBetItem {
+
+    width: 600px;
 
     @media #{$media-tablet-max} {
       width: 100%;
@@ -12,6 +15,10 @@
     .ms-srch-item-icon {
       line-height: 26px;
       margin-top: 0;
+    }
+
+    .ms-srch-bestBetItem-icon {
+      top: 5px;
     }
 
     .ms-srch-item-title {
