@@ -95,7 +95,7 @@ export namespace SideNav {
         }
 
         document.querySelector("body").addEventListener("click", ev => {
-            if (Utilities.findAncestor((ev.target as HTMLElement), "uu-pulse-side-nav-links") == null && (ev.target as HTMLElement).id !== "uu-pulse-content-nav-button") {
+            if (Utilities.findAncestor((ev.target as HTMLElement), "uu-pulse-side-nav") == null && (ev.target as HTMLElement).id !== "uu-pulse-content-nav-button") {
                 if (pulseSideNav) {
                     pulseSideNav.classList.remove("uu-pulse-side-nav-slide-out");
                 }
