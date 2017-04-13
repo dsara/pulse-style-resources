@@ -35,21 +35,29 @@ export namespace SideNav {
                 for (let i = 0; i < leftNavWebParts.length; i++) {
                     leftNavWebParts.item(i).classList.remove("ms-webpartzone-cell");
                 }
+
+                setupEvents();
             } else if (refinementWebpart) {
                 if (contentRow) {
                     contentRow.classList.remove("uu-pulse-side-nav-hidden");
                     contentRow.classList.add("uu-pulse-side-nav-shown");
-                }            
+                }
+
+                setupEvents();
             } else if (window.location.href.indexOf("/_layouts/15/osssearchresults.aspx") != -1) {
                 if (contentRow) {
                     contentRow.classList.remove("uu-pulse-side-nav-hidden");
                     contentRow.classList.add("uu-pulse-side-nav-shown");
                 }
+
+                setupEvents();
             } else {
                 if (contentRow) {
                     contentRow.classList.remove("uu-pulse-side-nav-shown");
                     contentRow.classList.add("uu-pulse-side-nav-hidden");
                 }
+                
+                setupEvents();
             }
         } else if (masterpageType == "team" || masterpageType == "app") {
             var deltaPlaceHolderLeftNav = Utilities.getCachedElementById("DeltaPlaceHolderLeftNavBar") as HTMLDivElement;
