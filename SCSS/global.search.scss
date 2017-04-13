@@ -91,10 +91,6 @@
   }
 }
 
-.ms-srch-sbLarge > input {
-  @include width-minus(82%, 100%, 66px);
-}
-
 .ms-srch-result {
   margin-top: 0 !important;
 
