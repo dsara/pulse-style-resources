@@ -23,6 +23,7 @@
 
     .ms-srch-item-title {
       margin: 2px;
+      width: 700px;
     }
 
     .ms-srch-item-link {
@@ -62,6 +63,31 @@
     -ms-word-break: break-all !important;
     width: inherit !important;
     word-break: break-all !important;
+  }
+}
+
+.ms-srch-sbLarge {
+  display: flex;
+  width: 100%;
+
+  > input {
+    width: 100%;
+  }
+
+  .ms-srch-sb-navLink {
+    width: 28px;
+
+    &:hover {
+      background-color: map-get($colors, grey-lighter);
+    }
+  }
+
+  .ms-srch-sb-searchLink {
+    width: 36px;
+
+    &:hover {
+      background-color: map-get($colors, grey-lighter);
+    }
   }
 }
 
