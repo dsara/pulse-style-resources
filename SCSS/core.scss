@@ -826,3 +826,11 @@ input {
 .ms-surveyVBarB {
   background-color: map-get($colors, grey-lighter);
 }
+
+.color-swatches {
+  overflow: visible;
+
+  input {
+    width: 100%;
+  }
+}
