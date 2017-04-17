@@ -834,3 +834,8 @@ input {
     width: 100%;
   }
 }
+
+// ensure sharepoint dialogs are on top of every else on the page
+.ms-dlgContent {
+  z-index: 500000 !important;
+}
