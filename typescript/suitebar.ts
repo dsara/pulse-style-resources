@@ -84,6 +84,20 @@ export namespace SuiteBar {
         var mobileSearchIcon = Utilities.getCachedElementById("uu-pulse-suite-bar-right-mobile-search");
         var mobileSearchBox = Utilities.getCachedElementById("uu-pulse-suite-bar-right-mobile-search-box");
         var mobileSearchInput = Utilities.getCachedElementById("uu-pulse-suite-bar-right-mobile-search-box-input") as HTMLInputElement;
+        var welcomeMenuAnchors = document.querySelectorAll("#welcomeMenuBox .ms-core-menu-root");
+
+        if (welcomeMenuAnchors.length > 0) {
+            if (mobileSearchBox) {
+                for(let i = 0; i < welcomeMenuAnchors.length; i++) {
+                    welcomeMenuAnchors.item(i).addEventListener("click", ev => {
+                        if (!mobileSearchBox.classList.contains("hidden")) {
+                            mobileSearchBox.classList.add("hidden");
+                            mobileSearchIcon.classList.remove("selected");
+                        }
+                    });
+                }
+            }
+        }
 
         if (mobileSearchIcon) {
             mobileSearchIcon.addEventListener("click", ev => {
@@ -118,6 +132,19 @@ export namespace SuiteBar {
 
         var mobileMenuIcon = Utilities.getCachedElementById("uu-pulse-suite-bar-right-mobile-menu");
         var mobileMenuList = Utilities.getCachedElementById("uu-pulse-suite-bar-right-atoz");
+
+        if (welcomeMenuAnchors.length > 0) {
+            if (mobileMenuIcon) {
+                for(let i = 0; i < welcomeMenuAnchors.length; i++) {
+                    welcomeMenuAnchors.item(i).addEventListener("click", ev => {
+                        if (mobileMenuList.classList.contains("uu-pulse-inline-block")) {
+                            mobileMenuList.classList.remove("uu-pulse-inline-block");
+                            mobileMenuIcon.classList.remove("selected");
+                        }
+                    });
+                }
+            }
+        }
 
         if (mobileMenuIcon) {
             mobileMenuIcon.addEventListener("click", ev => {
