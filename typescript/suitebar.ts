@@ -84,7 +84,7 @@ export namespace SuiteBar {
         var mobileSearchIcon = Utilities.getCachedElementById("uu-pulse-suite-bar-right-mobile-search");
         var mobileSearchBox = Utilities.getCachedElementById("uu-pulse-suite-bar-right-mobile-search-box");
         var mobileSearchInput = Utilities.getCachedElementById("uu-pulse-suite-bar-right-mobile-search-box-input") as HTMLInputElement;
-        var welcomeMenuAnchors = document.querySelectorAll("#welcomeMenuBox .ms-core-menu-root");
+        var welcomeMenuAnchors = document.querySelectorAll("#DeltaSuiteBarRight .ms-core-menu-root");
 
         if (welcomeMenuAnchors.length > 0) {
             if (mobileSearchBox) {
