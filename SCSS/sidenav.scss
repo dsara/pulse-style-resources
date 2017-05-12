@@ -20,7 +20,7 @@ $side-nav-color: #808080;
     color: map-get($colors, black);
     font-size: 15px;
     line-height: 38px;
-    font-weight: 400;
+    font-weight: $font-weight-bold;
     text-transform: uppercase;
   }
   padding: 5px 5px 5px 20px !important;
@@ -124,7 +124,7 @@ $side-nav-color: #808080;
 
         .ms-helperText {
           @include font-size-normal;
-          @include font-weight-light;
+          @include font-weight-normal;
           color: #cccccc;
           padding-left: 5px;
         }
@@ -138,7 +138,7 @@ $side-nav-color: #808080;
             > input {
               @include width-minus(82%, 100%, 50px);
               @include font-size-normal;
-              @include font-weight-light;
+              @include font-weight-normal;
               color: map-get($colors, black);
               height: 100%;
             }
@@ -272,7 +272,7 @@ $side-nav-color: #808080;
 
             @if $type == 'app' {
               line-height: 25px;
-              font-weight: 300;
+              font-weight: $font-weight-normal;
               text-transform: initial;
             }
 

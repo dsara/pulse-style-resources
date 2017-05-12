@@ -249,6 +249,12 @@ $font-weight-bolder: 600;
   font-weight: $font-weight-bolder;
 }
 
+$font-weight-boldest: 700;
+
+@mixin font-weight-boldest {
+  font-weight: $font-weight-boldest;
+}
+
 $font-size-xlarge: 16px;
 
 @mixin font-size-xlarge {

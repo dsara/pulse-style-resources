@@ -12,49 +12,49 @@ $selected-background-color: #ff0;
 $solid-border: 1px solid map-get($colors , brand);
 
 // fonts
-@font-face {
-  font-family: 'Open Sans Light';
-  font-style: normal;
-  font-weight: normal; // font-weight: 300
-  src: url(/_layouts/15/commons/fonts/opensans/light/opensans-light-webfont.eot);
-  src: url(/_layouts/15/commons/fonts/opensans/light/opensans-light-webfont.eot?#iefix) format('embedded-opentype'),
-       url(/_layouts/15/commons/fonts/opensans/light/opensans-light-webfont.woff) format('woff'),
-       url(/_layouts/15/commons/fonts/opensans/light/opensans-light-webfont.ttf) format('truetype'),
-       url("/_layouts/15/commons/fonts/opensans/light/opensans-light-webfont.svg#Open Sans Light") format('svg');
-}
+// @font-face {
+//   font-family: 'Open Sans Light';
+//   font-style: normal;
+//   font-weight: normal; // font-weight: 300
+//   src: url(/_layouts/15/commons/fonts/opensans/light/opensans-light-webfont.eot);
+//   src: url(/_layouts/15/commons/fonts/opensans/light/opensans-light-webfont.eot?#iefix) format('embedded-opentype'),
+//        url(/_layouts/15/commons/fonts/opensans/light/opensans-light-webfont.woff) format('woff'),
+//        url(/_layouts/15/commons/fonts/opensans/light/opensans-light-webfont.ttf) format('truetype'),
+//        url("/_layouts/15/commons/fonts/opensans/light/opensans-light-webfont.svg#Open Sans Light") format('svg');
+// }
 
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: normal; // font-weight: 400
-  src: url(/_layouts/15/commons/fonts/opensans/regular/opensans-regular-webfont.eot);
-  src: url(/_layouts/15/commons/fonts/opensans/regular/opensans-regular-webfont.eot?#iefix) format('embedded-opentype'),
-       url(/_layouts/15/commons/fonts/opensans/regular/opensans-regular-webfont.woff) format('woff'),
-       url(/_layouts/15/commons/fonts/opensans/regular/opensans-regular-webfont.ttf) format('truetype'),
-       url("/_layouts/15/commons/fonts/opensans/regular/opensans-regular-webfont.svg#Open Sans"), format('svg');
-}
+// @font-face {
+//   font-family: 'Open Sans';
+//   font-style: normal;
+//   font-weight: normal; // font-weight: 400
+//   src: url(/_layouts/15/commons/fonts/opensans/regular/opensans-regular-webfont.eot);
+//   src: url(/_layouts/15/commons/fonts/opensans/regular/opensans-regular-webfont.eot?#iefix) format('embedded-opentype'),
+//        url(/_layouts/15/commons/fonts/opensans/regular/opensans-regular-webfont.woff) format('woff'),
+//        url(/_layouts/15/commons/fonts/opensans/regular/opensans-regular-webfont.ttf) format('truetype'),
+//        url("/_layouts/15/commons/fonts/opensans/regular/opensans-regular-webfont.svg#Open Sans"), format('svg');
+// }
 
-@font-face {
-  font-family: 'Open Sans Bold';
-  font-style: normal;
-  font-weight: normal; // font-weight: 700
-  src: url(/_layouts/15/commons/fonts/opensans/bold/opensans-bold-webfont.eot);
-  src: url(/_layouts/15/commons/fonts/opensans/bold/opensans-bold-webfont.eot?#iefix) format('embedded-opentype'),
-       url(/_layouts/15/commons/fonts/opensans/bold/opensans-bold-webfont.woff) format('woff'),
-       url(/_layouts/15/commons/fonts/opensans/bold/opensans-bold-webfont.ttf) format('truetype'),
-       url("/_layouts/15/commons/fonts/opensans/bold/opensans-bold-webfont.svg#Open Sans Bold"), format('svg');
-}
+// @font-face {
+//   font-family: 'Open Sans Bold';
+//   font-style: normal;
+//   font-weight: normal; // font-weight: 700
+//   src: url(/_layouts/15/commons/fonts/opensans/bold/opensans-bold-webfont.eot);
+//   src: url(/_layouts/15/commons/fonts/opensans/bold/opensans-bold-webfont.eot?#iefix) format('embedded-opentype'),
+//        url(/_layouts/15/commons/fonts/opensans/bold/opensans-bold-webfont.woff) format('woff'),
+//        url(/_layouts/15/commons/fonts/opensans/bold/opensans-bold-webfont.ttf) format('truetype'),
+//        url("/_layouts/15/commons/fonts/opensans/bold/opensans-bold-webfont.svg#Open Sans Bold"), format('svg');
+// }
 
-@font-face {
-  font-weight: normal; // font-weight: 700
-  font-style: normal;
-  font-family: 'Open Sans Italic';
-  src: url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.eot);
-  src: url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.eot?#iefix) format('embedded-opentype'),
-       url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.woff) format('woff'), 
-       url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.ttf) format('truetype'),
-       url("/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.svg#Open Sans Italic"), format('svg');
-}
+// @font-face {
+//   font-weight: normal; // font-weight: 700
+//   font-style: normal;
+//   font-family: 'Open Sans Italic';
+//   src: url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.eot);
+//   src: url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.eot?#iefix) format('embedded-opentype'),
+//        url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.woff) format('woff'), 
+//        url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.ttf) format('truetype'),
+//        url("/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.svg#Open Sans Italic"), format('svg');
+// }
 
 @include generate-color-classes;
 @include generate-shadow-classes;
@@ -105,7 +105,7 @@ a.ms-calloutLink:visited,
 .ms-cui-tb,
 .ms-cui-spn-txtbx {
   @include sofia-pro;
-  @include font-weight-light;
+  @include font-weight-normal;
   color: map-get($colors, black);
 }
 
@@ -125,7 +125,7 @@ body,
 .ms-status-msg,
 .js-callout-body {
   @include font-size-normal;
-  @include font-weight-light;
+  @include font-weight-normal;
   color: map-get($colors, black);
 }
 
@@ -171,7 +171,7 @@ h2.ms-rteElement-H2 {
 }
 
 .ms-rte-wpbox {
-  @include font-weight-light;
+  @include font-weight-normal;
 }
 
 .ms-rteFontFace-13 {
@@ -415,7 +415,7 @@ button {
 
 .ms-vb2,
 .ms-vb-title {
-  &[aria-selected='true'] {
+  &[aria-selected='true']:not(.ms-jsgrid-cell-selected-editable) {
     color: map-get($colors, white) !important;
 
     a {
