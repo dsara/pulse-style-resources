@@ -415,7 +415,7 @@ button {
 
 .ms-vb2,
 .ms-vb-title {
-  &[aria-selected='true']:not(.ms-jsgrid-cell-selected-editable) {
+  &[aria-selected='true']:not(.ms-jsgrid-cell-selected-editable):not([aria-describedby]) {
     color: map-get($colors, white) !important;
 
     a {
@@ -564,6 +564,10 @@ input {
       border: 0;
       border-left: $solid-border;
     }
+  }
+
+  .cb-dp-rw-selected {
+    background-color: map-get($colors,black);
   }
 }
 
