@@ -104,6 +104,7 @@ export namespace Search {
         if (globalSearch) {
             globalSearch.addEventListener("keyup", ev => {
                 if (ev.keyCode === 13) {
+                    Utilities.preventEventDefault(ev);
                     Utilities.getCachedElementById("LoadingResults").style.display = "inline-block";
                     setTimeout("location.href = '" + searchUrl + "?k=" + encodeURIComponent(globalSearch.value) + "'", 15) + "'";
                 }
@@ -113,6 +114,7 @@ export namespace Search {
         if (mobileSearch) {
             mobileSearch.addEventListener("keyup", ev => {
                 if (ev.keyCode === 13) {
+                    Utilities.preventEventDefault(ev);
                     location.href = searchUrl + "?k=" + encodeURIComponent(mobileSearch.value);
                 }
             });
