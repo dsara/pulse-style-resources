@@ -313,6 +313,10 @@ a:hover,
   @include hover-behavior(map-get($colors, brand-dark), none);
 }
 
+#DeltaPlaceHolderUtilityContent menu {
+  margin: 0;
+}
+
 .ms-ButtonHeightWidth:hover {
   border: $solid-border;
   background: map-get($colors, grey);
@@ -372,6 +376,16 @@ body,
   .ms-core-menu-label,
   .ms-core-menu-sublabel {
     color: map-get($colors, white);
+  }
+}
+
+.ms-itmHoverEnabled:hover {
+  > * {
+    background-color: map-get($colors,grey-lighter);
+  }
+
+  .ms-list-itemLink-td {
+    background-color: map-get($colors, grey-light);
   }
 }
 
@@ -488,6 +502,10 @@ input {
 
 .s4-itm-selected {
   > * {
+    background-color: map-get($colors, grey-light);
+  }
+
+  &:hover > * {
     background-color: map-get($colors, grey-light);
   }
 
