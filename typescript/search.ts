@@ -102,7 +102,7 @@ export namespace Search {
         let mobileSearchButton = Utilities.getCachedElementById("uu-pulse-suite-bar-right-mobile-search-box-span") as HTMLSpanElement;
 
         if (globalSearch) {
-            globalSearch.addEventListener("keyup", ev => {
+            globalSearch.addEventListener("keydown", ev => {
                 if (ev.keyCode === 13) {
                     Utilities.preventEventDefault(ev);
                     Utilities.getCachedElementById("LoadingResults").style.display = "inline-block";
@@ -112,7 +112,7 @@ export namespace Search {
         }
 
         if (mobileSearch) {
-            mobileSearch.addEventListener("keyup", ev => {
+            mobileSearch.addEventListener("keydown", ev => {
                 if (ev.keyCode === 13) {
                     Utilities.preventEventDefault(ev);
                     location.href = searchUrl + "?k=" + encodeURIComponent(mobileSearch.value);
