@@ -389,6 +389,22 @@ body,
   }
 }
 
+.ms-vh-selectAllIcon {
+  &:hover {
+    background-color: map-get($colors, grey-lighter);
+  }
+}
+
+.ms-vh-hoverable:hover,
+.ms-headerCellStyleHover {
+  background-color: map-get($colors, grey-lighter);
+}
+
+.ms-headerCellStylePressed,
+.ms-headerCellStyleMenuOpen {
+  background-color: map-get($colors, grey-light);
+}
+
 h2 {
   line-height: 1.16;
   padding-bottom: 8px;
