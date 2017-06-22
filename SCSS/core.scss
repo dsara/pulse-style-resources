@@ -310,7 +310,9 @@ li.ms-storefront-selected {
 
 a:hover,
 #DeltaPlaceHolderMain a:hover {
-  @include hover-behavior(map-get($colors, brand-dark), none);
+  &:not(.btn) {
+    @include hover-behavior(map-get($colors, brand-dark), none);
+  }
 }
 
 #DeltaPlaceHolderUtilityContent menu {
