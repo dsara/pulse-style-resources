@@ -7,8 +7,6 @@
   text-decoration-color: $hover-color;
 }
 
-$selected-background-color: #ff0;
-
 $solid-border: 1px solid map-get($colors , brand);
 
 // fonts
@@ -264,7 +262,7 @@ a:visited,
 }
 
 .ms-menutoolbar .ms-toolbar .ms-core-menu-itemDescription {
-  color: #cccccc;
+  color: map-get($colors, grey-light);
 }
 
 .ms-vl-sectionHeaderRow .ms-alignRight .ms-calloutLink:hover,
@@ -320,8 +318,8 @@ a:hover,
 }
 
 .ms-ButtonHeightWidth:hover {
-  border: $solid-border;
   background: map-get($colors, grey);
+  border: $solid-border;
   color: map-get($colors, brand);
 }
 
@@ -357,7 +355,7 @@ body,
   overflow: auto;
 }
 
-.ms-siteactions-normal li[text="Getting started"] {
+.ms-siteactions-normal li[text='Getting started'] {
   display: none;
 }
 
@@ -383,7 +381,7 @@ body,
 
 .ms-itmHoverEnabled:hover {
   > * {
-    background-color: map-get($colors,grey-lighter);
+    background-color: map-get($colors, grey-lighter);
   }
 
   .ms-list-itemLink-td {
@@ -400,6 +398,28 @@ body,
 .ms-vh-hoverable:hover,
 .ms-headerCellStyleHover {
   background-color: map-get($colors, grey-lighter);
+}
+
+.ms-promlink-button-enabled-hover,
+.ms-promlink-button-enabled:hover {
+  background-color: map-get($colors, grey-lighter);
+  border-color: map-get($colors, grey-light);
+}
+
+.ms-promlink-button-disabled {
+  background-color: map-get($colors, grey-lighter);
+  border-color: map-get($colors, grey-lighter);
+}
+
+.ms-promlink-button-disabled-hover {
+  background-color: map-get($colors, grey-lighter);
+  border-color: map-get($colors, grey-lighter);
+  cursor: not-allowed;
+}
+
+.ms-promlink-button-enabled-pressed {
+  background-color: map-get($colors, grey-light);
+  border-color: map-get($colors, grey);
 }
 
 .ms-headerCellStylePressed,
@@ -423,25 +443,25 @@ h2 {
 input,
 button {
   &.ms-button-emphasize {
-    border-color: map-get($colors, brand);
     background: map-get($colors, white);
+    border-color: map-get($colors, brand);
     color: map-get($colors, brand);
 
     &:hover {
-      color: map-get($colors, white);
       background-color: map-get($colors, brand);
+      color: map-get($colors, white);
     }
   }
 }
 
 .ms-emphasis,
 .ms-grid-link {
-  color: map-get($colors, brand);
   background-color: map-get($colors, white);
+  color: map-get($colors, brand);
 
   &:hover {
-    color: map-get($colors, white);
     background-color: map-get($colors, brand);
+    color: map-get($colors, white);
   }
 }
 
@@ -456,7 +476,7 @@ button {
   }
 }
 
-input[type="button"],
+input[type='button'],
 input[type=button],
 input[type=reset],
 input[type=submit],
@@ -468,7 +488,7 @@ button {
   text-transform: uppercase;
 }
 
-input[type="button"]:hover,
+input[type='button']:hover,
 input[type=submit]:hover,
 input[type=button]:hover,
 input[type=reset]:hover,
@@ -564,6 +584,7 @@ input {
 .ms-blog-postBox .ms-blog-postBoxDate .ms-textSmall {
   color: map-get($colors, white);
 }
+
 .ms-blog-postBox .ms-blog-postBoxDate {
   background-color: map-get($colors, brand);
   border-color: map-get($colors, brand);
@@ -603,7 +624,7 @@ input {
   }
 
   .cb-dp-rw-selected {
-    background-color: map-get($colors,black);
+    background-color: map-get($colors, black);
   }
 }
 
@@ -611,7 +632,8 @@ input {
   border-color: map-get($colors, brand);
 }
 
-.listbox-panel, .combobox-dropdown {
+.listbox-panel,
+.combobox-dropdown {
   border-color: map-get($colors, brand);
 }
 
@@ -637,10 +659,10 @@ input {
 }
 
 // hd mobile
-@media (max-device-width: 767px) { 
-    .container{
-        width:100%;
-    }
+@media (max-device-width: 767px) {
+  .container {
+    width: 100%;
+  }
 }
 
 // follow notify
@@ -666,18 +688,18 @@ input {
 #Pulse-LP-tier1-body a,
 #Pulse-LP-tier1-body a:link,
 #Pulse-LP-tier1-body a:visited {
-    color: map-get($colors, brand);
-    text-decoration: underline;
+  color: map-get($colors, brand);
+  text-decoration: underline;
 }
 
-.ms-alternatingstrong .ms-vb a:link, 
-.ms-alternatingstrong .ms-vb2 a:link, 
-.ms-alternatingstrong .ms-vb-user a:link, 
-.ms-alternatingstrong .ms-vb a:visited, 
-.ms-alternatingstrong .ms-vb2 a:visited, 
-.ms-alternatingstrong .ms-vb-user a:visited, 
-.ms-alternatingstrong .ms-vb a:visited:hover, 
-.ms-alternatingstrong .ms-vb2 a:visited:hover, 
+.ms-alternatingstrong .ms-vb a:link,
+.ms-alternatingstrong .ms-vb2 a:link,
+.ms-alternatingstrong .ms-vb-user a:link,
+.ms-alternatingstrong .ms-vb a:visited,
+.ms-alternatingstrong .ms-vb2 a:visited,
+.ms-alternatingstrong .ms-vb-user a:visited,
+.ms-alternatingstrong .ms-vb a:visited:hover,
+.ms-alternatingstrong .ms-vb2 a:visited:hover,
 .ms-alternatingstrong .ms-vb-user a:visited:hover {
   color: map-get($colors, brand);
 }
@@ -686,7 +708,7 @@ input {
 .NewsSummary a:hover,
 .ms-blog-postBody .ms-rtestate-field a:hover,
 #Pulse-LP-tier1-body a:hover {
-	color: map-get($colors, brand-dark);
+  color: map-get($colors, brand-dark);
   text-decoration: underline !important;
 }
 
@@ -711,7 +733,7 @@ input {
 // }
 
 .ms-tl-mainArea {
- @include force-box-sizing(content-box);
+  @include force-box-sizing(content-box);
 }
 
 .ms-tl-today {
@@ -739,80 +761,80 @@ input {
 
 .ms-acal-item {
   background-color: map-get($colors, brand);
-  color: map-get($colors, white);
   border: 1px solid map-get($colors, brand);
+  color: map-get($colors, white);
 }
 
 .ms-acal-color1,
 .ms-acal-apanel-color1 {
   background-color: map-get($colors, cyan-darker);
-  color: map-get($colors, white);
   border: 1px solid map-get($colors, cyan-darker);
+  color: map-get($colors, white);
 }
 
 .ms-acal-color2,
 .ms-acal-apanel-color2 {
   background-color: map-get($colors, blue-darker);
-  color: map-get($colors, white);
   border: 1px solid map-get($colors, blue-darker);
+  color: map-get($colors, white);
 }
 
 
 .ms-acal-color3,
 .ms-acal-apanel-color3 {
   background-color: map-get($colors, green-dark);
-  color: map-get($colors, white);
   border: 1px solid map-get($colors, green-dark);
+  color: map-get($colors, white);
 }
 
 .ms-acal-color4,
 .ms-acal-apanel-color4 {
   background-color: map-get($colors, red-darker);
-  color: map-get($colors, white);
   border: 1px solid map-get($colors, red-darker);
+  color: map-get($colors, white);
 }
 
 .ms-acal-color5,
 .ms-acal-apanel-color5 {
   background-color: map-get($colors, purple-darker);
-  color: map-get($colors, white);
   border: 1px solid map-get($colors, purple-darker);
+  color: map-get($colors, white);
 }
 
 .ms-acal-color6,
 .ms-acal-apanel-color6 {
   background-color: map-get($colors, orange-dark);
-  color: map-get($colors, white);
   border: 1px solid map-get($colors, orange-dark);
+  color: map-get($colors, white);
 }
 
 .ms-acal-color7,
 .ms-acal-apanel-color7 {
   background-color: map-get($colors, brown-dark);
-  color: map-get($colors, white);
   border: 1px solid map-get($colors, brown-dark);
+  color: map-get($colors, white);
 }
 
 .ms-acal-color8,
 .ms-acal-apanel-color8 {
   background-color: map-get($colors, black);
-  color: map-get($colors, white);
   border: 1px solid map-get($colors, black);
+  color: map-get($colors, white);
 }
 
 .ms-acal-color9,
 .ms-acal-apanel-color9 {
   background-color: map-get($colors, brand);
-  color: map-get($colors, white);
   border: 1px solid map-get($colors, brand);
+  color: map-get($colors, white);
 }
 
 
 .ms-acal-default-hover,
 .ms-acal-item-hover {
   background-color: map-get($colors, black);
-  color: map-get($colors, white);
   border: 1px solid map-get($colors, black);
+  color: map-get($colors, white);
 }
 
 // hovers
@@ -848,8 +870,8 @@ input {
 
 .ms-blog-postBox {
   .ms-blog-dateText {
-    line-height: 17px;
     color: map-get($colors, white);
+    line-height: 17px;
   }
 }
 
