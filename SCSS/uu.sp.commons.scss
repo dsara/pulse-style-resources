@@ -199,19 +199,19 @@ $radiuses: (
   box-sizing: $box-sizing !important;
 }
 
-@mixin opensans-light () {
+@mixin opensans-light {
   font-family: 'Open Sans Light', 'Segoe UI Light', Helvetica, Arial, sans-serif;
 }
 
-@mixin opensans () {
+@mixin opensans {
   font-family: 'Open Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
-@mixin opensans-bold () {
+@mixin opensans-bold {
   font-family: 'Open Sans Bold', 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
-@mixin opensans-italic () {
+@mixin opensans-italic {
   font-family: 'Open Sans Italic', 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
