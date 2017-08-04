@@ -688,8 +688,11 @@ input {
 #Pulse-LP-tier1-body a,
 #Pulse-LP-tier1-body a:link,
 #Pulse-LP-tier1-body a:visited {
-  color: map-get($colors, brand);
-  text-decoration: underline;
+
+  &:not(.btn) {
+    color: map-get($colors, brand);
+    text-decoration: underline;
+  }
 }
 
 .ms-alternatingstrong .ms-vb a:link,
@@ -701,15 +704,21 @@ input {
 .ms-alternatingstrong .ms-vb a:visited:hover,
 .ms-alternatingstrong .ms-vb2 a:visited:hover,
 .ms-alternatingstrong .ms-vb-user a:visited:hover {
-  color: map-get($colors, brand);
+
+  &:not(.btn) {
+    color: map-get($colors, brand);
+  }
 }
 
 .article-content a:hover,
 .NewsSummary a:hover,
 .ms-blog-postBody .ms-rtestate-field a:hover,
 #Pulse-LP-tier1-body a:hover {
-  color: map-get($colors, brand-dark);
-  text-decoration: underline !important;
+
+  &:not(.btn) {
+    color: map-get($colors, brand-dark);
+    text-decoration: underline !important;
+  }
 }
 
 .ms-vb-icon {
