@@ -103,8 +103,11 @@ $suite-bar-height: 40px; // normally 43px
 
           #welcomeMenuBox span a {
             color: map-get($colors, white);
-            padding: 0 11px;
             text-decoration: none;
+
+            &.ms-core-menu-root {
+              padding-right: 5px;
+            }
           }
 
           .ms-core-menu-arrow {
