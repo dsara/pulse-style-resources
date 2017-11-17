@@ -96,6 +96,11 @@ $suite-bar-height: 40px; // normally 43px
           color: map-get($colors, white);
           display: inline-block;
           margin-top: 3px;
+          padding: 0 11px;
+
+          > span {
+            display: none !important;
+          }
         }
 
         #DeltaSuiteBarRight {

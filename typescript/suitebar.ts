@@ -85,6 +85,7 @@ export namespace SuiteBar {
         var mobileSearchBox = Utilities.getCachedElementById("uu-pulse-suite-bar-right-mobile-search-box");
         var mobileSearchInput = Utilities.getCachedElementById("uu-pulse-suite-bar-right-mobile-search-box-input") as HTMLInputElement;
         var welcomeMenuAnchors = document.querySelectorAll("#DeltaSuiteBarRight .ms-core-menu-root");
+        var usernameMenu = Utilities.getCachedElementById("zz2_Menu") as HTMLAnchorElement;
 
         if (welcomeMenuAnchors.length > 0) {
             if (mobileSearchBox) {
@@ -97,6 +98,11 @@ export namespace SuiteBar {
                     });
                 }
             }
+        }
+
+        if (usernameMenu) {
+            var fullname = usernameMenu.firstChild;
+            usernameMenu.innerHTML = "<span class='hidden-xs'>" + fullname + "</span><span class='hidden-sm hidden-md hidden-lg glyphicon glyphicon-user'></span>"
         }
 
         if (mobileSearchIcon) {
