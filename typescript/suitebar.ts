@@ -102,7 +102,7 @@ export namespace SuiteBar {
 
         if (usernameMenu) {
             var fullname = usernameMenu.firstChild;
-            usernameMenu.innerHTML = "<span class='hidden-xs'>" + fullname + "</span><span class='hidden-sm hidden-md hidden-lg glyphicon glyphicon-user'></span>"
+            usernameMenu.innerHTML = "<span class='hidden-xs'>" + fullname.textContent + "</span><span class='hidden-sm hidden-md hidden-lg glyphicon glyphicon-user'></span>"
         }
 
         if (mobileSearchIcon) {
