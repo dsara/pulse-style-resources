@@ -145,7 +145,7 @@ img[src*="spcommon"] {
     tbody {
       tr {
         :nth-child(even) {
-          background-color: map-get($color, grey-lighter);
+          background-color: map-get($colors, grey-lighter);
         }
       }
     }
