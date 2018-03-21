@@ -136,6 +136,11 @@ img[src*="spcommon"] {
     margin: 10px 0;
     width: 100%;
 
+    td,
+    th {
+      padding: 5px 10px;
+    }
+
     thead {
       background-color: map-get($colors, brand-black);
       color: map-get($colors, brand-white);
@@ -144,7 +149,7 @@ img[src*="spcommon"] {
 
     tbody {
       tr {
-        :nth-child(even) {
+        &:nth-child(even) {
           background-color: map-get($colors, grey-lighter);
         }
       }
