@@ -124,6 +124,14 @@ img[src*="spcommon"] {
     @include font-size-xlarge;
   }
 
+  iframe {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 5px;
+    width: 100%;
+  }
+
   img {
     display: block;
     margin: 0 auto;
