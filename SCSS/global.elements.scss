@@ -168,6 +168,8 @@ img[src*="spcommon"] {
   a,
   a:visited,
   a:link {
-    color: map-get($colors, brand) !important;
+    &:not(.btn) {
+      color: map-get($colors, brand) !important;
+    }
   }
 }
