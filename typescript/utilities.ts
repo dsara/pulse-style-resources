@@ -56,11 +56,11 @@ export class Utilities {
         return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
     }
 
-    public static resizeIFrames(iframes: NodeListOf<HTMLIFrameElement>) {
+    public static resizeDocumentationIFrames(iframes: NodeListOf<HTMLIFrameElement>) {
         if (iframes && iframes.length > 0) {
             for (let x = 0; x < iframes.length; x++) {
-                let videoWidth = parseInt(window.getComputedStyle(iframes.item(x)).width, 10);
-                (iframes.item(x)).style.height = (9/16 * videoWidth).toString() + "px";
+                let parentWidth = parseInt(window.getComputedStyle(document.querySelector(".uu-pulse-documentation")).width, 10);
+                (iframes.item(x)).style.height = (9/16 * parentWidth).toString() + "px";
             }
         }
     }

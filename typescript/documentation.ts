@@ -8,10 +8,10 @@ export namespace Documentation {
             let documentationIFrames = document.querySelectorAll(".uu-pulse-documentation iframe") as NodeListOf<HTMLIFrameElement>;
 
             window.addEventListener("resize", (listener) => {
-                Utilities.resizeIFrames(documentationIFrames);
+                Utilities.resizeDocumentationIFrames(documentationIFrames);
             });
 
-            Utilities.resizeIFrames(documentationIFrames);
+            Utilities.resizeDocumentationIFrames(documentationIFrames);
         }
     }
 }
