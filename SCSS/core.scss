@@ -49,7 +49,7 @@ $solid-border: 1px solid map-get($colors , brand);
 //   font-family: 'Open Sans Italic';
 //   src: url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.eot);
 //   src: url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.eot?#iefix) format('embedded-opentype'),
-//        url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.woff) format('woff'), 
+//        url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.woff) format('woff'),
 //        url(/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.ttf) format('truetype'),
 //        url("/_layouts/15/commons/fonts/opensans/bold/opensans-italic-webfont.svg#Open Sans Italic"), format('svg');
 // }
@@ -907,6 +907,12 @@ input {
 }
 
 // ensure sharepoint dialogs are on top of every else on the page
+// and are fixed to the viewport
+.ms-dlgOverlay {
+  z-index: 499999 !important;
+}
+
 .ms-dlgContent {
+  position: fixed;
   z-index: 500000 !important;
 }
