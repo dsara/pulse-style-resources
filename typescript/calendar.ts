@@ -1,4 +1,4 @@
-declare function AdjustScrollPosition(a: any, b: any, c: any);
+declare function AdjustScrollPosition(a: any, b: any, c: any): any;
 
 export namespace Calendar {
   export function fixCalendarScrollingFunction(element: any, relativeToElement: any): any {
