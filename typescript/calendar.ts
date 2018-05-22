@@ -1,7 +1,7 @@
 declare function AdjustScrollPosition(a: any, b: any, c: any);
 
 export namespace Calendar {
-  export function fixCalendarScrollingFunction(element, relativeToElement) {
+  export function fixCalendarScrollingFunction(element: any, relativeToElement: any): any {
     var result = new Object() as any;
     result.x = 0;
     result.y = 0;
