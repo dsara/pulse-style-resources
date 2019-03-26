@@ -1,6 +1,6 @@
 {
   "name": "@uofu-health-web/pulse-style-resources",
-  "version": "2.10.4",
+  "version": "2.10.5",
   "description": "SharePoint Pulse typescript and sass resources",
   "main": "index.js",
   "scripts": {
