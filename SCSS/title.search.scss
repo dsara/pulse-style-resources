@@ -77,13 +77,14 @@
     }
 
     // Breadcrumb
-    #siteBreadcrumb {
-      padding-bottom: 5px;
-      padding-left: 1px;
+  }
 
-      > span:first-of-type > span:last-of-type {
-        display: none;
-      }
+  #siteBreadcrumb {
+    padding-bottom: 5px;
+    padding-left: 1px;
+
+    > span:first-of-type > span:last-of-type {
+      display: none;
     }
   }
 }
