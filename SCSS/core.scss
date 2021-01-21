@@ -921,3 +921,13 @@ input {
 .DialogContainer {
   z-index: 500000 !important;
 }
+
+// 2019 fixes
+li.ms-contextmenu-item {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  .ms-contextmenu-link {
+    margin-left: 0 !important;
+  }
+}
